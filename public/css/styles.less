@@ -1,0 +1,150 @@
+html {
+  background: #000;
+}
+
+body {
+  background: #000;
+}
+
+h3 {
+  font-size: 1.55rem;
+}
+
+.main_wrapper {
+  margin: 0 auto;
+  width: 100%;
+  background: url('../img/bg_main.jpg') no-repeat top center;
+  background-position-y: -15vh;
+  min-height: 100vh;
+  background-size: 78%;
+}
+
+#video_container {
+  top: 20vh;
+}
+
+.video_controls_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 40px;
+}
+
+.intro_text {
+  color: #FFF;
+}
+
+.start_btn {
+  background-image: linear-gradient(#4702fb, #3402b6);
+  color: #fff3cd;
+  border-radius: 10px;
+  width: 260px;
+  height: 60px;
+  font-size: 1.1rem;
+  margin-top: 40px;
+  position: relative;
+  padding-left: 40px;
+  border: none;
+
+  &:hover {
+    color: #d48888;
+
+    .fas {
+      transform: scale(1.5);
+    }
+  }
+
+  .fas {
+    transition: all 0.15s ease-in-out;
+    position: absolute;
+    top: 40%;
+    left: 35px;
+    transform-origin: left center;
+  }
+}
+
+.share_btn_wrapper {
+  width: 190px;
+  font-size: 11px;
+  top: 25vh;
+
+  .share_btn {
+    color: #000;
+    text-transform: uppercase;
+  }
+}
+
+.fa {
+  font-size: 10px;
+  padding-right: 10px;
+}
+
+.fas {
+  font-size: 10px;
+  padding-right: 10px;
+}
+
+.fa-bars {
+  padding: 10px 0 0 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.video_wrapper {
+  max-height: 62vh;
+
+  video {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.footer_wrapper {
+  border-top: #666 2px solid;
+  margin-top: 30vh;
+  && a {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 5px 0;
+    cursor: pointer;
+  }
+}
+
+.logo_redCross {
+  width: 25%;
+  height: auto;
+  top: 22vh;
+  position: absolute;
+}
+@media (max-width: 768px) {
+  .main_wrapper {
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .main_wrapper {
+    background-position-y: -5vh;
+    min-height: 100vh;
+    background-size: 140%;
+  }
+}
+
+@media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .main_wrapper {
+    background-position-y: -5vh;
+    min-height: 100vh;
+    background-size: 140%;
+  }
+}

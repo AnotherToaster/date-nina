@@ -1,20 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div id="main">
+
+    <div class="main_wrapper">
+      <div class="container">
+        <div class="row">
+          <VideoComponent/>
+        </div>
+        <ShareSocial/>
+
+          <SiteFooter/>
+
+      </div>
+
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import {Component, Vue} from 'vue-property-decorator';
+import VideoComponent from './components/videocomponent.vue';
+import SiteFooter from './components/sitefooter.vue';
+import ShareSocial from './components/sharesocial.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    VideoComponent,
+    SiteFooter,
+    ShareSocial
   },
 })
-export default class App extends Vue {}
+
+export default class App extends Vue {
+
+}
+
 </script>
 
 <style>
