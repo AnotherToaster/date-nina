@@ -1,0 +1,204 @@
+{
+  "url1": {
+    "@url": "1",
+    "url": "1",
+    "decGood": "2b",
+    "decBad": "2a",
+    "decGoodText": "KÜSSCHEN GEBEN",
+    "decBadText": "HAND GEBEN",
+    "linktext": "JETZT NINA DATEN",
+    "text": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ..."
+  },
+  "url2a": {
+    "@url": "2a",
+    "url": "2a",
+    "decGood": "3a",
+    "decBad": "3b",
+    "decGoodText": "SMS NICHT LESEN",
+    "decBadText": "SMS LESEN",
+    "linktext": [],
+    "text": []
+  },
+  "url2b": {
+    "@url": "2b",
+    "url": "2b",
+    "decGood": "3a",
+    "decBad": "3b",
+    "decGoodText": "SMS NICHT LESEN",
+    "decBadText": "SMS LESEN",
+    "linktext": [],
+    "text": []
+  },
+  "url3a": {
+    "@url": "3a",
+    "url": "3a",
+    "decGood": "4a",
+    "decBad": "4b",
+    "decGoodText": "JAZZY",
+    "decBadText": "FUNKY",
+    "linktext": [],
+    "text": []
+  },
+  "url3b": {
+    "@url": "3b",
+    "url": "3b",
+    "decGood": "4a",
+    "decBad": "4b",
+    "decGoodText": "JAZZY",
+    "decBadText": "FUNKY",
+    "linktext": [],
+    "text": []
+  },
+  "url4a": {
+    "@url": "4a",
+    "url": "4a",
+    "decGood": "5ab",
+    "decBad": "5bb",
+    "decGoodText": "DRÄNGLER IGNORIEREN",
+    "decBadText": "DRÄNGLER ABHÄNGEN",
+    "linktext": [],
+    "text": []
+  },
+  "url4b": {
+    "@url": "4b",
+    "url": "4b",
+    "decGood": "5aa",
+    "decBad": "5ba",
+    "decGoodText": "DRÄNGLER IGNORIEREN",
+    "decBadText": "DRÄNGLER ABHÄNGEN",
+    "linktext": [],
+    "text": []
+  },
+  "url5aa": {
+    "@url": "5aa",
+    "url": "5aa",
+    "decGood": "6a",
+    "decBad": "6b",
+    "decGoodText": "ABHAUEN",
+    "decBadText": "MITKNUTSCHEN",
+    "linktext": [],
+    "text": []
+  },
+  "url5ab": {
+    "@url": "5ab",
+    "url": "5ab",
+    "decGood": "6a",
+    "decBad": "6b",
+    "decGoodText": "ABHAUEN",
+    "decBadText": "MITKNUTSCHEN",
+    "linktext": [],
+    "text": []
+  },
+  "url5ba": {
+    "@url": "5ba",
+    "@end": "1",
+    "@track": "pusher",
+    "url": "5ba",
+    "backLink": "4a",
+    "decGoodText": [],
+    "decBadText": [],
+    "decBack": "Lass dich nicht provozieren, wenn du fährst.",
+    "linktext": [],
+    "text": []
+  },
+  "url5bb": {
+    "@url": "5bb",
+    "@end": "1",
+    "@track": "pusher",
+    "url": "5bb",
+    "backLink": "4a",
+    "decGoodText": [],
+    "decBadText": [],
+    "decBack": "Lass dich nicht provozieren, wenn du fährst.",
+    "linktext": [],
+    "text": []
+  },
+  "url6a": {
+    "@url": "6a",
+    "url": "6a",
+    "decGood": "7a",
+    "decBad": "7b",
+    "decGoodText": "ABLEHNEN",
+    "decBadText": "ANNEHMEN",
+    "linktext": [],
+    "text": []
+  },
+  "url6b": {
+    "@url": "6b",
+    "url": "6b",
+    "decGood": "7a",
+    "decBad": "7b",
+    "decGoodText": "ABLEHNEN",
+    "decBadText": "ANNEHMEN",
+    "decBack": "Bleib klar im Kopf. Dann ist alles klar beim Fahren.",
+    "linktext": [],
+    "text": []
+  },
+  "url7a": {
+    "@url": "7a",
+    "url": "7a",
+    "decGood": "8a",
+    "decBad": "8b",
+    "decGoodText": "SMS IGNORIEREN",
+    "decBadText": "SMS LESEN",
+    "linktext": [],
+    "text": []
+  },
+  "url7b": {
+    "@url": "7b",
+    "@end": "1",
+    "@track": "joint",
+    "url": "7b",
+    "backLink": "6a",
+    "decGoodText": [],
+    "decBadText": [],
+    "decBack": "Bleib klar im Kopf. Dann ist alles klar beim Fahren.",
+    "linktext": [],
+    "text": []
+  },
+  "url8a": {
+    "@url": "8a",
+    "url": "8a",
+    "decGood": "9a",
+    "decBad": "9b",
+    "decGoodText": "TAXI NEHMEN",
+    "decBadText": "SELBER FAHREN",
+    "linktext": [],
+    "text": []
+  },
+  "url8b": {
+    "@url": "8b",
+    "@end": "1",
+    "@track": "sms",
+    "url": "8b",
+    "backLink": "7a",
+    "decGoodText": [],
+    "decBadText": [],
+    "decBack": "Hände weg vom Handy, wenn du fährst.",
+    "linktext": [],
+    "text": []
+  },
+  "url9a": {
+    "@url": "9a",
+    "@end": "happyend",
+    "url": "9a",
+    "decGood": [],
+    "decBad": [],
+    "decGoodText": [],
+    "decBadText": [],
+    "linktext": [],
+    "text": "THE END"
+  },
+  "url9b": {
+    "@url": "9b",
+    "@end": "1",
+    "@track": "taxi",
+    "url": "9b",
+    "backLink": "8a",
+    "decGoodText": [],
+    "decBadText": [],
+    "decBack": "Entscheide dich gegen Alkohol am Steuer und für das Leben.",
+    "linktext": [],
+    "text": []
+  }
+}

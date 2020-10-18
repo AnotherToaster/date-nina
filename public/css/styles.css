@@ -14,9 +14,7 @@ h3 {
   background-position-y: -15vh;
   min-height: 100vh;
   background-size: 78%;
-}
-#video_container {
-  top: 20vh;
+  padding-top: 20vh;
 }
 .video_controls_wrapper {
   position: absolute;
@@ -58,11 +56,13 @@ h3 {
 .share_btn_wrapper {
   width: 190px;
   font-size: 11px;
-  top: 25vh;
+  height: 80px;
+  margin-bottom: 40px;
 }
 .share_btn_wrapper .share_btn {
   color: #000;
   text-transform: uppercase;
+  height: 40px;
 }
 .fa {
   font-size: 10px;
@@ -92,19 +92,22 @@ h3 {
 }
 .footer_wrapper {
   border-top: #666 2px solid;
-  margin-top: 30vh;
 }
-.footer_wrapper.footer_wrapper a {
+.footer_wrapper a {
   font-size: 14px;
   color: #666;
   margin: 5px 0 5px 0;
   cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
 }
-.logo_redCross {
-  width: 25%;
-  height: auto;
-  top: 22vh;
-  position: absolute;
+.footer_wrapper a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+.choices_wrapper .start_btn {
+  margin-top: 0;
+  padding-left: 0;
 }
 @media (max-width: 768px) {
   .main_wrapper {
