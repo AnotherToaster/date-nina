@@ -11,7 +11,6 @@
           <SiteFooter/>
 
       </div>
-
     </div>
   </div>
 </template>

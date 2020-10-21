@@ -2,10 +2,8 @@
   "url1": {
     "@url": "1",
     "url": "1",
-    "decGood": "2b",
-    "decBad": "2a",
-    "decGoodText": "KÜSSCHEN GEBEN",
-    "decBadText": "HAND GEBEN",
+    "decGoodText": "HAND GEBEN",
+    "decBadText": "KÜSSCHEN GEBEN",
     "linktext": "JETZT NINA DATEN",
     "text": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ..."
   },
