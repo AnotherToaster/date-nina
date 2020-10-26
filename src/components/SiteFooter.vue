@@ -6,32 +6,39 @@
       </a>
     </div>
     <div class="col-2 d-flex justify-content-center">
-      <a href="#" id="info">INFO</a>
+      <a @click="showModal('Info')" id="info">INFO</a>
     </div>
     <div class="col-2 d-flex justify-content-center">
-      <a href="#" id="imprint">IMPRESSUM</a>
+      <a @click="showModal('Imprint')" id="imprint">IMPRESSUM</a>
     </div>
     <div class="col-2 d-flex justify-content-center">
-      <a href="#" id="privacy">DATENSCHUTZ</a>
+      <a @click="showModal('Privacy')" id="privacy">DATENSCHUTZ</a>
     </div>
     <div class="col-4 justify-content-end d-flex align-items-center">
       <div class="col-2">
-        <a href="#" id="de">DE</a>
+        <a id="de">DE</a>
       </div>
       <div class="col-2">
-        <a href="#" id="fr">FR</a>
+        <a id="fr">FR</a>
       </div>
       <div class="col-2">
-        <a href="#" id="it">IT</a>
+        <a id="it">IT</a>
       </div>
     </div>
-
   </div>
 </template>
 
-<script>
-export default {
-  name: "SiteFooter"
+<script lang="ts">
+import {Component, Vue} from 'vue-property-decorator';
+
+@Component
+export default class Sitefooter extends Vue {
+  constructor() {
+    super();
+  }
+  showModal(ModalType: string) {
+    this.$store.dispatch('show' + ModalType + 'Modal', true);
+  }
 }
 </script>
 
