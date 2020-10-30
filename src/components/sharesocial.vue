@@ -7,14 +7,22 @@
       <button class="btn social_btn">
         <i class="fab fa-facebook-square"></i>
       </button>
-      <button class="btn btn-light share_btn">Freunde Verkuppeln</button>
+      <button class="btn btn-light share_btn" data-toggle="modal" data-target="#contact_modal" @click="showModal('Contact')">Freunde Verkuppeln</button>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "sharesocial"
+<script lang="ts">
+import {Component, Vue} from 'vue-property-decorator';
+
+@Component
+export default class ShareSocial extends Vue {
+  constructor() {
+    super();
+  }
+  showModal(ModalType: string) {
+    this.$store.dispatch('show' + ModalType + 'Modal', true);
+  }
 }
 </script>
 

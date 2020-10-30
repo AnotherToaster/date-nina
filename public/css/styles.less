@@ -16,6 +16,7 @@ body {
   padding-top: 20vh;
 }
 
+
 .video_controls_wrapper {
   position: absolute;
   top: 50%;
@@ -27,6 +28,11 @@ body {
 
   .control {
     width: 50%;
+
+    .start_btn {
+      padding-left: 40px;
+      margin-top: 40px;
+    }
 
     .intro_text {
       color: #FFF;
@@ -156,16 +162,14 @@ body {
   }
 }
 
-.start_btn {
+.base_btn_wrapper {
   background-image: linear-gradient(#4702fb, #3402b6);
   color: #fff3cd;
   border-radius: 10px;
   width: 260px;
   height: 60px;
   font-size: 1.1rem;
-  margin-top: 40px;
   position: relative;
-  padding-left: 40px;
   border: none;
 
   &:hover {
@@ -183,6 +187,10 @@ body {
     left: 35px;
     transform-origin: left center;
   }
+}
+
+.submit_btn {
+
 }
 
 .share_btn_wrapper {
@@ -236,7 +244,9 @@ body {
   }
 }
 
+.submit_btn {
 
+}
 .footer_wrapper {
   border-top: #666 2px solid;
   vertical-align: top;
@@ -264,7 +274,7 @@ body {
 
   .modal_wrapper {
 
-    p, h2, ul, h3 {
+    p, h2, ul, h3, h4 {
       color: #fff;
       font-weight: bold;
     }

@@ -1,4 +1,11 @@
 {
+  "contact": {
+    "addressTitle": "RoadCross Schweiz",
+    "addressCity": "8004 Zürich",
+    "addressTel": "Tel. 044 737 48 29",
+    "addressFax": "Fax 044 737 28 08",
+    "email": "info@roadcross.ch"
+  },
   "steps": {
     "1": {
       "next": {
@@ -169,6 +176,30 @@
         "4": "Die Gemeinde Steinhausen",
         "5": "Das Tiefbauamt des Kantons Zug"
       }
-    }
+    },
+    "imprintModal": {
+      "title": "Impressum",
+      "introText": "Verantwortlich für den Inhalt:",
+      "subtitle": "Copyright",
+      "subtitleText": "Die Weiterverwendung von Bild und Text bedarf der ausdrücklichen Erlaubnis von RoadCross Schweiz."
+    },
+    "privacyModal": {
+      "title": "Privacy Policy / Datenschutz",
+      "subtitle1": "Cookies",
+      "subtitle1Text": "Diese Website setzt ein Session-Cookie. Es wird bei Verlassen der Website automatisch gelöscht. Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browser aktivieren.",
+      "subtitle2": "Google Analytics",
+      "subtitle2Text1": "Diese Website nutzt den Dienst „Google Analytics“, welcher von der Google Inc. (1600 Amphitheatre Parkway Mountain View, CA 94043, USA) angeboten wird, zur Analyse der Websitebenutzung durch Nutzer. Der Dienst verwendet „Cookies“ – Textdateien, welche auf Ihrem Endgerät gespeichert werden. Die durch die Cookies gesammelten Informationen werden im Regelfall an einen Google-Server in den USA gesandt und dort gespeichert.",
+      "subtitle2Text2": "Auf dieser Website greift die IP-Anonymisierung. Die IP-Adresse der Nutzer wird innerhalb der Mitgliedsstaaten der EU und des Europäischen Wirtschaftsraum gekürzt. Durch diese Kürzung entfällt der Personenbezug Ihrer IP-Adresse. Im Rahmen der Vereinbarung zur Auftragsdatenvereinbarung, welche die Websitebetreiber mit der Google Inc. geschlossen haben, erstellt diese mithilfe der gesammelten Informationen eine Auswertung der Websitenutzung und der Websiteaktivität und erbringt mit der Internetnutzung verbundene Dienstleistungen. Sie haben die Möglichkeit, die Speicherung des Cookies auf Ihrem Gerät zu verhindern, indem Sie in Ihrem Browser entsprechende Einstellungen vornehmen. Es ist nicht gewährleistet, dass Sie auf alle Funktionen dieser Website ohne Einschränkungen zugreifen können, wenn Ihr Browser keine Cookies zulässt.",
+      "infoLinkText1": "Weiterhin können Sie durch ein Browser-Plugin verhindern, dass die durch Cookies gesammelten Informationen (inklusive Ihrer IP-Adresse) an die Google Inc. gesendet und von der Google Inc. genutzt werden. Folgender Link führt Sie zu dem entsprechenden Plugin:",
+      "infoLink1": "https://tools.google.com/dlpage/gaoptout?hl=de",
+      "infoLinkText2": "Hier finden Sie weitere Informationen zur Datennutzung durch die Google Inc.:",
+      "infoLink2": "https://support.google.com/analytics/answer/6004245?hl=de",
+      "logFileTitle": "Log-Files",
+      "logFileText": "Alle Zugriffe auf diesen Server werden in einem Zugriffs-Log erfasst. Es findet keine Auswertung dieser Daten statt."
+    },
+    "contactModal": {
+      "title": "Freunde Verkuppeln",
+      "text": "Du kannst bis zu 5 Freunde zu Date Nina einladen"
+      }
   }
 }

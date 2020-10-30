@@ -9,43 +9,29 @@
       <div class="modal_wrapper">
         <div class="row">
           <div class="col-12">
-            <h2>Impressum</h2>
+            <h2>{{ Title }}</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <h3>Verantwortlich für den Inhalt:</h3>
-            <p>RoadCross Schweiz kämpft gegen die zu hohe Zahl von jugendlichen Verkehrstoten – nicht mit Regeln und
-              Verboten, sondern durch
-              Aufklärung und Diskussion. Denn leider zeigen auch die neuesten Verkehrsunfallzahlen, dass junge Leute mit
-              Abstand
-              das höchste Risiko verzeichnen, bei einem Unfall in Zusammenhang mit Geschwindigkeit, Alkohol oder Drogen
-              schwer
-              verletzt oder getötet zu werden.
-            </p>
-            <p>Wenn du Fragen zu und über RoadCross Schweiz hast, hier findest du die Antworten:</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
+            <h3>{{ IntroText }}</h3>
             <p class="client_address">
-              RoadCross Schweiz<br>
-              8004 Zürich<br>
-              Tel. 044 737 48 29<br>
-              Fax 044 737 28 08<br>
-              E-Mail: <a href="mailto:info@roadcross.ch">info@roadcross.ch</a>
+              {{ AddressTitle }}<br>
+              {{ AddressCity }}<br>
+              {{ AddressTel }}<br>
+              {{ AddressFax }}<br>
+              E-Mail: <a href="mailto:info@roadcross.ch">{{ Email }}</a>
             </p>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <h3>Copyright</h3>
+            <h3>{{ Subtitle }}</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <p>Die Weiterverwendung von Bild und Text bedarf der ausdrücklichen Erlaubnis von RoadCross Schweiz.
-            </p>
+            <p>{{ SubtitleText }}</p>
           </div>
         </div>
       </div>
@@ -57,7 +43,34 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class InfoModal extends Vue {
+export default class ImprintModal extends Vue {
+  Contact: Array<string>;
+  ImprintModal: any;
+  Title: string;
+  Subtitle: string;
+  SubtitleText: string;
+  IntroText: string;
+  AddressTitle: string;
+  AddressCity: string;
+  AddressTel: string;
+  AddressFax: string;
+  Email: string;
+
+  constructor() {
+    super();
+    this.Contact = this.$store.state.siteData.contact;
+    this.AddressTitle = this.$store.state.siteData.contact.addressTitle;
+    this.AddressCity = this.$store.state.siteData.contact.addressCity;
+    this.AddressTel = this.$store.state.siteData.contact.addressTel;
+    this.AddressFax = this.$store.state.siteData.contact.addressFax;
+    this.Email = this.$store.state.siteData.contact.email;
+    this.ImprintModal = this.$store.state.siteData.modal.imprintModal;
+    this.Title = this.ImprintModal.title;
+    this.Subtitle = this.ImprintModal.subtitle;
+    this.SubtitleText = this.ImprintModal.subtitleText;
+    this.IntroText = this.ImprintModal.introText;
+  }
+
   closeModal(modal: string) {
     this.$modal.hide('imprint-modal')
     this.$store.dispatch('show' + modal + 'Modal', false);

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="embed-responsive embed-responsive-16by9" id="video_container">
-      <video id="video" class="embed-responsive-item" width="auto" height="100%"
+      <video id="video" class="embed-responsive-item" playsinline width="auto" height="100%"
              :src="videoSrc"
              @ended="videoEnded()">
         Your browser does not support the video tag.
@@ -9,7 +9,7 @@
       <div class="video_controls_wrapper d-flex justify-content-center">
         <div id="control" class="control" v-if="$store.state.showVideoControls">
           <p class="intro_text" id="intro_text">{{ introText }}</p>
-          <button class="btn btn-secondary start_btn" id="start_btn" v-on:click="startDate()">
+          <button class="btn btn-secondary base_btn_wrapper start_btn" id="start_btn" v-on:click="startDate()">
             <i class="fas fa-play"></i>
             {{ linkText }}
           </button>

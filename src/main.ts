@@ -3,6 +3,7 @@ import App from './App.vue';
 import store from './store';
 import axios from 'axios';
 import VModal from 'vue-js-modal'
+import Contact from '@/components/contact.vue'
 
 Vue.config.productionTip = false
 
@@ -13,6 +14,7 @@ async function getSiteContent() {
 
 getSiteContent().then(r => {
   Vue.use(VModal);
+  Vue.component("contact-form", Contact);
   new Vue({
     store,
     beforeCreate() {
