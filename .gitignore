@@ -23,3 +23,10 @@ pnpm-debug.log*
 *.sw?
 
 /public/videos/
+/public/phpMailer/SECURITY.md
+/public/phpMailer/README.md
+/public/phpMailer/language/
+/public/phpMailer/composer.json
+/public/phpMailer/LICENSE
+/public/phpMailer/VERSION
+/public/phpMailer/COMMITMENT

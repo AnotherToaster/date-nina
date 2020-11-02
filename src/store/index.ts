@@ -18,13 +18,19 @@ export default new Vuex.Store({
         sentContactFormError: false,
         sendingContactForm: false,
         showThanks: false,
+        counter: 0,
         showContactSuccess: false,
         siteData: [],
         userData: {
+
+            id: '1',
             clientName: 'John',
-            clientEmail: 'Doe',
-            friendName: 'Dominik',
-            friendEmail: 'Röttger'
+            clientEmail: 'johndoe@foo.com',
+
+        },
+        friendsData: {
+            friendName: '',
+            friendEmail: '',
         },
     },
     mutations: {
@@ -45,10 +51,6 @@ export default new Vuex.Store({
         },
         setContactFormData(state, data) {
             state.userData = data;
-        },
-        setClientName(state, data) {
-
-            state.userData.clientName = data;
         },
         sentContactForm(state, data) {
             state.sentContactForm = data;
@@ -84,9 +86,6 @@ export default new Vuex.Store({
         },
         setContactFormData(context, data) {
             context.commit('setContactFormData', data);
-        },
-        setClientName(context, data) {
-            context.commit('setClientName', data);
         },
         sentContactForm(context, data) {
             context.commit('sentContactForm', data);

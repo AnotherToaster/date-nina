@@ -19,75 +19,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <form id="contact_form" @submit.prevent="submitForm()">
-              <div class="form-row">
-                <div class="form-group col-6">
-                  <label for="client-name" class="sr-only">ClientName</label>
-                  <input type="text" class="form-control m-0 form-top-row"
-                         name="clientName"
-                         required="required"
-                         minlength="3"
-                         id="client-name"
-                         v-model="clientName"
-                         placeholder="Dein Name">
-                </div>
-                <div class="form-group col-6">
-                  <label for="client-email" class="sr-only">ClientEmail</label>
-                  <input type="text" class="form-control m-0 form-top-row"
-                         name="clientEmail"
-                         required="required"
-                         minlength="3"
-                         id="client-email"
-                         v-model="clientEmail"
-                         placeholder="Deine Email">
-                  <!--@TODO: change type to mail
-
-                  -->
-                </div>
-              </div>
-              <div class="form-row mb-3">
-                <div class="form-group col-6">
-                  <label for="friend-name" class="sr-only">FriendName</label>
-                  <input type="text" class="form-control m-0 form-top-row"
-                         name="friendName"
-                         required="required"
-                         minlength="3"
-                         id="friend-name"
-                         v-model="friendName"
-                         placeholder="Name deines Freundes">
-                </div>
-                <div class="form-group col-6">
-                  <label for="friend-email" class="sr-only">FriendEmail</label>
-                  <input type="text" class="form-control m-0 form-top-row"
-                         name="friendEmail"
-                         required="required"
-                         minlength="3"
-                         id="friend-email"
-                         v-model="friendEmail"
-                         placeholder="Email deines Freundes">
-                  <!--@TODO: change type to mail
-
-               -->
-                </div>
-              </div>
-              <div class="form-row mb-3">
-                <div class="col-6">
-                  <button type="button" class="form-group btn btn-outline-light"
-                          id="addFriends" @click="addInput()">Weitere
-                    Freunde hinzufügen
-                  </button>
-                </div>
-              </div>
-              <div class="form-row justify-content-center my-3">
-                <div class="form-group col-auto">
-                  <button type="submit"
-                          class="btn btn-secondary base_btn_wrapper submit_btn"
-                          id="input-send">
-                    Senden
-                  </button>
-                </div>
-              </div>
-            </form>
+            <input-field></input-field>
           </div>
         </div>
       </div>
@@ -105,8 +37,13 @@
 
 <script lang="ts">
 import {Component, Vue, Watch} from 'vue-property-decorator';
+import InputField from '@/components/inputField.vue'
 
-@Component
+@Component({
+  components: {
+    InputField
+  }
+})
 export default class ContactModal extends Vue {
 
   @Watch('formModel', {immediate: true, deep: true})
@@ -116,6 +53,7 @@ export default class ContactModal extends Vue {
 
   content: Array<string>;
   userData: Array<string>;
+  friendsData: Array<string>;
   contactModal: any;
   title: string;
   text: string;
@@ -123,20 +61,13 @@ export default class ContactModal extends Vue {
   formModel = {};
   modalWrapper: any;
   addFriends: any;
-  friendName: any;
-  clientName: any;
-  friendEmail: any;
-  clientEmail: any;
   inputs: any;
 
   constructor() {
     super();
     this.content = this.$store.state.siteData;
     this.userData = this.$store.state.userData;
-    this.clientName = this.$store.state.userData.clientName;
-    this.friendName = this.$store.state.userData.friendName;
-    this.clientEmail = this.$store.state.userData.clientEmail;
-    this.friendEmail = this.$store.state.userData.friendEmail;
+    this.friendsData = this.$store.state.friendsData;
     this.contactModal = this.$store.state.siteData.modal.contactModal;
     this.title = this.contactModal.title;
     this.text = this.contactModal.text;
@@ -150,10 +81,6 @@ export default class ContactModal extends Vue {
     this.$modal.hide('contact-modal')
     this.$store.dispatch('show' + modal + 'Modal', false);
     this.$store.dispatch('showContactSuccess', false);
-  }
-
-  submitForm() {
-    this.$store.dispatch('sendingContactForm', true);
   }
 
   get showThanks() {

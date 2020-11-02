@@ -15,7 +15,8 @@ export default class Contact extends Vue {
 			}, (newValue, oldValue) => {
 				if (newValue) {
 					const userData = this.$store.state.userData;
-                    const ContactDataArray = {userData: userData}
+					const friendsData = this.$store.state.friendsData;
+                    const ContactDataArray = {userData: userData, friendsData: friendsData}
                     API.submitForms(ContactDataArray);
 				}
 			}
