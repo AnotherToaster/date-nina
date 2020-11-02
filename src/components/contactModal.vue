@@ -59,9 +59,6 @@ export default class ContactModal extends Vue {
   text: string;
   maxFieldsFriends: number;
   formModel = {};
-  modalWrapper: any;
-  addFriends: any;
-  inputs: any;
 
   constructor() {
     super();
@@ -71,10 +68,7 @@ export default class ContactModal extends Vue {
     this.contactModal = this.$store.state.siteData.modal.contactModal;
     this.title = this.contactModal.title;
     this.text = this.contactModal.text;
-    this.maxFieldsFriends = 5;
-    this.modalWrapper = document.getElementById('modalWrapper');
-    this.inputs = document.getElementById('friends-row');
-    this.addFriends = document.getElementById('addFriends')
+    this.maxFieldsFriends = this.$store.state.maxFieldNumber;
   }
 
   closeModal(modal: string) {

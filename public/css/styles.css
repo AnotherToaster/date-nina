@@ -201,6 +201,10 @@ body {
   height: auto;
   width: 100%;
 }
+.disable_btn {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .footer_wrapper {
   border-top: #666 2px solid;
   vertical-align: top;

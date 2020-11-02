@@ -66,7 +66,7 @@ if (array_key_exists('toEmail', $mailProp)) {
         $error = true;
     }
     if (array_key_exists('emailMsg', $mailProp)) {
-        $emailMsg = substr(strip_tags($mailProp['emailMsg']), 0, 16384);
+        $emailMsg = substr(strip_tags($mailProp['emailMsg']), 0, 250);
     } else {
         $mailProp['emailMsg'] = 'No Message provided!';
         $error = true;

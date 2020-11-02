@@ -18,20 +18,23 @@ export default new Vuex.Store({
         sentContactFormError: false,
         sendingContactForm: false,
         showThanks: false,
-        counter: 0,
+        disableBtnActive: false,
+        maxFieldNumber: 5,
+        counter: 1,
         showContactSuccess: false,
         siteData: [],
         userData: {
-
-            id: '1',
             clientName: 'John',
             clientEmail: 'johndoe@foo.com',
 
         },
-        friendsData: {
-            friendName: '',
-            friendEmail: '',
-        },
+        friendsData: [
+            {
+                id: 1,
+                friendName: '',
+                friendEmail: '',
+            }
+        ]
     },
     mutations: {
         siteContent(state, data) {
@@ -67,6 +70,27 @@ export default new Vuex.Store({
         showContactSuccess(state, data) {
             state.showContactSuccess = data;
         },
+        addInput(state) {
+            state.counter += 1
+            if (state.counter <= state.maxFieldNumber) {
+                if (state.counter == state.maxFieldNumber) {
+                    state.disableBtnActive = true;
+                }
+                const item = {
+                    id: state.counter,
+                    friendName: '',
+                    friendEmail: '',
+                };
+                state.friendsData.push(item);
+            }
+        },
+        removeInput(state) {
+            if (state.disableBtnActive) {
+                state.disableBtnActive = false;
+            }
+            state.counter -= 1
+            state.friendsData.pop()
+        }
     },
     actions: {
         siteContent(context, data) {
@@ -102,6 +126,12 @@ export default new Vuex.Store({
         showContactSuccess(context, data) {
             context.commit('showContactSuccess', data)
         },
+        addInput(data) {
+            data.commit('addInput', data)
+        },
+        removeInput(data) {
+            data.commit('removeInput', data)
+        }
     },
     modules: {}
 })
