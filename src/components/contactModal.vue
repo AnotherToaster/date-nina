@@ -25,7 +25,7 @@
       </div>
       <div v-if="showThanks && !sentContactFormError">
         <h4>Vielen Dank {{ $store.state.userData.clientName }}!</h4>
-        <p class="big">Anfage wurde erfolgreich gesendet (Es werden keine echten Mails versandt)</p>
+        <p class="big">Anfage wurde erfolgreich gesendet</p>
       </div>
       <div v-if="sentContactFormError">
         <h4>Tut mir Leid {{ $store.state.userData.clientName }}!</h4>

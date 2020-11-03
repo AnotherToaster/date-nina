@@ -20,24 +20,14 @@ $fromName = $userData['clientName'];
 $fromEmail = $userData['clientEmail'];
 
 $friendEmail = false;
-
-
-/*
-//***** Development Purpose ******
-$fromName = 'john';
-$fromEmail = $adminMail;
-$toName = 'foo';
-$toEmail = $adminMail;
-//*****                     ******
-*/
-
+$error = false;
 $emailMsg = '';
+$success = array('success' => false, 'friendsEmailSent' => array());
 
 //Create Array for PHPMailer
 $mailProp = array('fromName' => $fromName, 'fromEmail' => $fromEmail, 'friendsData' => $friendsData,
     'subject' => $subject, 'emailMsg' => array());
 
-$success = false;
 
 for ($id = 0; $id < count($friendsData); $id++) {
     $mailProp['emailMsg'][$id] = '
@@ -54,11 +44,8 @@ Spass miteinander haben, wenn du die richtigen Entscheidungen beim Date triffst 
 ';
 }
 
-$error = false;
-
 require_once('./phpMailer/src/PHPMailer.php');
 require_once('./phpMailer/src/Exception.php');
-
 
 if (count($mailProp['friendsData']) >= 1 && count($mailProp['friendsData']) <= 5) {
 
@@ -103,6 +90,16 @@ if (count($mailProp['friendsData']) >= 1 && count($mailProp['friendsData']) <= 5
     }
     if (!$error) {
         for ($id = 0; $id < count($friendsData); $id++) {
+
+            //***** Development/Testing ******
+            /*
+            $fromName = 'John';
+            $fromEmail = $adminMail;
+            $toName[$id] = 'Foo';
+            $toEmail[$id] = $adminMail;
+            */
+            //***** For Production, put block in Comment ******
+
             $mail[$id] = new \PHPMailer\PHPMailer\PHPMailer();
             $mail[$id]->CharSet = 'utf-8';
 
@@ -118,10 +115,16 @@ if (count($mailProp['friendsData']) >= 1 && count($mailProp['friendsData']) <= 5
             $mail[$id]->Body = $mailProp['emailMsg'][$id];
 
             if ($mail[$id]->Send()) {
-                $success = array('success' => true);
+                $success['friendsEmailSent'][$id] = true;
+                $success['success'] = true;
+            } else {
+                $success['friendsEmailSent'][$id] = false;
+                $success['success'] = false;
+                $error = true;
             }
         }
     }
+    array_push($success, $mailProp);
     echo json_encode($success);
     exit();
 }
