@@ -19,8 +19,8 @@ $friendsData = $data['friendsData'];
 $fromName = $userData['clientName'];
 $fromEmail = $userData['clientEmail'];
 
-$toName = $friendsData['friendName'];
-$toEmail = $friendsData['friendEmail'];
+$friendEmail = false;
+
 
 /*
 //***** Development Purpose ******
@@ -31,25 +31,28 @@ $toEmail = $adminMail;
 //*****                     ******
 */
 
+$emailMsg = '';
+
+//Create Array for PHPMailer
+$mailProp = array('fromName' => $fromName, 'fromEmail' => $fromEmail, 'friendsData' => $friendsData,
+    'subject' => $subject, 'emailMsg' => array());
+
 $success = false;
 
-$emailMsg= '
+for ($id = 0; $id < count($friendsData); $id++) {
+    $mailProp['emailMsg'][$id] = '
 <html>
 <head>
-<title>JETZT NINA DATEN</title>
 </head>
 <body>
-<p>Hoi ' . $toName . ',</p>
+<p>Hoi ' . $friendsData[$id]['friendName'] . ',</p>
 <p>' . $fromEmail . ' findet, du sollst mich daten!</p>
 <p>Mach mit beim interaktiven Game von RoadCross Schweiz. Wir werden sicher viel 
 Spass miteinander haben, wenn du die richtigen Entscheidungen beim Date triffst ...</p>
 </body>
 </html>
 ';
-
-//Create Array for PHPMailer
-$mailProp = array('fromName' => $fromName, 'fromEmail' => $fromEmail, 'toName' => $toName, 'toEmail' => $toEmail,
-    'subject' => $subject, 'emailMsg' => $emailMsg);
+}
 
 $error = false;
 
@@ -57,7 +60,7 @@ require_once('./phpMailer/src/PHPMailer.php');
 require_once('./phpMailer/src/Exception.php');
 
 
-if (array_key_exists('toEmail', $mailProp)) {
+if (count($mailProp['friendsData']) >= 1 && count($mailProp['friendsData']) <= 5) {
 
     if (array_key_exists('subject', $mailProp)) {
         $subject = substr(strip_tags($mailProp['subject']), 0, 50);
@@ -77,47 +80,53 @@ if (array_key_exists('toEmail', $mailProp)) {
         $mailProp['fromName'] = 'Invalid Name';
         $error = true;
     }
-    if (array_key_exists('toName', $mailProp) && strlen($mailProp['toName']) >= 3) {
-        $toName = substr(strip_tags($mailProp['toName']), 0, 26);
-    } else {
-        $mailProp['toName'] = 'Invalid Name';
-        $error = true;
-    }
     if (array_key_exists('fromEmail', $mailProp) && filter_var($mailProp['fromEmail'], FILTER_VALIDATE_EMAIL)) {
         $fromEmail = $mailProp['fromEmail'];
     } else {
         $mailProp['fromEmail'] = 'Invalid client email provided';
         $error = true;
     }
-    if (array_key_exists('toEmail', $mailProp) && filter_var($mailProp['toEmail'], FILTER_VALIDATE_EMAIL)) {
-        $toEmail = $mailProp['toEmail'];
-    } else {
-        $mailProp['toEmail'] = 'Invalid friend email address provided';
-        $error = true;
-    }
 
-    if (!$error) {
-        $mail = new \PHPMailer\PHPMailer\PHPMailer();
-        $mail->CharSet = 'utf-8';
-
-        //Recipients
-        $mail->From = $fromEmail;
-        $mail->FromName = $fromName;
-        $mail->AddAddress($toEmail);
-        $mail->AddReplyTo($fromEmail, $fromName);
-
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body    = $emailMsg;
-
-        if ($mail->Send()) {
-            $success = array('success' => true);
-            echo json_encode($success);
-            exit();
+    for ($id = 0; $id < count($friendsData); $id++) {
+        if (array_key_exists('friendName', $mailProp['friendsData'][$id]) && strlen($mailProp['friendsData'][$id]['friendName']) >= 3) {
+            $toName[$id] = substr($mailProp['friendsData'][$id]['friendName'], 0, 26);
+        } else {
+            $mailProp['friendsData'][$id]['friendName'] = 'Invalid Name';
+            $error = true;
+        }
+        if (array_key_exists('friendEmail', $mailProp['friendsData'][$id]) && filter_var($mailProp['friendsData'][$id]['friendEmail'], FILTER_VALIDATE_EMAIL)) {
+            $toEmail[$id] = $mailProp['friendsData'][$id]['friendEmail'];
+        } else {
+            $mailProp['friendsData'][$id]['friendEmail'] = 'Invalid friend email address provided';
+            $error = true;
         }
     }
+    if (!$error) {
+        for ($id = 0; $id < count($friendsData); $id++) {
+            $mail[$id] = new \PHPMailer\PHPMailer\PHPMailer();
+            $mail[$id]->CharSet = 'utf-8';
+
+            //Recipients
+            $mail[$id]->From = $fromEmail;
+            $mail[$id]->FromName = $fromName;
+            $mail[$id]->AddAddress($toEmail[$id]);
+            $mail[$id]->AddReplyTo($fromEmail, $fromName);
+
+            // Content
+            $mail[$id]->isHTML(true);
+            $mail[$id]->Subject = $subject;
+            $mail[$id]->Body = $mailProp['emailMsg'][$id];
+
+            if ($mail[$id]->Send()) {
+                $success = array('success' => true);
+            }
+        }
+    }
+    echo json_encode($success);
+    exit();
 }
+
+$error = true;
 echo json_encode($success = array('success' => false, 'Userdata' => $userData,
     'FriendsData' => $friendsData, 'mailProp' => $mailProp, 'Error' => $error));
 http_response_code(400);

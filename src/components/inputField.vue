@@ -14,7 +14,7 @@
       </div>
       <div class="form-group col-6">
         <label for="email" class="sr-only">ClientEmail</label>
-        <input type="text" class="form-control m-0"
+        <input type="email" class="form-control m-0"
                name="email"
                required="required"
                minlength="3"
@@ -30,13 +30,15 @@
         <label for="friendName" class="sr-only"></label>
         <input type="text" class="form-control m-0"
                id="friendName"
+               required="required"
                placeholder="Name deines Freundes"
                v-model="friend.friendName">
       </div>
       <div class="form-group col-6">
         <label for="friendEmail" class="sr-only"></label>
-        <input type="text" class="form-control m-0"
+        <input type="email" class="form-control m-0"
                id="friendEmail"
+               required="required"
                placeholder="Email deines Freundes"
                v-model="friend.friendEmail">
       </div>
