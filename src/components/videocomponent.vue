@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="embed-responsive embed-responsive-16by9" id="video_container">
-      <video id="video" class="embed-responsive-item" playsinline width="auto" height="100%"
+      <video id="video" class="embed-responsive-item" :poster="videoPoster" playsinline width="auto" height="100%"
              :src="videoSrc"
              @ended="videoEnded()">
         Your browser does not support the video tag.
@@ -60,6 +60,7 @@ import {Component, Vue} from 'vue-property-decorator';
 export default class VideoComponent extends Vue {
   content: Array<string>;
   videoELm: any;
+  videoPoster: any;
   introText: string;
   linkText: string;
   endText: string;
@@ -88,6 +89,7 @@ export default class VideoComponent extends Vue {
     this.videoELm = document.getElementById('video');
     this.decABtn = document.getElementById('decA');
     this.decBBtn = document.getElementById('decB');
+    this.videoPoster = this.$store.state.videoPosterUrl;
     this.videoSrc = this.videoSteps[this.currentVideoID]['a'].videoURL;
     this.decAText = this.videoSteps[this.currentVideoID].decAText;
     this.decBText = this.videoSteps[this.currentVideoID].decBText;
@@ -103,6 +105,7 @@ export default class VideoComponent extends Vue {
   mounted() {
     this.videoELm = document.getElementById('video');
     this.videoSrc = this.videoSteps[this.currentVideoID]['a'].videoURL;
+    this.videoPoster = this.$store.state.videoPosterUrl;
   }
 
 
@@ -119,6 +122,7 @@ export default class VideoComponent extends Vue {
   }
 
   startDate() {
+    this.videoPoster = '';
     this.nextVideoID = '2';
     this.decAB = 'a';
     this.$store.state.isEnd = false;

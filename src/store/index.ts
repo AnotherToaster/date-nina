@@ -7,6 +7,7 @@ export default new Vuex.Store({
     state: {
         showVideoControls: true,
         videoUrl: 'videos/step_1.mp4',
+        videoPosterUrl: '/img/introscreen.jpg',
         showChoices: false,
         isEnd: false,
         isHappyEnd: false,
