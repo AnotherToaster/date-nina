@@ -1,15 +1,30 @@
 <template>
   <div id="main">
     <div class="main_wrapper">
-      <div class="container">
+      <div class="grid-container">
+        <div class="container align-content-start">
+          <div id="header" class="header_grid"></div>
+        </div>
+        <div class="container align-content-center">
+          <div id="videoComponent" class="video_grid">
 
-        <contact-form/>
+            <VideoComponent/>
 
-        <VideoComponent/>
+          </div>
 
-        <ShareSocial/>
+          <div id="shareSocial" class="shareSocial_grid">
 
-        <SiteFooter/>
+            <ShareSocial/>
+
+            <contact-form/>
+
+          </div>
+        </div>
+        <div class="container align-content-end">
+          <div id="siteFooter" class="siteFooter_grid">
+            <SiteFooter/>
+          </div>
+        </div>
 
         <modal name="info-modal"
                :adaptive="true"
@@ -44,9 +59,11 @@
 
         <modal name="contact-modal"
                :adaptive="true"
+               :scrollable="true"
                width="80%"
                :height="'auto'"
                :maxWidth="760"
+               :styles="'overflow-y: scroll; background-image: linear-gradient(#292929, #000, #000 40%);'"
                @before-close="beforeModalClose('contact')">
           <contact-modal/>
         </modal>
@@ -99,28 +116,28 @@ export default class App extends Vue {
         (state) => {
           return state.showInfoModal
         }, () => {
-            this.showModal('info')
-          }
+          this.showModal('info')
+        }
     )
     store.watch(
         (state) => {
           return state.showImprintModal
         }, () => {
-            this.showModal('imprint')
+          this.showModal('imprint')
         }
     )
     store.watch(
         (state) => {
           return state.showPrivacyModal
         }, () => {
-            this.showModal('privacy')
+          this.showModal('privacy')
         }
     )
     store.watch(
         (state) => {
           return state.showContactModal
         }, () => {
-            this.showModal('contact')
+          this.showModal('contact')
         }
     )
     store.watch(
@@ -153,6 +170,7 @@ export default class App extends Vue {
   get showContactModal() {
     return this.$store.state.showContactModal
   }
+
   beforeModalClose(modal: string) {
     if (modal === 'info') {
       this.$store.dispatch('showInfoModal', false);

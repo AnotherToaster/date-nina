@@ -1,7 +1,7 @@
 <template>
   <form id="contact_form" @submit.prevent="submitForm()">
     <div class="form-row">
-      <div class="form-group col-6">
+      <div class="form-group col-sm-6">
         <label for="name" class="sr-only">ClientName</label>
         <input type="text" class="form-control m-0"
                name="name"
@@ -12,7 +12,7 @@
                placeholder="Dein Name">
 
       </div>
-      <div class="form-group col-6">
+      <div class="form-group col-sm-6">
         <label for="email" class="sr-only">ClientEmail</label>
         <input type="email" class="form-control m-0"
                name="email"
@@ -26,7 +26,7 @@
     <div class="form-row" id="addFriends"
          v-for="(friend, key) in $store.state.friendsData"
          v-bind:key="key">
-      <div class="form-group col-6">
+      <div class="form-group col-sm-6">
         <label for="friendName" class="sr-only"></label>
         <input type="text" class="form-control m-0"
                id="friendName"
@@ -34,7 +34,7 @@
                placeholder="Name deines Freundes"
                v-model="friend.friendName">
       </div>
-      <div class="form-group col-6">
+      <div class="form-group col-sm-6">
         <label for="friendEmail" class="sr-only"></label>
         <input type="email" class="form-control m-0"
                id="friendEmail"
@@ -43,14 +43,16 @@
                v-model="friend.friendEmail">
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group justify-content-center col-6">
-        <button type="button" class="form-group btn btn-outline-light" v-bind="{disabled: $store.state.disableBtnActive}"
-                id="addFriendsBtn" v-on:click="addInput()">Weitere
+    <div class="form-row" id="friendsBtn">
+      <div class="form-group col-sm-6">
+        <button type="button" class="btn btn-outline-light mb-sm-3 mb-0 base_btn_wrapper" v-bind="{disabled: $store.state.disableBtnActive}"
+               v-on:click="addInput()">Weitere
           Freunde hinzufügen
         </button>
-        <button type="button" class="form-group btn btn-outline-light ml-5" v-if="$store.state.counter >= 2"
-                id="removeFriendsBtn" v-on:click="removeInput()">Feld löschen
+      </div>
+      <div class="form-group col-sm-6">
+        <button type="button" class="btn btn-outline-light base_btn_wrapper" v-if="$store.state.counter >= 2"
+                v-on:click="removeInput()">Feld löschen
         </button>
       </div>
     </div>
@@ -71,8 +73,7 @@ import store from '@/store'
 
 export default {
   name: "inputField",
-  props: {
-  },
+  props: {},
 
   methods: {
     addInput() {

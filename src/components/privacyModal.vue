@@ -1,5 +1,5 @@
 <template>
-  <div class="modal_inner">
+  <div class="modal_inner" id="privacyModal">
     <div class="row">
       <div class="col-12 d-flex justify-content-end">
         <button class="btn btn-light icn_close" @click="closeModal('Privacy')"></button>

@@ -11,7 +11,7 @@
           <p class="intro_text" id="intro_text">{{ introText }}</p>
           <button class="btn btn-secondary base_btn_wrapper start_btn" id="start_btn" v-on:click="startDate()">
             <i class="fas fa-play"></i>
-            {{ linkText }}
+            <p class="start_btn_text">{{ linkText }}</p>
           </button>
         </div>
       </div>

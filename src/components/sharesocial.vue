@@ -1,13 +1,16 @@
 <template>
   <div class="row">
-    <div class="col-12 align-items-center justify-content-end d-flex share_btn_wrapper">
+    <div class="col-12 align-items-center d-flex share_btn_wrapper mb-3 mb-sm-0">
       <button class="btn social_btn">
         <i class="fab fa-whatsapp"></i>
       </button>
       <button class="btn social_btn">
         <i class="fab fa-facebook-square"></i>
       </button>
-      <button class="btn btn-light share_btn" data-toggle="modal" data-target="#contact_modal" @click="showModal('Contact')">Freunde Verkuppeln</button>
+      <button class="btn btn-light share_btn" data-toggle="modal"
+              data-target="#contact_modal" @click="showModal('Contact')">
+        <img src="/favicon.ico" class="share_btn_heart">
+        Freunde Verkuppeln</button>
     </div>
   </div>
 </template>
