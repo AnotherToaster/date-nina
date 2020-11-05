@@ -134,6 +134,7 @@ export default class VideoComponent extends Vue {
     this.decAText = this.videoSteps[this.currentVideoID].decAText;
     this.decBText = this.videoSteps[this.currentVideoID].decBText;
     setTimeout(() => {
+      this.videoELm.currentTime =  (this.videoELm.duration / 100) * 80
       this.playVideo();
     }, 150)
   }
@@ -146,6 +147,7 @@ export default class VideoComponent extends Vue {
     this.decBText = this.videoSteps[this.currentVideoID].decBText;
     this.$store.state.showChoices = false;
     setTimeout(() => {
+      this.videoELm.currentTime =  (this.videoELm.duration / 100) * 80
       this.playVideo();
     }, 150)
   }

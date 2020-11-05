@@ -30,3 +30,6 @@ pnpm-debug.log*
 /public/phpMailer/LICENSE
 /public/phpMailer/VERSION
 /public/phpMailer/COMMITMENT
+/public/css/
+/public/css/styles.css
+/public/css/styles.css.map
