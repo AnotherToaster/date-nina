@@ -9,9 +9,12 @@ Vue.config.productionTip = false
 
 //load Config Json First
 async function getSiteContent() {
+/*  axios.get('/language.php')
+      .then((response) => {
+        store.commit('currentLanguage', response.data)
+      })*/
   return await axios.get('./appConfigs.json');
 }
-
 getSiteContent().then(r => {
   Vue.use(VModal);
   Vue.component("contact-form", Contact);
@@ -23,3 +26,4 @@ getSiteContent().then(r => {
     render: h => h(App)
   }).$mount('#app')
 });
+

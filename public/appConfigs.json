@@ -11,13 +11,35 @@
       "next": {
         "step": "2"
       },
-      "decAText": "HAND GEBEN",
-      "decBText": "KÜSSCHEN GEBEN",
-      "linkText": "JETZT NINA DATEN",
-      "introText": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ...",
-      "a": {
-        "videoURL": "videos/step_1.mp4",
-        "isEnd": false
+      "de": {
+        "decAText": "HAND GEBEN",
+        "decBText": "KÜSSCHEN GEBEN",
+        "linkText": "JETZT NINA DATEN",
+        "introText": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ...",
+        "a": {
+          "videoURL": "videos/de/step_1.mp4",
+          "isEnd": false
+        }
+      },
+      "fr": {
+        "decAText": "Serrer la main",
+        "decBText": "Faire la bise",
+        "linkText": "RENCONTRE-LA",
+        "introText": "NINA T'ATTEND POUR UN RENDEZ-VOUS. EST-CE QUE CELA VA MARCHER? C'EST TOI QUI DÉCIDES ...",
+        "a": {
+          "videoURL": "videos/fr/step_1.mp4",
+          "isEnd": false
+        }
+      },
+      "it": {
+        "decAText": "Dare la mano",
+        "decBText": "Dare un bacetto",
+        "linkText": "Incontrala",
+        "introText": "NINA HA UN APPUNTAMENTO CON TE E TI ASPETTA. DECIDI TU SE ANDRÀ A BUON FINE ...",
+        "a": {
+          "videoURL": "videos/it/step_1.mp4",
+          "isEnd": false
+        }
       }
     },
     "2": {
@@ -200,6 +222,6 @@
     "contactModal": {
       "title": "Freunde Verkuppeln",
       "text": "Du kannst bis zu 5 Freunde zu Date Nina einladen"
-      }
+    }
   }
 }

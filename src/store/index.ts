@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from "axios";
 
 Vue.use(Vuex)
 
@@ -23,6 +24,7 @@ export default new Vuex.Store({
         maxFieldNumber: 5,
         counter: 1,
         showContactSuccess: false,
+        currentLanguage: 'fr',
         siteData: [],
         userData: {
             clientName: 'John',
@@ -70,6 +72,12 @@ export default new Vuex.Store({
         },
         showContactSuccess(state, data) {
             state.showContactSuccess = data;
+        },
+        currentLanguage(state, data) {
+            state.currentLanguage = data;
+        },
+        switchLang(state, data) {
+            state.currentLanguage = data;
         },
         addInput(state) {
             state.counter += 1
@@ -132,7 +140,13 @@ export default new Vuex.Store({
         },
         removeInput(data) {
             data.commit('removeInput', data)
-        }
+        },
+        currentLanguage(data) {
+            data.commit('currentLanguage', data)
+        },
+        switchLang(data) {
+            data.commit('switchLang', data)
+        },
     },
     modules: {}
 })

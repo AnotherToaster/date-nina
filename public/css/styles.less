@@ -54,8 +54,8 @@ body {
       transform: translateY(-50%);
       padding: 40px;
 
+
       .control {
-        width: 50%;
 
         .start_btn {
           padding-left: 40px;
@@ -70,7 +70,34 @@ body {
         .intro_text {
           color: #FFF;
           font-size: 25px;
+          width: 50%;
+
         }
+      }
+    }
+
+    .btnFS_wrapper {
+      position: absolute;
+      top: 92%;
+      width: 100%;
+      /*
+      z-index: 2147483648;
+      */
+      .btnFS {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.7);
+
+        .icon-fullscreen {
+          background: url(https://s.cdpn.io/6035/vp_sprite.png) no-repeat 0 0;
+          width: 10px;
+          height: 10px;
+          display: block;
+          margin: 3px 0 0 -2px;
+        }
+
       }
     }
 
@@ -81,6 +108,7 @@ body {
       text-align: center;
       width: 100%;
       transform: translateY(-50%);
+      z-index: 2147483648;
 
       .choice_btn {
         background-image: linear-gradient(#4702fb, #3402b6);
@@ -293,15 +321,12 @@ body {
       vertical-align: top;
       padding-top: 15px;
 
-      a:not([href]) {
-        color: #666;
-      }
-
       a {
         font-size: 16px;
         margin: 5px 0 5px 0;
         cursor: pointer;
         text-decoration: none;
+        color: #666;
 
         &:hover {
           color: #fff;
@@ -362,6 +387,25 @@ body {
     font-size: 14px;
   }
 }
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+
+/*
+
+video::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-internal-media-controls-overflow-button{
+  display: none !important;
+}
+*/
 
 @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
 

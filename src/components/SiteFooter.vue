@@ -20,13 +20,13 @@
     </div>
     <div class="col-lg-3 col-md-2 col-12 justify-content-end d-flex align-items-center">
       <div class="col-md-2 col-sm-1 col-auto">
-        <a id="de">DE</a>
+        <a id="de" @click="switchLang(lang = 'de')">DE</a>
       </div>
       <div class="col-md-2 col-sm-1 col-auto">
-        <a id="fr">FR</a>
+        <a id="fr" href="http://localhost:8080/fr/">FR</a>
       </div>
       <div class="col-md-2 col-sm-1 col-auto">
-        <a id="it">IT</a>
+        <a id="it" href="http://localhost:8080/it/">IT</a>
       </div>
     </div>
   </div>
@@ -42,6 +42,9 @@ export default class Sitefooter extends Vue {
   }
   showModal(ModalType: string) {
     this.$store.dispatch('show' + ModalType + 'Modal', true);
+  }
+  set switchLang(lang: string) {
+    this.$store.dispatch('switchLang', lang);
   }
 }
 </script>

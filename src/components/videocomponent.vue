@@ -1,18 +1,28 @@
 <template>
   <div class="row">
     <div class="embed-responsive embed-responsive-16by9" id="video_container">
-      <video id="video" class="embed-responsive-item" :poster="videoPoster" playsinline width="auto" height="100%"
+      <video id="video" class="embed-responsive-item" :poster="videoPoster" playsinline width="auto"
+             height="100%"
              :src="videoSrc"
              @ended="videoEnded()">
         Your browser does not support the video tag.
       </video>
-      <div class="video_controls_wrapper d-flex justify-content-center">
-        <div id="control" class="control" v-if="$store.state.showVideoControls">
-          <p class="intro_text" id="intro_text">{{ introText }}</p>
-          <button class="btn btn-secondary base_btn_wrapper start_btn" id="start_btn" v-on:click="startDate()">
-            <i class="fas fa-play"></i>
-            <p class="start_btn_text">{{ linkText }}</p>
-          </button>
+      <div class="video_controls_wrapper">
+        <div id="control" class="control row" v-if="$store.state.showVideoControls">
+          <div class="col-12 d-flex justify-content-center">
+            <p class="intro_text" id="intro_text">{{ introText }}</p>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <button class="btn btn-secondary base_btn_wrapper start_btn" id="start_btn" v-on:click="startDate()">
+              <i class="fas fa-play"></i>
+              <p class="start_btn_text">{{ linkText }}</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="btnFS" class="btnFS_wrapper">
+        <div class="col-12 d-flex justify-content-end">
+          <div class="btnFS btn" @click="enterFS()"><span class="icon-fullscreen"></span></div>
         </div>
       </div>
       <div id="choices" class="choices_wrapper row" v-if="$store.state.showChoices">
@@ -31,7 +41,8 @@
         <div class="col-12">
           <p class="endText">{{ endText }}</p>
           <p class="endText_fail mb-sm-5">{{ endTextFail }}</p>
-          <button id="goBack" class="btn btn-secondary end_btn" @click="goBack()"><i class="fas fa-angle-double-left"></i>
+          <button id="goBack" class="btn btn-secondary end_btn" @click="goBack()"><i
+              class="fas fa-angle-double-left"></i>
             ZURÜCK ZUR ENTSCHEIDUNG
           </button>
         </div>
@@ -61,6 +72,7 @@ export default class VideoComponent extends Vue {
   content: Array<string>;
   videoELm: any;
   videoPoster: any;
+  currentLanguage: string;
   introText: string;
   linkText: string;
   endText: string;
@@ -82,6 +94,7 @@ export default class VideoComponent extends Vue {
     super();
     this.content = this.$store.state.siteData;
     this.videoSteps = this.$store.state.siteData.steps;
+    this.currentLanguage = this.$store.state.currentLanguage;
     this.videoSrc = '';
     this.currentVideoID = '1';
     this.nextVideoID = '2';
@@ -90,11 +103,11 @@ export default class VideoComponent extends Vue {
     this.decABtn = document.getElementById('decA');
     this.decBBtn = document.getElementById('decB');
     this.videoPoster = this.$store.state.videoPosterUrl;
-    this.videoSrc = this.videoSteps[this.currentVideoID]['a'].videoURL;
-    this.decAText = this.videoSteps[this.currentVideoID].decAText;
-    this.decBText = this.videoSteps[this.currentVideoID].decBText;
-    this.introText = this.videoSteps[this.currentVideoID].introText;
-    this.linkText = this.videoSteps[this.currentVideoID].linkText;
+    this.videoSrc = this.videoSteps[this.currentVideoID][this.currentLanguage]['a'].videoURL;
+    this.decAText = this.videoSteps[this.currentVideoID][this.currentLanguage].decAText;
+    this.decBText = this.videoSteps[this.currentVideoID][this.currentLanguage].decBText;
+    this.introText = this.videoSteps[this.currentVideoID][this.currentLanguage].introText;
+    this.linkText = this.videoSteps[this.currentVideoID][this.currentLanguage].linkText;
     this.endText = '';
     this.endTextFail = '';
     this.endTextSmall = '';
@@ -104,14 +117,14 @@ export default class VideoComponent extends Vue {
 
   mounted() {
     this.videoELm = document.getElementById('video');
-    this.videoSrc = this.videoSteps[this.currentVideoID]['a'].videoURL;
+    this.videoSrc = 'videos/de/step_1.mp4';
     this.videoPoster = this.$store.state.videoPosterUrl;
   }
 
 
   playVideo() {
     if (this.videoTimer) {
-      this.videoELm.currentTime =  (this.videoELm.duration / 100) * 90;
+      this.videoELm.currentTime = (this.videoELm.duration / 100) * 90;
     }
     this.videoTimer = false;
     this.$store.state.showChoices = false;
@@ -129,10 +142,10 @@ export default class VideoComponent extends Vue {
     this.$store.state.isHappyEnd = false;
     this.$store.state.showChoices = false;
     this.$store.state.showVideoControls = false;
-    this.videoSrc = 'videos/step_1.mp4';
+    this.videoSrc = 'videos/de/step_1.mp4';
     this.currentVideoID = '1';
-    this.decAText = this.videoSteps[this.currentVideoID].decAText;
-    this.decBText = this.videoSteps[this.currentVideoID].decBText;
+    this.decAText = this.videoSteps[this.currentVideoID][this.currentLanguage].decAText;
+    this.decBText = this.videoSteps[this.currentVideoID][this.currentLanguage].decBText;
     setTimeout(() => {
       this.playVideo();
     }, 150)
@@ -141,9 +154,9 @@ export default class VideoComponent extends Vue {
   nextVideo(decAB: string) {
     this.decAB = decAB;
     this.nextVideoID = this.videoSteps[this.currentVideoID].next.step;
-    this.videoSrc = this.videoSteps[this.currentVideoID][this.decAB].videoURL
-    this.decAText = this.videoSteps[this.currentVideoID].decAText;
-    this.decBText = this.videoSteps[this.currentVideoID].decBText;
+    this.videoSrc = this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].videoURL
+    this.decAText = this.videoSteps[this.currentVideoID][this.currentLanguage].decAText;
+    this.decBText = this.videoSteps[this.currentVideoID][this.currentLanguage].decBText;
     this.$store.state.showChoices = false;
     setTimeout(() => {
       this.playVideo();
@@ -156,16 +169,24 @@ export default class VideoComponent extends Vue {
   }
 
   videoEnded() {
-    if (this.videoSteps[this.currentVideoID][this.decAB].isEnd == true) {
+    if (this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].isEnd == true) {
       this.$store.state.isEnd = true;
-      this.endText = this.videoSteps[this.currentVideoID][this.decAB].endText;
-      this.endTextFail = this.videoSteps[this.currentVideoID][this.decAB].endTextFail;
-    } else if (this.videoSteps[this.currentVideoID][this.decAB].isHappyEnd == true) {
+      this.endText = this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].endText;
+      this.endTextFail = this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].endTextFail;
+    } else if (this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].isHappyEnd == true) {
       this.$store.state.isHappyEnd = true;
-      this.endText = this.videoSteps[this.currentVideoID][this.decAB].endText;
-      this.endTextSmall = this.videoSteps[this.currentVideoID][this.decAB].endTextSmall;
-    }
-    else {
+      this.endText = this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].endText;
+      this.endTextSmall = this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].endTextSmall;
+    } else {
+      if (this.videoELm.exitFullscreen) {
+        this.videoELm.exitFullscreen();
+      } else if (this.videoELm.msExitFullscreen) {
+        this.videoELm.msExitFullscreen();
+      } else if (this.videoELm.mozExitFullscreen) {
+        this.videoELm.mozExitFullscreen();
+      } else if (this.videoELm.webkitExitFullscreen) {
+        this.videoELm.webkitExitFullscreen();
+      }
       this.currentVideoID = this.nextVideoID;
       this.$store.state.showChoices = true;
     }
@@ -176,13 +197,25 @@ export default class VideoComponent extends Vue {
     this.decAB = 'a';
     this.backLink = this.videoSteps[this.currentVideoID].backLink;
     this.currentVideoID = this.backLink.charAt(0);
-    this.videoSrc = this.videoSteps[this.currentVideoID][this.decAB].videoURL;
-    this.decAText = this.videoSteps[this.currentVideoID].decAText;
-    this.decBText = this.videoSteps[this.currentVideoID].decBText;
+    this.videoSrc = this.videoSteps[this.currentVideoID][this.currentLanguage][this.decAB].videoURL;
+    this.decAText = this.videoSteps[this.currentVideoID][this.currentLanguage].decAText;
+    this.decBText = this.videoSteps[this.currentVideoID][this.currentLanguage].decBText;
     setTimeout(() => {
       this.videoTimer = true
       this.playVideo();
     }, 500)
+  }
+
+  enterFS() {
+    if (this.videoELm.requestFullscreen) {
+      this.videoELm.requestFullscreen();
+    } else if (this.videoELm.msRequestFullscreen) {
+      this.videoELm.msRequestFullscreen();
+    } else if (this.videoELm.mozRequestFullScreen) {
+      this.videoELm.mozRequestFullScreen();
+    } else if (this.videoELm.webkitRequestFullscreen) {
+      this.videoELm.webkitRequestFullscreen();
+    }
   }
 }
 </script>
