@@ -97,6 +97,47 @@ export default class ContactModal extends Vue {
 
 </script>
 
-<style scoped>
+<style lang="less">
+.modal_inner {
+  background-image: linear-gradient(#292929, #000, #000 40%);
+  padding: 30px;
 
+  .modal_wrapper {
+
+    p, h2, ul, h3, h4 {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 20px 0 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    a {
+      line-break: anywhere;
+    }
+  }
+
+  .icn_close {
+    top: -20px;
+    right: 0;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border: none;
+    background: url('http://127.0.0.1:8080/img/icn_close.png') no-repeat;
+    cursor: pointer;
+  }
+}
 </style>

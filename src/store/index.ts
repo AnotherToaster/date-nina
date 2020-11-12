@@ -1,17 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from "axios";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
         showVideoControls: true,
-        videoUrl: 'videos/step_1.mp4',
+        videoUrl: 'videos/de/step_1.mp4',
         videoPosterUrl: '/img/introscreen.jpg',
         showChoices: false,
         isEnd: false,
-        isHappyEnd: false,
+        isFinish: false,
         showInfoModal: false,
         showImprintModal: false,
         showPrivacyModal: false,
@@ -24,11 +23,12 @@ export default new Vuex.Store({
         maxFieldNumber: 5,
         counter: 1,
         showContactSuccess: false,
-        currentLanguage: 'fr',
+        currentLanguage: 'de',
+        switchLang: false,
         siteData: [],
         userData: {
-            clientName: 'John',
-            clientEmail: 'johndoe@foo.com',
+            clientName: '',
+            clientEmail: '',
 
         },
         friendsData: [
@@ -144,8 +144,8 @@ export default new Vuex.Store({
         currentLanguage(data) {
             data.commit('currentLanguage', data)
         },
-        switchLang(data) {
-            data.commit('switchLang', data)
+        switchLang(context, lang) {
+            context.commit('switchLang', lang)
         },
     },
     modules: {}

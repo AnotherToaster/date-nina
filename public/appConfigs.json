@@ -6,39 +6,67 @@
     "addressFax": "Fax 044 737 28 08",
     "email": "info@roadcross.ch"
   },
+  "content": {
+    "de": {
+      "ShareBtn": "FREUNDE VERKUPPELN",
+      "footer": {
+        "info": "INFO",
+        "imprint": "IMPRESSUM",
+        "privacy": "DATENSCHUTZ"
+      }
+    },
+    "fr": {
+      "ShareBtn": "Brancher des amis",
+      "footer": {
+        "info": "INFO",
+        "imprint": "IMPRESSUM",
+        "privacy": "PROTECTION DES DONNÉES"
+      }
+    },
+    "it": {
+      "ShareBtn": "Metti in contatto gli amici",
+      "footer": {
+        "info": "INFO",
+        "imprint": "REDAZIONALE",
+        "privacy": "PROTEZIONE DEI DATI"
+      }
+    }
+  },
   "steps": {
     "1": {
       "next": {
         "step": "2"
       },
-      "de": {
-        "decAText": "HAND GEBEN",
-        "decBText": "KÜSSCHEN GEBEN",
-        "linkText": "JETZT NINA DATEN",
-        "introText": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ...",
-        "a": {
-          "videoURL": "videos/de/step_1.mp4",
-          "isEnd": false
-        }
-      },
-      "fr": {
-        "decAText": "Serrer la main",
-        "decBText": "Faire la bise",
-        "linkText": "RENCONTRE-LA",
-        "introText": "NINA T'ATTEND POUR UN RENDEZ-VOUS. EST-CE QUE CELA VA MARCHER? C'EST TOI QUI DÉCIDES ...",
-        "a": {
-          "videoURL": "videos/fr/step_1.mp4",
-          "isEnd": false
-        }
-      },
-      "it": {
-        "decAText": "Dare la mano",
-        "decBText": "Dare un bacetto",
-        "linkText": "Incontrala",
-        "introText": "NINA HA UN APPUNTAMENTO CON TE E TI ASPETTA. DECIDI TU SE ANDRÀ A BUON FINE ...",
-        "a": {
-          "videoURL": "videos/it/step_1.mp4",
-          "isEnd": false
+      "content": {
+        "de": {
+          "decAText": "HAND GEBEN",
+          "decBText": "KÜSSCHEN GEBEN",
+          "linkText": "JETZT NINA DATEN",
+          "introText": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ...",
+          "a": {
+            "videoURL": "videos/de/step_1.mp4",
+            "isEnd": false
+          }
+        },
+        "fr": {
+          "decAText": "Serrer la main",
+          "decBText": "Faire la bise",
+          "linkText": "RENCONTRE-LA",
+          "introText": "NINA T'ATTEND POUR UN RENDEZ-VOUS. EST-CE QUE CELA VA MARCHER? C'EST TOI QUI DÉCIDES ...",
+          "a": {
+            "videoURL": "videos/fr/step_1.mp4",
+            "isEnd": false
+          }
+        },
+        "it": {
+          "decAText": "Dare la mano",
+          "decBText": "Dare un bacetto",
+          "linkText": "Incontrala",
+          "introText": "NINA HA UN APPUNTAMENTO CON TE E TI ASPETTA. DECIDI TU SE ANDRÀ A BUON FINE ...",
+          "a": {
+            "videoURL": "videos/it/step_1.mp4",
+            "isEnd": false
+          }
         }
       }
     },
@@ -46,139 +74,413 @@
       "next": {
         "step": "3"
       },
-      "decAText": "SMS NICHT LESEN",
-      "decBText": "SMS LESEN",
-      "linktext": [],
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_2a.mp4"
-      },
-      "b": {
-        "videoURL": "videos/step_2b.mp4"
+      "content": {
+        "de": {
+          "decAText": "SMS NICHT LESEN",
+          "decBText": "SMS LESEN",
+          "linktext": [],
+          "text": [],
+          "a": {
+            "videoURL": "videos/de/step_2a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/de/step_2b.mp4"
+          }
+        },
+        "fr": {
+          "decAText": "Ne pas lire le SMS",
+          "decBText": "Lire le SMS",
+          "linkText": [],
+          "introText": [],
+          "a": {
+            "videoURL": "videos/fr/step_2a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/fr/step_2b.mp4"
+          }
+        },
+        "it": {
+          "decAText": "Non leggere SMS",
+          "decBText": "Leggere SMS",
+          "linkText": [],
+          "introText": [],
+          "a": {
+            "videoURL": "videos/it/step_2a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/it/step_2b.mp4"
+          }
+        }
       }
     },
     "3": {
       "next": {
         "step": "4"
       },
-      "decAText": "JAZZY",
-      "decBText": "FUNKY",
-      "linktext": [],
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_3a.mp4"
-      },
-      "b": {
-        "videoURL": "videos/step_3b.mp4"
+      "content": {
+        "de": {
+          "decAText": "JAZZY",
+          "decBText": "FUNKY",
+          "linktext": [],
+          "text": [],
+          "a": {
+            "videoURL": "videos/de/step_3a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/de/step_3b.mp4"
+          }
+        },
+        "fr": {
+          "decAText": "JAZZY",
+          "decBText": "FUNKY",
+          "linkText": [],
+          "introText": [],
+          "a": {
+            "videoURL": "videos/fr/step_3a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/fr/step_3b.mp4"
+          }
+        },
+        "it": {
+          "decAText": "JAZZY",
+          "decBText": "FUNKY",
+          "linkText": [],
+          "introText": [],
+          "a": {
+            "videoURL": "videos/it/step_3a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/it/step_3b.mp4"
+          }
+        }
       }
     },
     "4": {
       "next": {
         "step": "5"
       },
-      "decAText": "DRÄNGLER IGNORIEREN",
-      "decBText": "DRÄNGLER ABHÄNGEN",
-      "linktext": [],
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_4a.mp4"
-      },
-      "b": {
-        "videoURL": "videos/step_4b.mp4"
+      "content": {
+        "de": {
+          "decAText": "DRÄNGLER IGNORIEREN",
+          "decBText": "DRÄNGLER ABHÄNGEN",
+          "linktext": [],
+          "text": [],
+          "a": {
+            "videoURL": "videos/de/step_4a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/de/step_4b.mp4"
+          }
+        },
+        "fr": {
+          "decAText": "Ignorer le chauffard",
+          "decBText": "Semer le chauffard",
+          "linkText": [],
+          "introText": [],
+          "a": {
+            "videoURL": "videos/fr/step_4a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/fr/step_4b.mp4"
+          }
+        },
+        "it": {
+          "decAText": "Ignorare il gradasso",
+          "decBText": "Distanziare il gradasso",
+          "linkText": [],
+          "introText": [],
+          "a": {
+            "videoURL": "videos/it/step_4a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/it/step_4b.mp4"
+          }
+        }
       }
     },
     "5": {
       "next": {
         "step": "6"
       },
-      "decAText": "ABHAUEN",
-      "decBText": "MITKNUTSCHEN",
-      "backLink": "4a",
-      "linktext": [],
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_5a.mp4"
-      },
-      "b": {
-        "videoURL": "videos/step_5b.mp4",
-        "isEnd": true,
-        "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
-        "endTextFail": "Lass dich nicht provozieren, wenn du fährst."
+      "content": {
+        "de": {
+          "decAText": "ABHAUEN",
+          "decBText": "MITKNUTSCHEN",
+          "backLink": "4a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Zurück zur Entscheidung",
+          "a": {
+            "videoURL": "videos/de/step_5a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/de/step_5b.mp4",
+            "isEnd": true,
+            "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
+            "endTextFail": "Lass dich nicht provozieren, wenn du fährst."
+          }
+        },
+        "fr": {
+          "decAText": "Partir",
+          "decBText": "S'embrasser",
+          "backLink": "4a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Retour à la décision",
+          "a": {
+            "videoURL": "videos/fr/step_5a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/fr/step_5b.mp4",
+            "isEnd": true,
+            "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
+            "endTextFail": "Sur la route, ne te laisse pas provoquer."
+          }
+        },
+        "it": {
+          "decAText": "Andare via",
+          "decBText": "Sbaciucchiare",
+          "backLink": "4a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Torna alla scelta",
+          "a": {
+            "videoURL": "videos/it/step_5a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/it/step_5b.mp4",
+            "isEnd": true,
+            "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
+            "endTextFail": "Non lasciarti provocare quando guidi."
+          }
+        }
       }
     },
     "6": {
       "next": {
         "step": "7"
       },
-      "decAText": "ABLEHNEN",
-      "decBText": "ANNEHMEN",
-      "linktext": [],
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_6a.mp4"
-      },
-      "b": {
-        "videoURL": "videos/step_6b.mp4"
+      "content": {
+        "de": {
+          "decAText": "ABLEHNEN",
+          "decBText": "ANNEHMEN",
+          "linktext": [],
+          "text": [],
+          "a": {
+            "videoURL": "videos/de/step_6a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/de/step_6b.mp4"
+          }
+        },
+        "fr": {
+          "decAText": "Refuser",
+          "decBText": "Accepter",
+          "linktext": [],
+          "text": [],
+          "a": {
+            "videoURL": "videos/fr/step_6a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/fr/step_6b.mp4"
+          }
+        },
+        "it": {
+          "decAText": "Rifiutare",
+          "decBText": "Accettare",
+          "linktext": [],
+          "text": [],
+          "a": {
+            "videoURL": "videos/it/step_6a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/it/step_6b.mp4"
+          }
+        }
       }
     },
     "7": {
       "next": {
         "step": "8"
       },
-      "decAText": "SMS IGNORIEREN",
-      "decBText": "SMS LESEN",
-      "backLink": "6a",
-      "linktext": [],
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_7a.mp4"
-      },
-      "b": {
-        "videoURL": "videos/step_7b.mp4",
-        "isEnd": true,
-        "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
-        "endTextFail": "Bleib klar im Kopf. Dann ist alles klar beim Fahren."
+      "content": {
+        "de": {
+          "decAText": "SMS IGNORIEREN",
+          "decBText": "SMS LESEN",
+          "backLink": "6a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Zurück zur Entscheidung",
+          "a": {
+            "videoURL": "videos/de/step_7a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/de/step_7b.mp4",
+            "isEnd": true,
+            "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
+            "endTextFail": "Bleib klar im Kopf. Dann ist alles klar beim Fahren."
+          }
+        },
+        "fr": {
+          "decAText": "Ignorer le SMS",
+          "decBText": "Lire le SMS",
+          "backLink": "6a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Retour à la décision",
+          "a": {
+            "videoURL": "videos/fr/step_7a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/fr/step_7b.mp4",
+            "isEnd": true,
+            "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
+            "endTextFail": "Garde les idées bien claires dans ta tête, et tout restera clair sur la route."
+          }
+        },
+        "it": {
+          "decAText": "ignora SMS",
+          "decBText": "leggi SMS",
+          "backLink": "6a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Torna alla scelta",
+          "a": {
+            "videoURL": "videos/it/step_7a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/it/step_7b.mp4",
+            "isEnd": true,
+            "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
+            "endTextFail": "Resta lucido. E sarai lucido anche alla guida."
+          }
+        }
       }
     },
     "8": {
       "next": {
         "step": "9"
       },
-      "decAText": "TAXI NEHMEN",
-      "decBText": "SELBER FAHREN",
-      "backLink": "7a",
-      "linktext": [],
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_8a.mp4"
-      },
-      "b": {
-        "videoURL": "videos/step_8b.mp4",
-        "isEnd": true,
-        "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
-        "endTextFail": "Hände weg vom Handy, wenn du fährst."
+      "content": {
+        "de": {
+          "decAText": "TAXI NEHMEN",
+          "decBText": "SELBER FAHREN",
+          "backLink": "7a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Zurück zur Entscheidung",
+          "a": {
+            "videoURL": "videos/de/step_8a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/de/step_8b.mp4",
+            "isEnd": true,
+            "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
+            "endTextFail": "Hände weg vom Handy, wenn du fährst."
+          }
+        },
+        "fr": {
+          "decAText": "Prendre un taxi",
+          "decBText": "Prendre le volant",
+          "backLink": "7a",
+          "linktext": [],
+          "altFinishBtnText": "Retour à la décision",
+          "text": [],
+          "a": {
+            "videoURL": "videos/fr/step_8a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/fr/step_8b.mp4",
+            "isEnd": true,
+            "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
+            "endTextFail": "Pas touche au portable quand on conduit."
+          }
+        },
+        "it": {
+          "decAText": "Prendere un taxi",
+          "decBText": "Guidare",
+          "backLink": "7a",
+          "linktext": [],
+          "text": [],
+          "altFinishBtnText": "Torna alla scelta",
+          "a": {
+            "videoURL": "videos/it/step_8a.mp4"
+          },
+          "b": {
+            "videoURL": "videos/it/step_8b.mp4",
+            "isEnd": true,
+            "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
+            "endTextFail": "Giù le mani dal cellulare quando guidi."
+          }
+        }
       }
     },
     "9": {
       "next": {
         "step": "happyEnd"
       },
-      "decAText": "",
-      "decBText": "",
-      "linktext": [],
-      "backLink": "8a",
-      "text": [],
-      "a": {
-        "videoURL": "videos/step_9a.mp4",
-        "isHappyEnd": true,
-        "endText": "WAR EINE GUTE ENTSCHEIDUNG, DICH ZU DATEN.",
-        "endTextSmall": "Aber ich bin ja nicht die Einzige von uns beiden, die gute Entscheidungen trifft..."
-      },
-      "b": {
-        "videoURL": "videos/step_9b.mp4",
-        "isEnd": true,
-        "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
-        "endTextFail": "Entscheide dich gegen Alkohol am Steuer und für das Leben."
+      "content": {
+        "de": {
+          "decAText": "",
+          "decBText": "",
+          "linktext": "Neues Date",
+          "backLink": "8a",
+          "text": [],
+          "altFinishBtnText": "Zurück zur Entscheidung",
+          "a": {
+            "videoURL": "videos/de/step_9a.mp4",
+            "isFinish": true,
+            "endText": "WAR EINE GUTE ENTSCHEIDUNG, DICH ZU DATEN.",
+            "endTextSmall": "Aber ich bin ja nicht die Einzige von uns beiden, die gute Entscheidungen trifft..."
+          },
+          "b": {
+            "videoURL": "videos/step_9b.mp4",
+            "isEnd": true,
+            "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
+            "endTextFail": "Entscheide dich gegen Alkohol am Steuer und für das Leben."
+          }
+        },
+        "fr": {
+          "decAText": "",
+          "decBText": "",
+          "linktext": "Nouveau rancart",
+          "backLink": "8a",
+          "text": [],
+          "altFinishBtnText": "Retour à la décision",
+          "a": {
+            "videoURL": "videos/fr/step_9a.mp4",
+            "isFinish": true,
+            "endText": "J'AI BIEN FAIT DE SORTIR AVEC TOI.",
+            "endTextSmall": "Mais entre nous, je ne suis pas la seule à prendre de bonnes décisions... "
+          },
+          "b": {
+            "videoURL": "videos/fr/step_9b.mp4",
+            "isEnd": true,
+            "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
+            "endTextFail": "Renonce à l'alcool au volant et choisis la vie."
+          }
+        },
+        "it": {
+          "decAText": "",
+          "decBText": "",
+          "linktext": "di più",
+          "backLink": "8a",
+          "text": [],
+          "altFinishBtnText": "Torna alla scelta",
+          "a": {
+            "videoURL": "videos/it/step_9a.mp4",
+            "isFinish": true,
+            "endText": "OTTIMA DECISIONE QUELLA DI INCONTRARTI.",
+            "endTextSmall": "Ma non sono certo l'unica tra noi due, a prendere le decisioni giuste... "
+          },
+          "b": {
+            "videoURL": "videos/it/step_9b.mp4",
+            "isEnd": true,
+            "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
+            "endTextFail": "Scegli contro l'alcool al volante, scegli la vita."
+          }
+        }
       }
     }
   },

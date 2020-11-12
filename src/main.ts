@@ -9,10 +9,7 @@ Vue.config.productionTip = false
 
 //load Config Json First
 async function getSiteContent() {
-/*  axios.get('/language.php')
-      .then((response) => {
-        store.commit('currentLanguage', response.data)
-      })*/
+  store.commit('currentLanguage', document.documentElement.lang ? document.documentElement.lang : 'de');
   return await axios.get('./appConfigs.json');
 }
 getSiteContent().then(r => {

@@ -45,12 +45,13 @@
     </div>
     <div class="form-row" id="friendsBtn">
       <div class="form-group col-sm-6">
-        <button type="button" class="btn btn-outline-light mb-sm-3 mb-0 base_btn_wrapper" v-bind="{disabled: $store.state.disableBtnActive}"
-               v-on:click="addInput()">Weitere
+        <button type="button" class="btn btn-outline-light mb-sm-3 mb-0 base_btn_wrapper"
+                v-bind="{disabled: $store.state.disableBtnActive}"
+                v-on:click="addInput()">Weitere
           Freunde hinzufügen
         </button>
       </div>
-      <div class="form-group col-sm-6">
+      <div class="form-group col-sm-6" id="submitBtn">
         <button type="button" class="btn btn-outline-light base_btn_wrapper" v-if="$store.state.counter >= 2"
                 v-on:click="removeInput()">Feld löschen
         </button>
@@ -92,6 +93,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+.base_btn_wrapper {
+  width: 230px;
+  height: 45px;
+  font-size: 14px;
+}
 
 </style>

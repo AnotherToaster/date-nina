@@ -1,75 +1,81 @@
 <template>
   <div id="main">
+    <div class="bg_wrapper">
+    </div>
     <div class="main_wrapper">
-      <div class="grid-container">
-        <div class="container align-content-start">
-          <div id="header" class="header_grid"></div>
-        </div>
-        <div class="container align-content-center">
-          <div id="videoComponent" class="video_grid">
 
-            <VideoComponent/>
+        <header>
+        </header>
 
-          </div>
+        <main class="container align-content-center">
+            <div id="videoComponent" class="video_grid">
+              <VideoComponent/>
+            </div>
 
-          <div id="shareSocial" class="shareSocial_grid">
+            <div id="shareSocial" class="shareSocial_grid">
+              <ShareSocial/>
+              <contact-form/>
+            </div>
+        </main>
 
-            <ShareSocial/>
+        <footer class="container align-content-end">
+            <div id="siteFooter" class="siteFooter_grid">
+              <SiteFooter/>
+            </div>
+        </footer>
 
-            <contact-form/>
+        <aside>
+          <modal name="info-modal"
+                 :adaptive="true"
+                 width="80%"
+                 :scrollable="true"
+                 :height="'auto'"
+                 :maxWidth="760"
+                 :styles="'overflow-y: scroll'"
+                 @before-close="beforeModalClose('info')">
+            <info-modal/>
+          </modal>
+        </aside>
 
-          </div>
-        </div>
-        <div class="container align-content-end">
-          <div id="siteFooter" class="siteFooter_grid">
-            <SiteFooter/>
-          </div>
-        </div>
+        <aside>
+          <modal name="imprint-modal"
+                 :adaptive="true"
+                 width="80%"
+                 :height="'auto'"
+                 :maxWidth="640" :minHeight="450"
+                 @before-close="beforeModalClose('imprint')">
+            <imprint-modal/>
+          </modal>
+        </aside>
 
-        <modal name="info-modal"
-               :adaptive="true"
-               width="80%"
-               :scrollable="true"
-               :height="'auto'"
-               :maxWidth="760"
-               :styles="'overflow-y: scroll'"
-               @before-close="beforeModalClose('info')">
-          <info-modal/>
-        </modal>
+        <aside>
+          <modal name="privacy-modal"
+                 :adaptive="true"
+                 width="80%"
+                 :scrollable="true"
+                 :height="720"
+                 :maxWidth="760"
+                 :styles="'overflow-y: scroll'"
+                 @before-close="beforeModalClose('privacy')">
+            <privacy-modal/>
+          </modal>
+        </aside>
 
-        <modal name="imprint-modal"
-               :adaptive="true"
-               width="80%"
-               :height="'auto'"
-               :maxWidth="640" :minHeight="450"
-               @before-close="beforeModalClose('imprint')">
-          <imprint-modal/>
-        </modal>
-
-        <modal name="privacy-modal"
-               :adaptive="true"
-               width="80%"
-               :scrollable="true"
-               :height="720"
-               :maxWidth="760"
-               :styles="'overflow-y: scroll'"
-               @before-close="beforeModalClose('privacy')">
-          <privacy-modal/>
-        </modal>
-
-        <modal name="contact-modal"
-               :adaptive="true"
-               :scrollable="true"
-               width="80%"
-               :height="'auto'"
-               :maxWidth="760"
-               :styles="'overflow-y: scroll; background-image: linear-gradient(#292929, #000, #000 40%);'"
-               @before-close="beforeModalClose('contact')">
-          <contact-modal/>
-        </modal>
+        <aside>
+          <modal name="contact-modal"
+                 :adaptive="true"
+                 :scrollable="true"
+                 width="80%"
+                 :height="'auto'"
+                 :maxWidth="760"
+                 :styles="'overflow-y: scroll; background-image: linear-gradient(#292929, #000, #000 40%);'"
+                 @before-close="beforeModalClose('contact')">
+            <contact-modal/>
+          </modal>
+        </aside>
 
       </div>
-    </div>
+
   </div>
 </template>
 
@@ -191,13 +197,79 @@ export default class App extends Vue {
 
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less">
+html {
+  background: #000;
 }
+
+body {
+  background: #000;
+}
+
+header {
+  grid-area: header;
+  min-height: 20vh;
+  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: 30vh;
+  }
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: 25vh;
+  }
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: calc((100vh - 356px) / 2);
+  }
+}
+
+.bg_wrapper {
+  width: 100%;
+  background: url('http://127.0.0.1:8080/img/bg_main.jpg') no-repeat top center;
+  background-position-y: -15vh;
+  background-size: 75%;
+  min-height: 110vh;
+  position: absolute;
+  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-position-y: 0;
+    min-height: 100vh;
+    background-size: 170%;
+    background-position-x: -17vh;
+  }
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-position-y: 1vh;
+    background-size: 170%;
+    background-position-x: -14vh;
+  }
+}
+
+
+.main_wrapper {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  padding: 0;
+  min-height: 100vh;
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 0 10px;
+  }
+}
+
+.video_grid {
+  grid-area: main;
+}
+
+.shareSocial_grid {
+  grid-area: video;
+  min-height: 13vh;
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: 19vh;
+
+  }
+
+
+}
+
+
 </style>
