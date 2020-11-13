@@ -25,6 +25,7 @@ export default new Vuex.Store({
         showContactSuccess: false,
         currentLanguage: 'de',
         switchLang: false,
+        isFS: false,
         siteData: [],
         userData: {
             clientName: '',
@@ -79,6 +80,9 @@ export default new Vuex.Store({
         switchLang(state, data) {
             state.currentLanguage = data;
         },
+        isFS(state, data) {
+            state.isFS = data;
+        },
         addInput(state) {
             state.counter += 1
             if (state.counter <= state.maxFieldNumber) {
@@ -99,7 +103,7 @@ export default new Vuex.Store({
             }
             state.counter -= 1
             state.friendsData.pop()
-        }
+        },
     },
     actions: {
         siteContent(context, data) {
@@ -146,6 +150,9 @@ export default new Vuex.Store({
         },
         switchLang(context, lang) {
             context.commit('switchLang', lang)
+        },
+        isFS(context, data) {
+            context.commit('isFS', data)
         },
     },
     modules: {}

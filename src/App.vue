@@ -4,77 +4,77 @@
     </div>
     <div class="main_wrapper">
 
-        <header>
-        </header>
+      <header>
+      </header>
 
-        <main class="container align-content-center">
-            <div id="videoComponent" class="video_grid">
-              <VideoComponent/>
-            </div>
+      <main class="container align-content-center">
+        <div id="videoComponent" class="video_grid">
+          <VideoComponent/>
+        </div>
 
-            <div id="shareSocial" class="shareSocial_grid">
-              <ShareSocial/>
-              <contact-form/>
-            </div>
-        </main>
+        <div id="shareSocial" class="shareSocial_grid">
+          <ShareSocial/>
+          <contact-form/>
+        </div>
+      </main>
 
-        <footer class="container align-content-end">
-            <div id="siteFooter" class="siteFooter_grid">
-              <SiteFooter/>
-            </div>
-        </footer>
+      <footer class="container align-content-end">
+        <div id="siteFooter" class="siteFooter_grid">
+          <SiteFooter/>
+        </div>
+      </footer>
 
-        <aside>
-          <modal name="info-modal"
-                 :adaptive="true"
-                 width="80%"
-                 :scrollable="true"
-                 :height="'auto'"
-                 :maxWidth="760"
-                 :styles="'overflow-y: scroll'"
-                 @before-close="beforeModalClose('info')">
-            <info-modal/>
-          </modal>
-        </aside>
+      <aside>
+        <modal name="info-modal"
+               :adaptive="true"
+               width="80%"
+               :scrollable="true"
+               :height="'auto'"
+               :maxWidth="760"
+               :styles="'overflow-y: scroll'"
+               @before-close="beforeModalClose('info')">
+          <info-modal/>
+        </modal>
+      </aside>
 
-        <aside>
-          <modal name="imprint-modal"
-                 :adaptive="true"
-                 width="80%"
-                 :height="'auto'"
-                 :maxWidth="640" :minHeight="450"
-                 @before-close="beforeModalClose('imprint')">
-            <imprint-modal/>
-          </modal>
-        </aside>
+      <aside>
+        <modal name="imprint-modal"
+               :adaptive="true"
+               width="80%"
+               :height="'auto'"
+               :maxWidth="640" :minHeight="450"
+               @before-close="beforeModalClose('imprint')">
+          <imprint-modal/>
+        </modal>
+      </aside>
 
-        <aside>
-          <modal name="privacy-modal"
-                 :adaptive="true"
-                 width="80%"
-                 :scrollable="true"
-                 :height="720"
-                 :maxWidth="760"
-                 :styles="'overflow-y: scroll'"
-                 @before-close="beforeModalClose('privacy')">
-            <privacy-modal/>
-          </modal>
-        </aside>
+      <aside>
+        <modal name="privacy-modal"
+               :adaptive="true"
+               width="80%"
+               :scrollable="true"
+               :height="720"
+               :maxWidth="760"
+               :styles="'overflow-y: scroll'"
+               @before-close="beforeModalClose('privacy')">
+          <privacy-modal/>
+        </modal>
+      </aside>
 
-        <aside>
-          <modal name="contact-modal"
-                 :adaptive="true"
-                 :scrollable="true"
-                 width="80%"
-                 :height="'auto'"
-                 :maxWidth="760"
-                 :styles="'overflow-y: scroll; background-image: linear-gradient(#292929, #000, #000 40%);'"
-                 @before-close="beforeModalClose('contact')">
-            <contact-modal/>
-          </modal>
-        </aside>
+      <aside>
+        <modal name="contact-modal"
+               :adaptive="true"
+               :scrollable="true"
+               width="80%"
+               :height="'auto'"
+               :maxWidth="760"
+               :styles="'overflow-y: scroll; background-image: linear-gradient(#292929, #000, #000 40%);'"
+               @before-close="beforeModalClose('contact')">
+          <contact-modal/>
+        </modal>
+      </aside>
 
-      </div>
+    </div>
 
   </div>
 </template>
@@ -103,6 +103,12 @@ import store from '@/store'
 })
 
 export default class App extends Vue {
+  isFS: boolean;
+
+  constructor() {
+    super();
+    this.isFS = this.$store.state.isFS;
+  }
 
   mounted() {
     this.$modal.hideAll();
@@ -155,6 +161,11 @@ export default class App extends Vue {
           }
         }
     )
+    document.addEventListener('fullscreenchange', function () {
+      if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+        store.dispatch('isFS');
+      }
+    })
   }
 
   showModal(modal: string) {
@@ -191,7 +202,6 @@ export default class App extends Vue {
       this.$store.dispatch('showContactModal', false);
     }
   }
-
 }
 
 
@@ -220,9 +230,10 @@ header {
   }
 }
 
+
 .bg_wrapper {
   width: 100%;
-  background: url('http://127.0.0.1:8080/img/bg_main.jpg') no-repeat top center;
+  background: url('/img/bg_main.jpg') no-repeat top center;
   background-position-y: -15vh;
   background-size: 75%;
   min-height: 110vh;
@@ -271,5 +282,47 @@ header {
 
 }
 
+.modal_inner {
+  background-image: linear-gradient(#292929, #000, #000 40%);
+  padding: 30px;
+
+  .modal_wrapper {
+
+    p, h2, ul, h3, h4 {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 20px 0 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    a {
+      line-break: anywhere;
+    }
+  }
+
+  .icn_close {
+    top: -20px;
+    right: 0;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border: none;
+    background: url('/img/icn_close.png') no-repeat;
+    cursor: pointer;
+  }
+}
 
 </style>

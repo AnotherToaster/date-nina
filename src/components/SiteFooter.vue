@@ -19,15 +19,15 @@
       </div>
     </div>
     <nav class="col-lg-3 col-md-2 col-12 justify-content-end d-flex align-items-center">
-        <div class="col-md-2 col-sm-1 col-auto">
-          <a id="de" href="/?lang=de">DE</a>
-        </div>
-        <div class="col-md-2 col-sm-1 col-auto">
-          <a id="fr" href="/?lang=fr">FR</a>
-        </div>
-        <div class="col-md-2 col-sm-1 col-auto">
-          <a id="it" href="/?lang=it">IT</a>
-        </div>
+      <div class="col-md-2 col-sm-1 col-auto">
+        <a id="de" href="/?lang=de">DE</a>
+      </div>
+      <div class="col-md-2 col-sm-1 col-auto">
+        <a id="fr" href="/?lang=fr">FR</a>
+      </div>
+      <div class="col-md-2 col-sm-1 col-auto">
+        <a id="it" href="/?lang=it">IT</a>
+      </div>
     </nav>
   </div>
 </template>
@@ -60,7 +60,7 @@ export default class Sitefooter extends Vue {
 }
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 .footer_wrapper {
   border-top: #666 2px solid;
   vertical-align: top;
@@ -72,15 +72,27 @@ export default class Sitefooter extends Vue {
     cursor: pointer;
     text-decoration: none;
     color: #666;
+    transition: 0.3s;
+
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
       font-size: 12px;
     }
-
 
     &:hover {
       color: #fff;
     }
   }
+
+  a:not([href]) {
+    text-decoration: none;
+    color: #666;
+    transition: 0.3s;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
   .logo_redCross {
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
       margin: 5px 0;

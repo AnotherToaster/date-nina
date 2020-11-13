@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="embed-responsive embed-responsive-16by9" id="video_container">
+    <div class="embed-responsive embed-responsive-16by9" id="video_container" >
       <video id="video" class="embed-responsive-item" :poster="videoPoster" playsinline width="auto"
              height="100%"
              :src="videoSrc"
@@ -20,9 +20,9 @@
           </div>
         </div>
       </div>
-      <div class="btnFS_wrapper">
+      <div class="btnFS_wrapper" v-bind:class="{ btnFS_FS: $store.state.isFS }">
         <div class="col-12 d-flex justify-content-end">
-          <div class="btnFS btn" @click="switchFS()"><span class="icon-fullscreen"></span></div>
+          <div class="btnFS btn" v-on:click="switchFS()"><span class="icon-fullscreen"></span></div>
         </div>
       </div>
       <div id="choices" class="choices_wrapper row" v-if="$store.state.showChoices">
@@ -117,7 +117,7 @@ export default class VideoComponent extends Vue {
     this.endTextFail = '';
     this.endTextSmall = '';
     this.videoTimer = false;
-    this.isFS = false;
+    this.isFS = this.$store.state.isFS;
     this.backLink = this.videoSteps[this.currentVideoID].backLink;
   }
 
@@ -205,7 +205,7 @@ export default class VideoComponent extends Vue {
   }
 
   switchFS() {
-    if (!this.isFS) {
+      if (!this.$store.state.isFS) {
       if (this.videoContainer.requestFullscreen) {
         this.videoContainer.requestFullscreen();
       } else if (this.videoContainer.msRequestFullscreen) {
@@ -215,16 +215,16 @@ export default class VideoComponent extends Vue {
       } else if (this.videoContainer.webkitRequestFullscreen) {
         this.videoContainer.webkitRequestFullscreen();
       }
-      this.isFS = true;
-    } else if (this.isFS) {
+      this.$store.dispatch('isFS', true)
+    } else if (this.$store.state.isFS) {
       if (document.exitFullscreen) {
         document.exitFullscreen();
-      } /*else if(document.mozCancelFullScreen) {
+      } else if(document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
       } else if(document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
-      }*/
-      this.isFS = false;
+      }
+        this.$store.dispatch('isFS', false)
     }
   }
 }
@@ -316,15 +316,29 @@ video::-webkit-media-controls {
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.7);
+    transition: 0.5s;
 
     .icon-fullscreen {
-      background: url(https://s.cdpn.io/6035/vp_sprite.png) no-repeat 0 0;
+      background: url('https://s.cdpn.io/6035/vp_sprite.png') no-repeat 0 0;
       width: 10px;
       height: 10px;
       display: block;
       margin: 3px 0 0 -2px;
     }
 
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+}
+
+.btnFS_FS {
+  width: 98%;
+  bottom: 55px;
+
+  .icon-fullscreen {
+    transform: scale(1.6);
   }
 }
 
