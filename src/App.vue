@@ -162,7 +162,10 @@ export default class App extends Vue {
         }
     )
     document.addEventListener('fullscreenchange', function () {
-      if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+/*      if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+        store.dispatch('isFS');
+      }*/
+      if (!document.fullscreenElement) {
         store.dispatch('isFS');
       }
     })

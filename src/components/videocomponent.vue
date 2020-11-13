@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="embed-responsive embed-responsive-16by9" id="video_container" >
+    <div class="embed-responsive embed-responsive-16by9" id="video_container">
       <video id="video" class="embed-responsive-item" :poster="videoPoster" playsinline width="auto"
              height="100%"
              :src="videoSrc"
@@ -205,7 +205,7 @@ export default class VideoComponent extends Vue {
   }
 
   switchFS() {
-      if (!this.$store.state.isFS) {
+    if (!this.$store.state.isFS) {
       if (this.videoContainer.requestFullscreen) {
         this.videoContainer.requestFullscreen();
       } else if (this.videoContainer.msRequestFullscreen) {
@@ -219,12 +219,12 @@ export default class VideoComponent extends Vue {
     } else if (this.$store.state.isFS) {
       if (document.exitFullscreen) {
         document.exitFullscreen();
-      } else if(document.mozCancelFullScreen) {
+      } /*else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
-      } else if(document.webkitExitFullscreen) {
+      } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
-      }
-        this.$store.dispatch('isFS', false)
+      }*/
+      this.$store.dispatch('isFS', false)
     }
   }
 }
@@ -271,8 +271,15 @@ video::-webkit-media-controls {
         .fas {
           left: 25px;
           top: 40%;
+          @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+            top: 35%;
+          }
         }
 
+      }
+      @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+        height: 40px;
+        font-size: 10px;
       }
     }
 
@@ -283,6 +290,9 @@ video::-webkit-media-controls {
         font-size: 14px;
         margin: 0;
         padding: 0;
+      }
+      @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+        font-size: 11px;
       }
     }
 
@@ -296,8 +306,8 @@ video::-webkit-media-controls {
         width: 75%;
       }
       @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
-        font-size: 16px;
-        margin-bottom: 30px;
+        font-size: 12px;
+        margin-bottom: 15px;
         width: 100%;
       }
 
@@ -308,7 +318,11 @@ video::-webkit-media-controls {
 .btnFS_wrapper {
   position: relative;
   width: 100%;
-  bottom: 25px;
+  bottom: 5%;
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+    bottom: 10%;
+  }
 
   .btnFS {
     width: 30px;
@@ -335,12 +349,50 @@ video::-webkit-media-controls {
 
 .btnFS_FS {
   width: 98%;
-  bottom: 55px;
-
-  .icon-fullscreen {
-    transform: scale(1.6);
+  @media (max-width: 1400px) and (-webkit-min-device-pixel-ratio: 1) {
+    width: 95%;
+    top: 17%;
+  }
+  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 98%;
+    bottom: -5%;
+    top: unset;
+    @media screen and (orientation: landscape) {
+      width: 90%;
+      bottom: 35%;
+    }
+  }
+  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    width: 96%;
+    top: 20%;
+  }
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 96%;
+    top: 23%;
+    @media (min-height: 320px) {
+      top: unset;
+      bottom: 15%;
+    }
+  }
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 96%;
+    top: 28%;
+    @media screen and (orientation: landscape) {
+      width: 98%;
+      bottom: 10%;
+    }
+  }
+  @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 95%;
+    top: 40%;
   }
 }
+
+
+.icon-fullscreen {
+  transform: scale(1.2);
+}
+
 
 .choices_wrapper {
   position: absolute;
