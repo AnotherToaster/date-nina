@@ -20,13 +20,13 @@
     </div>
     <nav class="col-lg-3 col-md-2 col-12 justify-content-end d-flex align-items-center">
       <div class="col-md-2 col-sm-1 col-auto">
-        <a id="de" href="/?lang=de">DE</a>
+        <a id="de" href="/de">DE</a>
       </div>
       <div class="col-md-2 col-sm-1 col-auto">
-        <a id="fr" href="/?lang=fr">FR</a>
+        <a id="fr" href="/fr">FR</a>
       </div>
       <div class="col-md-2 col-sm-1 col-auto">
-        <a id="it" href="/?lang=it">IT</a>
+        <a id="it" href="/it">IT</a>
       </div>
     </nav>
   </div>

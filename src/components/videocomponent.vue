@@ -1,6 +1,7 @@
 <template>
   <div class="row">
-    <div class="embed-responsive embed-responsive-16by9" id="video_container">
+    <div class="embed-responsive embed-responsive-16by9" v-bind:class="{ videoContainerFS: $store.state.isFS }"
+         id="video_container">
       <video id="video" class="embed-responsive-item" :poster="videoPoster" playsinline width="auto"
              height="100%"
              :src="videoSrc"
@@ -219,11 +220,11 @@ export default class VideoComponent extends Vue {
     } else if (this.$store.state.isFS) {
       if (document.exitFullscreen) {
         document.exitFullscreen();
-      } /*else if (document.mozCancelFullScreen) {
+      } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
       } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
-      }*/
+      }
       this.$store.dispatch('isFS', false)
     }
   }
@@ -232,6 +233,17 @@ export default class VideoComponent extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
+
+.videoContainerFS {
+/*  @supports (-webkit-touch-callout: none) {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 99;
+  }*/
+}
 
 video::-webkit-media-controls {
   display: none !important;
@@ -323,6 +335,12 @@ video::-webkit-media-controls {
     width: 100%;
     bottom: 10%;
   }
+  @supports (-webkit-touch-callout: none) { //disable FS button for IPHONE only
+    /* iPhone Portrait */
+    @media screen and (max-device-width: 480px) {
+      display: none;
+    }
+  }
 
   .btnFS {
     width: 30px;
@@ -330,7 +348,6 @@ video::-webkit-media-controls {
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.7);
-    transition: 0.5s;
 
     .icon-fullscreen {
       background: url('https://s.cdpn.io/6035/vp_sprite.png') no-repeat 0 0;
@@ -338,10 +355,6 @@ video::-webkit-media-controls {
       height: 10px;
       display: block;
       margin: 3px 0 0 -2px;
-    }
-
-    &:hover {
-      transform: scale(1.3);
     }
   }
 
@@ -385,6 +398,11 @@ video::-webkit-media-controls {
   @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 95%;
     top: 40%;
+  }
+  @supports (-webkit-touch-callout: none) {
+    position: absolute;
+    bottom: 5%;
+    top: unset;
   }
 }
 

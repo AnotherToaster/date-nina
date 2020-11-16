@@ -104,10 +104,12 @@ import store from '@/store'
 
 export default class App extends Vue {
   isFS: boolean;
+  videoELm: any;
 
   constructor() {
     super();
     this.isFS = this.$store.state.isFS;
+    this.videoELm = document.getElementById('video');
   }
 
   mounted() {
@@ -162,10 +164,7 @@ export default class App extends Vue {
         }
     )
     document.addEventListener('fullscreenchange', function () {
-/*      if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
-        store.dispatch('isFS');
-      }*/
-      if (!document.fullscreenElement) {
+      if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
         store.dispatch('isFS');
       }
     })

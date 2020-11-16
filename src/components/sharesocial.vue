@@ -48,7 +48,7 @@ export default class ShareSocial extends Vue {
   text-transform: uppercase;
   margin-left: 10px;
   height: 45px;
-  width: 250px;
+  max-width: 300px;
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     font-size: 11px;
     height: 40px;

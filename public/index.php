@@ -1,10 +1,9 @@
 <?php
 
-$cookiefirstInit = 'firstInit';
+/*$cookiefirstInit = 'firstInit';
 $cookieLang = 'lang';
 
-/*$userLanguage = $_GET['lang'] ? $_GET['lang'] : 'de'; //Creates Error:  Undefined index: lang*/
-/*
+$userLanguage = $_GET['lang'] ? $_GET['lang'] : 'de';
 $prefLang = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 
 if (strpos($prefLang, 'de') !== false || strpos($prefLang, 'fr') !== false || strpos($prefLang, 'it') !== false) {
@@ -23,8 +22,8 @@ if (strpos($prefLang, 'de') !== false || strpos($prefLang, 'fr') !== false || st
 
 } else {
     $prefLang = 'de';
-}
-*/
+}*/
+
 
 if (isset($_GET['lang'])) {
     $userLanguage = $_GET['lang'];
@@ -32,10 +31,10 @@ if (isset($_GET['lang'])) {
     $userLanguage = 'de';
 }
 
-if (!isset($_COOKIE[$cookiefirstInit])) {
+/*if (!isset($_COOKIE[$cookiefirstInit])) {
     setcookie($cookiefirstInit, true, time() + (86400 * 365)); // 86400 = 1 day
     setcookie($cookieLang, $userLanguage, time() + (86400 * 365)); // 86400 = 1 day
-}
+}*/
 $html = file_get_contents('index.html');
 
 $html = str_replace('<html lang="en">', '<html lang="' . $userLanguage . '">', $html);

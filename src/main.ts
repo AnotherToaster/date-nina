@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 //load Config Json First
 async function getSiteContent() {
   store.commit('currentLanguage', document.documentElement.lang ? document.documentElement.lang : 'de');
-  return await axios.get('./appConfigs.json');
+  return await axios.get('/appConfigs.json');
 }
 getSiteContent().then(r => {
   Vue.use(VModal);
