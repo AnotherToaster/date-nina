@@ -8,11 +8,11 @@
       </header>
 
       <main class="container align-content-center">
-        <div id="videoComponent" class="video_grid">
+        <div id="videoComponent">
           <VideoComponent/>
         </div>
 
-        <div id="shareSocial" class="shareSocial_grid">
+        <div id="shareSocial">
           <ShareSocial/>
           <contact-form/>
         </div>
@@ -267,22 +267,6 @@ header {
   }
 }
 
-.video_grid {
-  grid-area: main;
-}
-
-.shareSocial_grid {
-  grid-area: video;
-  min-height: 13vh;
-  display: flex;
-  justify-content: flex-end;
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    min-height: 19vh;
-
-  }
-
-
-}
 
 .modal_inner {
   background-image: linear-gradient(#292929, #000, #000 40%);

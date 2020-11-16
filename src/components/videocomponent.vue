@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="btnFS_wrapper" v-bind:class="{ btnFS_FS: $store.state.isFS }">
-        <div class="col-12 d-flex justify-content-end">
+        <div class="col-12 d-flex align-self-end justify-content-end">
           <div class="btnFS btn" v-on:click="switchFS()"><span class="icon-fullscreen"></span></div>
         </div>
       </div>
