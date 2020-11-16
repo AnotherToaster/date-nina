@@ -113,7 +113,7 @@ export default class VideoComponent extends Vue {
     this.decBText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].decBText;
     this.introText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].introText;
     this.linkText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].linkText;
-    this.altFinishBtnText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].altFinishBtnText;
+    this.altFinishBtnText = '';
     this.endText = '';
     this.endTextFail = '';
     this.endTextSmall = '';
@@ -134,6 +134,9 @@ export default class VideoComponent extends Vue {
     if (this.videoTimer) {
       this.videoELm.currentTime = (this.videoELm.duration / 100) * 90;
     }
+/*
+    this.videoELm.playbackRate = 12;
+*/
     this.videoTimer = false;
     this.$store.state.showChoices = false;
     this.$store.state.showVideoControls = false;
@@ -180,6 +183,7 @@ export default class VideoComponent extends Vue {
     if (this.videoSteps[this.currentVideoID]['content'][this.currentLanguage][this.decAB].isEnd == true) {
       this.$store.state.isEnd = true;
       this.endText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage][this.decAB].endText;
+      this.altFinishBtnText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].altFinishBtnText;
       this.endTextFail = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage][this.decAB].endTextFail;
     } else if (this.videoSteps[this.currentVideoID]['content'][this.currentLanguage][this.decAB].isFinish == true) {
       this.$store.state.isFinish = true;
@@ -295,19 +299,6 @@ video::-webkit-media-controls {
       }
     }
 
-    .start_btn_text {
-      padding: 0;
-      margin: 0;
-      @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-        font-size: 14px;
-        margin: 0;
-        padding: 0;
-      }
-      @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
-        font-size: 11px;
-      }
-    }
-
     #intro_text {
       color: #FFF;
       font-size: 25px;
@@ -324,6 +315,19 @@ video::-webkit-media-controls {
       }
 
     }
+  }
+}
+
+.start_btn_text {
+  padding: 0;
+  margin: 0;
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+  @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 11px;
   }
 }
 
@@ -459,7 +463,7 @@ video::-webkit-media-controls {
     font-family: Arial, Verdana, sans-serif;
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
       line-height: 30px;
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 
@@ -468,7 +472,7 @@ video::-webkit-media-controls {
     font-size: 26px;
     font-family: Arial, Verdana, sans-serif;
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
@@ -478,12 +482,12 @@ video::-webkit-media-controls {
     border-radius: 10px;
     width: 400px;
     height: 60px;
-    font-size: 1.1rem;
+    font-size: 20px;
     position: relative;
     border: none;
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-      width: 245px;
-      height: 50px;
+      width: 220px;
+      height: 40px;
       font-size: 14px;
     }
 
@@ -493,6 +497,7 @@ video::-webkit-media-controls {
       transition: all 0.15s ease-in-out;
       @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
         padding-right: 10px;
+        font-size: 15px;
       }
     }
 
@@ -558,19 +563,22 @@ video::-webkit-media-controls {
     border-radius: 10px;
     width: 400px;
     height: 60px;
-    font-size: 1.1rem;
+    font-size: 20px;
     position: relative;
     border: none;
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-      top: 20px;
-      width: 210px;
+      width: 220px;
       height: 40px;
+      font-size: 14px;
     }
 
     .fas {
       font-size: 20px;
       padding-right: 25px;
       transition: all 0.15s ease-in-out;
+      @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+        font-size: 14px;
+      }
     }
 
     &:hover {
