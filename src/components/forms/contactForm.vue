@@ -57,6 +57,9 @@
         </button>
       </div>
     </div>
+
+    <SocialMedia/>
+
     <div class="form-row mt-4">
       <div class="form-group col-12">
         <button type="submit"
@@ -69,27 +72,37 @@
   </form>
 </template>
 
-<script>
+<script lang="ts">
 import store from '@/store'
+import {Component, Vue} from 'vue-property-decorator';
+import SocialMedia from "@/components/social-media.component.vue";
 
-export default {
-  name: "inputField",
-  props: {},
 
-  methods: {
+@Component({
+  components: {
+  SocialMedia,
+  },
+})
+
+export default class InputField extends Vue {
+
+  constructor() {
+    super();
+
+  }
+
     addInput() {
       store.dispatch('addInput')
-    },
+    }
 
     removeInput() {
       store.dispatch('removeInput')
-
-    },
+    }
 
     submitForm() {
       this.$store.dispatch('sendingContactForm', true);
     }
-  }
+
 }
 </script>
 

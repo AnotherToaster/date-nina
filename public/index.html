@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+    <meta property="og:url" content="https://date-nina.rum.dev/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Date-Nina"/>
+    <meta property="og:description"
+          content="Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ..."/>
+    <meta property="og:image" content="https://date-nina.rum.dev/img/introscreen.jpg"/>
+
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
 
     <script src="https://kit.fontawesome.com/fd0cf64665.js" crossorigin="anonymous"></script>
@@ -12,13 +19,24 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.1/vue-router.min.js"></script>
+    <script src="https://cdn.rawgit.com/ktquez/vue-head/master/vue-head.js"></script>
+
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
+
 <noscript>
     <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
         Please enable it to continue.</strong>
 </noscript>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v9.0&appId=358697158726687&autoLogAppEvents=1"
+        nonce="mdP50fuN">
+</script>
+
 <div id="app"></div>
 <!-- built files will be auto injected -->
 </body>

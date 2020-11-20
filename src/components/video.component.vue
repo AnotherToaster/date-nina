@@ -1,7 +1,6 @@
 <template>
   <div class="row">
-    <div class="embed-responsive embed-responsive-16by9" v-bind:class="{ videoContainerFS: $store.state.isFS }"
-         id="video_container">
+    <div class="embed-responsive embed-responsive-16by9" id="video-container">
       <video id="video" class="embed-responsive-item" :poster="videoPoster" playsinline width="auto"
              height="100%"
              :src="videoSrc"
@@ -38,16 +37,19 @@
           </button>
         </div>
       </div>
+
       <div id="altFinish" v-if="$store.state.isEnd" class="end_wrapper row">
         <div class="col-12">
           <p class="endText">{{ endText }}</p>
           <p class="endText_fail mb-sm-5">{{ endTextFail }}</p>
-          <button id="goBack" class="btn btn-secondary end_btn" @click="goBack()"><i
+          <button id="goBack" class="btn btn-secondary end_btn mb-3" @click="goBack()"><i
               class="fas fa-angle-double-left"></i>
             {{ altFinishBtnText }}
           </button>
         </div>
+        <SocialMedia/>
       </div>
+
       <div id="finish" class="finish_wrapper row" v-if="$store.state.isFinish">
         <div class="col-12">
           <div class="logo_wrapper">
@@ -56,19 +58,26 @@
           <p class="endText">{{ endText }}</p>
           <p class="endTextSmall mb-sm-5">{{ endTextSmall }}</p>
           <button id="decBack" @click="startDate()"
-                  class="btn btn-secondary end_btn"><i class="fas fa-arrow-right"></i>
+                  class="btn btn-secondary end_btn mb-3"><i class="fas fa-arrow-right"></i>
             {{ linkText }}
           </button>
+          <SocialMedia/>
         </div>
       </div>
+
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
+import SocialMedia from "@/components/social-media.component.vue";
 
-@Component
+@Component({
+  components: {
+    SocialMedia,
+  },
+})
 export default class VideoComponent extends Vue {
   content: Array<string>;
   videoELm: any;
@@ -86,13 +95,16 @@ export default class VideoComponent extends Vue {
   decBText: string;
   videoSteps: any;
   currentVideoID: string;
+  currentVideoIdStore: string;
   nextVideoID: string;
   decAB: string;
   endTextSmall: string;
   backLink: string;
   videoTimer: boolean;
   videoContainer: any;
-  isFS: boolean;
+  isFullScreen: boolean;
+
+ // @TODO: Video Object
 
   constructor() {
     super();
@@ -103,7 +115,8 @@ export default class VideoComponent extends Vue {
     this.currentVideoID = '1';
     this.nextVideoID = '2';
     this.decAB = 'a';
-    this.videoContainer = document.getElementById('video_container');
+    this.currentVideoIdStore = this.$store.state.currentVideoIdStore;
+    this.videoContainer = document.getElementById('video-container');
     this.videoELm = document.getElementById('video');
     this.decABtn = document.getElementById('decA');
     this.decBBtn = document.getElementById('decB');
@@ -118,24 +131,23 @@ export default class VideoComponent extends Vue {
     this.endTextFail = '';
     this.endTextSmall = '';
     this.videoTimer = false;
-    this.isFS = this.$store.state.isFS;
+    this.isFullScreen = this.$store.state.isFS;
     this.backLink = this.videoSteps[this.currentVideoID].backLink;
   }
 
   mounted() {
     this.videoELm = document.getElementById('video');
-    this.videoContainer = document.getElementById('video_container');
+    this.videoContainer = document.getElementById('video-container');
     this.videoSrc = 'videos/de/step_1.mp4';
     this.videoPoster = this.$store.state.videoPosterUrl;
   }
-
 
   playVideo() {
     if (this.videoTimer) {
       this.videoELm.currentTime = (this.videoELm.duration / 100) * 90;
     }
 /*
-    this.videoELm.playbackRate = 12;
+    this.videoELm.playbackRate = 5;
 */
     this.videoTimer = false;
     this.$store.state.showChoices = false;
@@ -165,6 +177,7 @@ export default class VideoComponent extends Vue {
   nextVideo(decAB: string) {
     this.decAB = decAB;
     this.nextVideoID = this.videoSteps[this.currentVideoID].next.step;
+    this.$store.dispatch('currentVideoIdStore');
     this.videoSrc = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage][this.decAB].videoURL
     this.decAText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].decAText;
     this.decBText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].decBText;
@@ -172,11 +185,6 @@ export default class VideoComponent extends Vue {
     setTimeout(() => {
       this.playVideo();
     }, 150)
-  }
-
-  isEnd() {
-    this.$store.state.showChoices = false;
-    this.$store.state.isEnd = true;
   }
 
   videoEnded() {
@@ -197,6 +205,7 @@ export default class VideoComponent extends Vue {
 
   goBack() {
     this.nextVideoID = this.currentVideoID;
+    this.$store.state.currentVideoIdStore = this.$store.state.currentVideoIdStore - 1;
     this.decAB = 'a';
     this.backLink = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].backLink;
     this.currentVideoID = this.backLink.charAt(0);
@@ -237,17 +246,6 @@ export default class VideoComponent extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-
-.videoContainerFS {
-/*  @supports (-webkit-touch-callout: none) {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    z-index: 99;
-  }*/
-}
 
 video::-webkit-media-controls {
   display: none !important;
@@ -321,6 +319,7 @@ video::-webkit-media-controls {
 .start_btn_text {
   padding: 0;
   margin: 0;
+  font-size: 18px;
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     font-size: 14px;
     margin: 0;
@@ -339,7 +338,8 @@ video::-webkit-media-controls {
     width: 100%;
     bottom: 10%;
   }
-  @supports (-webkit-touch-callout: none) { //disable FS button for IPHONE only
+  @supports (-webkit-touch-callout: none) {
+    //disable FS button for IPHONE only
     /* iPhone Portrait */
     @media screen and (max-device-width: 480px) {
       display: none;
@@ -480,7 +480,7 @@ video::-webkit-media-controls {
     background-image: linear-gradient(#4702fb, #3402b6);
     color: #fff3cd;
     border-radius: 10px;
-    width: 400px;
+    max-width: 400px;
     height: 60px;
     font-size: 20px;
     position: relative;
@@ -493,7 +493,8 @@ video::-webkit-media-controls {
 
     .fas {
       font-size: 20px;
-      padding-right: 25px;
+      padding-right: 15px;
+      padding-left: 15px;
       transition: all 0.15s ease-in-out;
       @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
         padding-right: 10px;
@@ -513,7 +514,7 @@ video::-webkit-media-controls {
 
 .finish_wrapper {
   position: absolute;
-  top: 40%;
+  top: 44%;
   left: 10%;
   width: 60%;
   transform: translateY(-50%);
@@ -597,7 +598,6 @@ video::-webkit-media-controls {
   border-radius: 10px;
   width: 260px;
   height: 60px;
-  font-size: 1.1rem;
   position: relative;
   border: none;
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -609,27 +609,41 @@ video::-webkit-media-controls {
     color: #d48888;
 
     .fas {
-      transform: scale(1.5);
+      transform: scale(1.2);
     }
   }
 
   .fas {
     transition: all 0.15s ease-in-out;
     position: absolute;
-    top: 40%;
+    top: 37%;
     left: 35px;
+    font-size: 14px;
     transform-origin: left center;
   }
 }
 
-.fa {
-  font-size: 10px;
-  padding-right: 10px;
+.fab {
+  font-size: 26px;
+
 }
 
-.fas {
-  font-size: 10px;
-  padding-right: 10px;
+.fa-twitter-square {
+  color: #1da1f2;
+  transition: 0.5s;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.fa-facebook-square {
+  color: #1877f2;
+  transition: 0.5s;
+
+  &:hover {
+    color: #ffffff;
+  }
 }
 
 </style>

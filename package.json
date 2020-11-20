@@ -10,11 +10,14 @@
   "dependencies": {
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
+    "fb": "^2.0.0",
+    "twitter-widgets": "^2.0.0",
     "vee-validate": "^3.4.3",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-js-modal": "^2.0.0-rc.6",
     "vue-property-decorator": "^8.4.2",
+    "vue-twitter": "^0.1.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

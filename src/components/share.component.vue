@@ -1,16 +1,14 @@
 <template>
   <div class="row share_btn_wrapper align-items-center">
-    <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+    <div class="col-12 col-sm-12 col-md-7 col-lg-7 align-items-center d-flex">
       <iframe
-          src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdate-nina.rum.dev%2F&width=320&layout=button&action=like&size=large&share=true&height=65&appId=358697158726687"
-          width="auto" height="30" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdate-nina.rum.dev%2F&width=320&layout=button&action=like&size=large&share=false&height=65&appId=358697158726687"
+          width="175" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
           allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+      </iframe>
     </div>
     <div class="col-12 col-sm-12 justify-content-sm-start col-md-5 align-items-center justify-content-md-end col-lg-5 d-flex justify-content-start mb-3">
-      <button class="btn social_btn mr-3">
-        <i class="fab fa-whatsapp"></i>
-      </button>
       <button class="btn btn-light share_btn" data-toggle="modal"
               data-target="#contact_modal" @click="showModal('Contact')">
         <img src="/favicon.ico" class="share_btn_heart">
@@ -24,7 +22,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class ShareSocial extends Vue {
+export default class ShareComponent extends Vue {
   siteContent: Array<string>;
   content: any;
   currentLanguage: string;
@@ -53,7 +51,6 @@ export default class ShareSocial extends Vue {
 
 
 .share_btn_wrapper {
-  grid-area: video;
   min-height: 11vh;
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     min-height: 19vh;
@@ -99,12 +96,5 @@ export default class ShareSocial extends Vue {
   }
 }
 
-.social_btn {
-  color: #fff;
-  font-size: 30px;
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    font-size: 25px;
-  }
-}
 
 </style>

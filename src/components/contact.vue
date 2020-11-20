@@ -2,7 +2,6 @@
 <script lang="ts">
 import * as API from '@/api';
 import {Component, Vue} from 'vue-property-decorator';
-import store from "@/store";
 
 @Component
 export default class Contact extends Vue {

@@ -8,20 +8,24 @@
       </header>
 
       <main class="container align-content-center">
-        <div id="videoComponent">
+
+        <div class="video_wrapper">
           <VideoComponent/>
         </div>
 
-        <div id="shareSocial">
-          <ShareSocial/>
-          <contact-form/>
+        <div class="social_wrapper">
+          <ShareComponent/>
+          <ContactForm/>
         </div>
+
       </main>
 
-      <footer class="container align-content-end">
-        <div id="siteFooter" class="siteFooter_grid">
-          <SiteFooter/>
+      <footer class="container">
+
+        <div class="footer_wrapper">
+          <FooterComponent/>
         </div>
+
       </footer>
 
       <aside>
@@ -32,7 +36,7 @@
                :height="'auto'"
                :maxWidth="760"
                :styles="'overflow-y: scroll'"
-               @before-close="beforeModalClose('info')">
+               @before-close="beforeModalClose('Info')">
           <info-modal/>
         </modal>
       </aside>
@@ -43,7 +47,7 @@
                width="80%"
                :height="'auto'"
                :maxWidth="640" :minHeight="450"
-               @before-close="beforeModalClose('imprint')">
+               @before-close="beforeModalClose('Imprint')">
           <imprint-modal/>
         </modal>
       </aside>
@@ -56,7 +60,7 @@
                :height="720"
                :maxWidth="760"
                :styles="'overflow-y: scroll'"
-               @before-close="beforeModalClose('privacy')">
+               @before-close="beforeModalClose('Privacy')">
           <privacy-modal/>
         </modal>
       </aside>
@@ -69,7 +73,7 @@
                :height="'auto'"
                :maxWidth="760"
                :styles="'overflow-y: scroll; background-image: linear-gradient(#292929, #000, #000 40%);'"
-               @before-close="beforeModalClose('contact')">
+               @before-close="beforeModalClose('Contact')">
           <contact-modal/>
         </modal>
       </aside>
@@ -81,20 +85,20 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import VideoComponent from './components/videocomponent.vue';
-import SiteFooter from './components/SiteFooter.vue';
-import ShareSocial from './components/sharesocial.vue';
-import InfoModal from "@/components/infoModal.vue";
-import ImprintModal from "@/components/imprintModal.vue";
-import PrivacyModal from "@/components/privacyModal.vue";
-import ContactModal from "@/components/contactModal.vue";
+import VideoComponent from './components/video.component.vue';
+import FooterComponent from './components/footer.component.vue';
+import ShareComponent from './components/share.component.vue';
+import InfoModal from "@/components/modale/info.modal.vue";
+import ImprintModal from "@/components/modale/imprint.modal.vue";
+import PrivacyModal from "@/components/modale/privacy.modal.vue";
+import ContactModal from "@/components/modale/contact.modal.vue";
 import store from '@/store'
 
 @Component({
   components: {
     VideoComponent,
-    SiteFooter,
-    ShareSocial,
+    FooterComponent,
+    ShareComponent,
     InfoModal,
     ImprintModal,
     PrivacyModal,
@@ -103,12 +107,12 @@ import store from '@/store'
 })
 
 export default class App extends Vue {
-  isFS: boolean;
+  isFullScreen: boolean;
   videoELm: any;
 
   constructor() {
     super();
-    this.isFS = this.$store.state.isFS;
+    this.isFullScreen = this.$store.state.isFS;
     this.videoELm = document.getElementById('video');
   }
 
@@ -191,21 +195,9 @@ export default class App extends Vue {
   }
 
   beforeModalClose(modal: string) {
-    if (modal === 'info') {
-      this.$store.dispatch('showInfoModal', false);
-    }
-    if (modal === 'imprint') {
-      this.$store.dispatch('showImprintModal', false);
-    }
-    if (modal === 'privacy') {
-      this.$store.dispatch('showPrivacyModal', false);
-    }
-    if (modal === 'contact') {
-      this.$store.dispatch('showContactModal', false);
-    }
+    this.$store.dispatch('show' + modal + 'Modal', false);
   }
 }
-
 
 </script>
 
@@ -219,7 +211,6 @@ body {
 }
 
 header {
-  grid-area: header;
   min-height: 20vh;
   @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
     min-height: 30vh;
@@ -255,11 +246,6 @@ header {
 
 
 .main_wrapper {
-  display: grid;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
   padding: 0;
   min-height: 100vh;
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -267,6 +253,11 @@ header {
   }
 }
 
+
+footer {
+  border-top: #666 2px solid;
+
+}
 
 .modal_inner {
   background-image: linear-gradient(#292929, #000, #000 40%);
@@ -310,5 +301,45 @@ header {
     cursor: pointer;
   }
 }
+
+.footer_wrapper {
+  vertical-align: top;
+  padding-top: 15px;
+
+  a {
+    font-size: 16px;
+    margin: 5px 0 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #666;
+    transition: 0.3s;
+
+    @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+      font-size: 12px;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  a:not([href]) {
+    text-decoration: none;
+    color: #666;
+    transition: 0.3s;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .logo_redCross {
+    @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+      margin: 5px 0;
+    }
+  }
+
+}
+
 
 </style>

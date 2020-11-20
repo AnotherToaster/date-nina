@@ -11,6 +11,7 @@ export default new Vuex.Store({
         showChoices: false,
         isEnd: false,
         isFinish: false,
+        currentVideoIdStore: 1,
         showInfoModal: false,
         showImprintModal: false,
         showPrivacyModal: false,
@@ -83,6 +84,64 @@ export default new Vuex.Store({
         isFS(state, data) {
             state.isFS = data;
         },
+        shareBtn(state) {
+            if (state.currentVideoIdStore == 1) {
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: 'https://date-nina.rum.dev/',
+                    quote: 'Date Nina! Kann ich nur empfehlen!'
+                }, function (response: string) {
+                    //
+                });
+            } else if (state.currentVideoIdStore == 5) {
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: 'https://date-nina.rum.dev/',
+                    quote: 'Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... :( Vielleicht machst du es ja besser?'
+                }, function (response: string) {
+                    //
+                });
+            } else if (state.currentVideoIdStore == 7) {
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: 'https://date-nina.rum.dev/',
+                    quote: 'Ich habe das Date mit Nina versaut... Schade! Vielleicht machst du es besser?'
+                }, function (response: string) {
+                    //
+                });
+            } else if (state.currentVideoIdStore == 8) {
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: 'https://date-nina.rum.dev/',
+                    quote: 'Ich las ein SMS beim Autofahren! Vielleicht machst du es besser?'
+                }, function (response: string) {
+                    //
+                });
+            } else if (state.isEnd) {
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: 'https://date-nina.rum.dev/',
+                    quote: 'Ich bin betrunken Auto gefahren! Vielleicht machst du es besser?'
+                }, function (response: string) {
+                    //
+                });
+            } else if (state.isFinish) {
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: 'https://date-nina.rum.dev/',
+                    quote: 'Ich habe Nina erfolgreich durch ein Date geführt... Hast du auch Lust?'
+                }, function (response: string) {
+                    //
+                });
+            }
+
+        },
         addInput(state) {
             state.counter += 1
             if (state.counter <= state.maxFieldNumber) {
@@ -103,6 +162,9 @@ export default new Vuex.Store({
             }
             state.counter -= 1
             state.friendsData.pop()
+        },
+        currentVideoIdStore(state) {
+            state.currentVideoIdStore ++;
         },
     },
     actions: {
@@ -153,6 +215,12 @@ export default new Vuex.Store({
         },
         isFS(context, data) {
             context.commit('isFS', data)
+        },
+        shareBtn(context, data) {
+            context.commit('shareBtn', data)
+        },
+        currentVideoIdStore(context, data) {
+            context.commit('currentVideoIdStore', data)
         },
     },
     modules: {}

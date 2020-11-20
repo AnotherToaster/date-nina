@@ -1,5 +1,5 @@
 <template>
-  <div class="row footer_wrapper align-items-center">
+  <div class="row align-items-center">
     <div class="col-lg-2 col-md-3 col-12 logo_wrapper">
       <a href="https://www.roadcross.ch/" target="_blank">
         <img src="img/logo_raodcross.png" class="logo_redCross">
@@ -36,7 +36,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class Sitefooter extends Vue {
+export default class FooterComponent extends Vue {
   siteContent: Array<string>;
   content: any;
   currentLanguage: string;
@@ -61,43 +61,4 @@ export default class Sitefooter extends Vue {
 </script>
 
 <style scoped lang="less">
-.footer_wrapper {
-  border-top: #666 2px solid;
-  vertical-align: top;
-  padding-top: 15px;
-
-  a {
-    font-size: 16px;
-    margin: 5px 0 5px 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: #666;
-    transition: 0.3s;
-
-    @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-      font-size: 12px;
-    }
-
-    &:hover {
-      color: #fff;
-    }
-  }
-
-  a:not([href]) {
-    text-decoration: none;
-    color: #666;
-    transition: 0.3s;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-
-  .logo_redCross {
-    @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-      margin: 5px 0;
-    }
-  }
-
-}
 </style>

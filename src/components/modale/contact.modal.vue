@@ -19,7 +19,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <input-field></input-field>
+            <ContactForm/>
           </div>
         </div>
       </div>
@@ -37,11 +37,11 @@
 
 <script lang="ts">
 import {Component, Vue, Watch} from 'vue-property-decorator';
-import InputField from '@/components/inputField.vue'
+import ContactForm from '@/components/forms/contactForm.vue'
 
 @Component({
   components: {
-    InputField
+    ContactForm,
   }
 })
 export default class ContactModal extends Vue {

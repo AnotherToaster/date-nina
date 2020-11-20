@@ -73,7 +73,7 @@ export default class InfoModal extends Vue {
     super();
     this.content = this.$store.state.siteData;
     this.infoModal = this.$store.state.siteData.modal.infoModal;
-    this.helpers = this.$store.state.siteData.modal.infoModal.helpers;
+    this.helpers = this.infoModal.helpers;
     this.title = this.infoModal.title;
     this.IntroText1 = this.infoModal.intro_text1;
     this.IntroText2 = this.infoModal.intro_text2;
