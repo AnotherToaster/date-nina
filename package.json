@@ -10,7 +10,6 @@
   "dependencies": {
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
-    "fb": "^2.0.0",
     "twitter-widgets": "^2.0.0",
     "vee-validate": "^3.4.3",
     "vue": "^2.6.11",

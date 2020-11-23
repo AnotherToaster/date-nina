@@ -45,7 +45,7 @@
           "introText": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ...",
           "a": {
             "videoURL": "videos/de/step_1.mp4",
-            "isEnd": false
+            "badEnd": false
           }
         },
         "fr": {
@@ -55,7 +55,7 @@
           "introText": "NINA T'ATTEND POUR UN RENDEZ-VOUS. EST-CE QUE CELA VA MARCHER? C'EST TOI QUI DÉCIDES ...",
           "a": {
             "videoURL": "videos/fr/step_1.mp4",
-            "isEnd": false
+            "badEnd": false
           }
         },
         "it": {
@@ -65,7 +65,7 @@
           "introText": "NINA HA UN APPUNTAMENTO CON TE E TI ASPETTA. DECIDI TU SE ANDRÀ A BUON FINE ...",
           "a": {
             "videoURL": "videos/it/step_1.mp4",
-            "isEnd": false
+            "badEnd": false
           }
         }
       }
@@ -216,7 +216,7 @@
           },
           "b": {
             "videoURL": "videos/de/step_5b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
             "endTextFail": "Lass dich nicht provozieren, wenn du fährst."
           }
@@ -233,7 +233,7 @@
           },
           "b": {
             "videoURL": "videos/fr/step_5b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
             "endTextFail": "Sur la route, ne te laisse pas provoquer."
           }
@@ -250,7 +250,7 @@
           },
           "b": {
             "videoURL": "videos/it/step_5b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
             "endTextFail": "Non lasciarti provocare quando guidi."
           }
@@ -317,7 +317,7 @@
           },
           "b": {
             "videoURL": "videos/de/step_7b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
             "endTextFail": "Bleib klar im Kopf. Dann ist alles klar beim Fahren."
           }
@@ -334,7 +334,7 @@
           },
           "b": {
             "videoURL": "videos/fr/step_7b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
             "endTextFail": "Garde les idées bien claires dans ta tête, et tout restera clair sur la route."
           }
@@ -351,7 +351,7 @@
           },
           "b": {
             "videoURL": "videos/it/step_7b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
             "endTextFail": "Resta lucido. E sarai lucido anche alla guida."
           }
@@ -375,7 +375,7 @@
           },
           "b": {
             "videoURL": "videos/de/step_8b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
             "endTextFail": "Hände weg vom Handy, wenn du fährst."
           }
@@ -392,7 +392,7 @@
           },
           "b": {
             "videoURL": "videos/fr/step_8b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
             "endTextFail": "Pas touche au portable quand on conduit."
           }
@@ -409,7 +409,7 @@
           },
           "b": {
             "videoURL": "videos/it/step_8b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
             "endTextFail": "Giù le mani dal cellulare quando guidi."
           }
@@ -418,25 +418,26 @@
     },
     "9": {
       "next": {
-        "step": "happyEnd"
+        "step": ""
       },
       "content": {
         "de": {
           "decAText": "",
           "decBText": "",
-          "linktext": "Neues Date",
+          "linktext": "",
           "backLink": "8a",
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
           "a": {
             "videoURL": "videos/de/step_9a.mp4",
-            "isFinish": true,
+            "goodEnd": true,
+            "btnText": "Neues Date",
             "endText": "WAR EINE GUTE ENTSCHEIDUNG, DICH ZU DATEN.",
             "endTextSmall": "Aber ich bin ja nicht die Einzige von uns beiden, die gute Entscheidungen trifft..."
           },
           "b": {
             "videoURL": "videos/de/step_9b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Im richtigen Leben hast du nur eine Chance, dich richtig zu entscheiden.",
             "endTextFail": "Entscheide dich gegen Alkohol am Steuer und für das Leben."
           }
@@ -450,13 +451,13 @@
           "altFinishBtnText": "Retour à la décision",
           "a": {
             "videoURL": "videos/fr/step_9a.mp4",
-            "isFinish": true,
+            "goodEnd": true,
             "endText": "J'AI BIEN FAIT DE SORTIR AVEC TOI.",
             "endTextSmall": "Mais entre nous, je ne suis pas la seule à prendre de bonnes décisions... "
           },
           "b": {
             "videoURL": "videos/fr/step_9b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Dans la vraie vie, tu n’as qu’une seule chance de prendre la bonne décision.",
             "endTextFail": "Renonce à l'alcool au volant et choisis la vie."
           }
@@ -470,13 +471,13 @@
           "altFinishBtnText": "Torna alla scelta",
           "a": {
             "videoURL": "videos/it/step_9a.mp4",
-            "isFinish": true,
+            "goodEnd": true,
             "endText": "OTTIMA DECISIONE QUELLA DI INCONTRARTI.",
             "endTextSmall": "Ma non sono certo l'unica tra noi due, a prendere le decisioni giuste... "
           },
           "b": {
             "videoURL": "videos/it/step_9b.mp4",
-            "isEnd": true,
+            "badEnd": true,
             "endText": "Nella vita vera hai un’unica opportunità per fare la scelta giusta.",
             "endTextFail": "Scegli contro l'alcool al volante, scegli la vita."
           }

@@ -6,12 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         showVideoControls: true,
-        videoUrl: 'videos/de/step_1.mp4',
-        videoPosterUrl: '/img/introscreen.jpg',
         showChoices: false,
-        isEnd: false,
-        isFinish: false,
-        currentVideoIdStore: 1,
+        badEnd: false,
+        goodEnd: false,
         showInfoModal: false,
         showImprintModal: false,
         showPrivacyModal: false,
@@ -24,14 +21,12 @@ export default new Vuex.Store({
         maxFieldNumber: 5,
         counter: 1,
         showContactSuccess: false,
-        currentLanguage: 'de',
+        currentLanguage: '',
         switchLang: false,
-        isFS: false,
         siteData: [],
         userData: {
             clientName: '',
             clientEmail: '',
-
         },
         friendsData: [
             {
@@ -39,7 +34,18 @@ export default new Vuex.Store({
                 friendName: '',
                 friendEmail: '',
             }
-        ]
+        ],
+        video: {
+/*
+            videoPlayer: document.getElementById('video'),
+*/
+            isFullScreen: false,
+            videoPosterUrl: '/img/introscreen.jpg',
+            videoUrl: '',
+            Id: '1',
+            backFromFinish: false,
+            decision: 'a',
+        }
     },
     mutations: {
         siteContent(state, data) {
@@ -81,11 +87,12 @@ export default new Vuex.Store({
         switchLang(state, data) {
             state.currentLanguage = data;
         },
-        isFS(state, data) {
-            state.isFS = data;
+        isFullScreen(state, data) {
+            state.video.isFullScreen = data;
         },
+
         shareBtn(state) {
-            if (state.currentVideoIdStore == 1) {
+            if (state.video.Id == '1') {
                 FB.ui({
                     display: 'popup',
                     method: 'share',
@@ -94,7 +101,7 @@ export default new Vuex.Store({
                 }, function (response: string) {
                     //
                 });
-            } else if (state.currentVideoIdStore == 5) {
+            } else if (state.video.Id == '5') {
                 FB.ui({
                     display: 'popup',
                     method: 'share',
@@ -103,7 +110,7 @@ export default new Vuex.Store({
                 }, function (response: string) {
                     //
                 });
-            } else if (state.currentVideoIdStore == 7) {
+            } else if (state.video.Id == '7') {
                 FB.ui({
                     display: 'popup',
                     method: 'share',
@@ -112,7 +119,7 @@ export default new Vuex.Store({
                 }, function (response: string) {
                     //
                 });
-            } else if (state.currentVideoIdStore == 8) {
+            } else if (state.video.Id == '8') {
                 FB.ui({
                     display: 'popup',
                     method: 'share',
@@ -121,7 +128,7 @@ export default new Vuex.Store({
                 }, function (response: string) {
                     //
                 });
-            } else if (state.isEnd) {
+            } else if (state.badEnd) {
                 FB.ui({
                     display: 'popup',
                     method: 'share',
@@ -130,7 +137,7 @@ export default new Vuex.Store({
                 }, function (response: string) {
                     //
                 });
-            } else if (state.isFinish) {
+            } else if (state.goodEnd) {
                 FB.ui({
                     display: 'popup',
                     method: 'share',
@@ -140,8 +147,8 @@ export default new Vuex.Store({
                     //
                 });
             }
-
         },
+
         addInput(state) {
             state.counter += 1
             if (state.counter <= state.maxFieldNumber) {
@@ -163,8 +170,52 @@ export default new Vuex.Store({
             state.counter -= 1
             state.friendsData.pop()
         },
-        currentVideoIdStore(state) {
-            state.currentVideoIdStore ++;
+        setVideoId(state, data) {
+            state.video.Id = data;
+        },
+        setVideoUrl(state, data) {
+            state.video.videoUrl = data;
+        },
+        backFromFinish(state, data) {
+            state.video.backFromFinish = data;
+        },
+        startDate(state) {
+            state.video.videoPosterUrl = '';
+            state.video.Id = '1';
+            state.video.videoUrl = 'videos/' + [state.currentLanguage] + '/step_1.mp4';
+        },
+        playVideo(state, data) {
+            state.showChoices = false;
+            state.showVideoControls = false;
+            state.goodEnd = false;
+            state.badEnd = false;
+            setTimeout(() => {
+                /*
+                state.video.videoPlayer.play();
+                */
+/*
+                document.getElementById('video').playbackRate = 12;
+*/
+                if (data) {
+                    document.getElementById('video').currentTime = (document.getElementById('video').duration / 100) * 90;
+                }
+                document.getElementById('video').play();
+            }, 150)
+        },
+        badEnd(state, data) {
+            state.badEnd = data;
+        },
+        goodEnd(state, data) {
+            state.goodEnd = data;
+        },
+        showChoices(state, data) {
+            state.showChoices = data;
+        },
+        showVideoControls(state, data) {
+            state.showVideoControls = data;
+        },
+        setDecision(state, data) {
+            state.video.decision = data;
         },
     },
     actions: {
@@ -213,14 +264,41 @@ export default new Vuex.Store({
         switchLang(context, lang) {
             context.commit('switchLang', lang)
         },
-        isFS(context, data) {
-            context.commit('isFS', data)
+        isFullScreen(context, data) {
+            context.commit('isFullScreen', data)
         },
         shareBtn(context, data) {
             context.commit('shareBtn', data)
         },
-        currentVideoIdStore(context, data) {
-            context.commit('currentVideoIdStore', data)
+        setVideoId(context, data) {
+            context.commit('setVideoId', data)
+        },
+        setVideoUrl(context, data) {
+            context.commit('setVideoUrl', data)
+        },
+        backFromFinish(context, data) {
+            context.commit('backFromFinish', data)
+        },
+        startDate(context, data) {
+            context.commit('startDate', data)
+        },
+        playVideo(context, data) {
+            context.commit('playVideo', data)
+        },
+        badEnd(context, data) {
+            context.commit('badEnd', data)
+        },
+        goodEnd(context, data) {
+            context.commit('goodEnd', data)
+        },
+        showVideoControls(context, data) {
+            context.commit('showVideoControls', data)
+        },
+        showChoices(context, data) {
+            context.commit('showChoices', data)
+        },
+        setDecision(context, data) {
+            context.commit('setDecision', data)
         },
     },
     modules: {}

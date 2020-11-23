@@ -5,7 +5,11 @@
     <a class="mb-3 mr-2" target="_blank" id="tweet">
       <i class="fab fa-twitter-square"></i>
     </a>
-    <i class="fab fa-whatsapp"></i>
+
+    <a href="whatsapp://send?text=DateNina!" target="_blank" id="whatsapp-message">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
   </div>
 </template>
 
@@ -17,18 +21,18 @@ import store from '@/store';
 @Component
 export default class SocialMedia extends Vue {
   tweetElm: any;
-  currentVideoIdStore: number;
+  currentVideoId: string;
 
   constructor() {
     super();
     this.tweetElm = document.getElementById('tweet');
-    this.currentVideoIdStore = store.state.currentVideoIdStore;
+    this.currentVideoId = store.state.video.Id;
   }
 
   mounted() {
 
     this.tweetElm = document.getElementById('tweet');
-    const tweetUrl = 'Ich%20wurde%20beim%20Rasen%20erwischt!%20Und%20das%20beim%20Date%20mit%20Nina...%20:(%20Vielleicht%20machst%20du%20es%20ja%20besser?';
+    const tweetUrl = 'Date Nina! Kann ich nur empfehlen!';
     const strLink = "https://twitter.com/intent/tweet?text=" + tweetUrl + '';
     this.tweetElm.setAttribute("href", strLink);
   }
