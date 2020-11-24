@@ -79,7 +79,6 @@
       </aside>
 
     </div>
-
   </div>
 </template>
 
@@ -109,11 +108,13 @@ import store from '@/store'
 export default class App extends Vue {
   isFullScreen: boolean;
   videoELm: any;
+  currentLanguage: string;
 
   constructor() {
     super();
-    this.isFullScreen = this.$store.state.isFS;
+    this.isFullScreen = this.$store.state.video.isFullScreen;
     this.videoELm = document.getElementById('video');
+    this.currentLanguage = this.$store.state.currentLanguage;
   }
 
   mounted() {
@@ -122,7 +123,7 @@ export default class App extends Vue {
       this.$modal.show('info-modal')
     }
     if (this.showImprintModal) {
-      this.$modal.show('contact-modal')
+      this.$modal.show('imprint-modal')
     }
     if (this.showPrivacyModal) {
       this.$modal.show('privacy-modal')
@@ -169,7 +170,7 @@ export default class App extends Vue {
     )
     document.addEventListener('fullscreenchange', function () {
       if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
-        store.dispatch('isFS');
+        store.dispatch('isFullScreen');
       }
     })
   }
@@ -340,6 +341,4 @@ footer {
   }
 
 }
-
-
 </style>

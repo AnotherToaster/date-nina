@@ -14,9 +14,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <p>{{ IntroText1 }}</p>
-            <p>{{ IntroText2 }}</p>
-            <p>{{ IntroText3 }}</p>
+            <p>{{ introText1 }}</p>
+            <p>{{ introText2 }}</p>
+            <p>{{ introText3 }}</p>
           </div>
         </div>
         <div class="row">
@@ -29,14 +29,14 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <p>{{ TextList }}</p>
+            <p>{{ textList }}</p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
             <ul>
-              <li v-for="helper in helpers" :key="helper">
-                {{ helper }}
+              <li v-for="supporter in supporters" :key="supporter">
+                {{ supporter }}
               </li>
             </ul>
           </div>
@@ -44,7 +44,7 @@
         <div class="row">
           <div class="col-12">
             <a href="https://www.roadcross.ch/" target="_blank">
-              <img src="img/logo_raodcross.png" class="logo_redCross">
+              <img src="img/logo_roadcross.png" class="logo_redCross">
             </a>
           </div>
         </div>
@@ -61,26 +61,27 @@ export default class InfoModal extends Vue {
   content: Array<string>;
   infoModal: any;
   title: string;
-  IntroText1: string;
-  IntroText2: string;
-  IntroText3: string;
+  currentLanguage: string;
+  introText1: string;
+  introText2: string;
+  introText3: string;
   link1: string;
   link2: string;
-  TextList: string;
-  helpers: Array<object>;
+  textList: string;
+  supporters: Array<object>;
 
   constructor() {
-    super();
-    this.content = this.$store.state.siteData;
+    super();    
     this.infoModal = this.$store.state.siteData.modal.infoModal;
-    this.helpers = this.infoModal.helpers;
-    this.title = this.infoModal.title;
-    this.IntroText1 = this.infoModal.intro_text1;
-    this.IntroText2 = this.infoModal.intro_text2;
-    this.IntroText3 = this.infoModal.intro_text3;
-    this.link1 = this.infoModal.link1;
-    this.link2 = this.infoModal.link2;
-    this.TextList = this.infoModal.text_list;
+    this.currentLanguage = this.$store.state.currentLanguage;
+    this.supporters = this.infoModal[this.currentLanguage].supporters;
+    this.title = this.infoModal[this.currentLanguage].title;
+    this.introText1 = this.infoModal[this.currentLanguage].intro_text1;
+    this.introText2 = this.infoModal[this.currentLanguage].intro_text2;
+    this.introText3 = this.infoModal[this.currentLanguage].intro_text3;
+    this.link1 = this.infoModal[this.currentLanguage].link1;
+    this.link2 = this.infoModal[this.currentLanguage].link2;
+    this.textList = this.infoModal[this.currentLanguage].text_list;
   }
 
   closeModal(modal: string) {

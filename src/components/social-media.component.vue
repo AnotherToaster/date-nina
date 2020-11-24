@@ -6,7 +6,7 @@
       <i class="fab fa-twitter-square"></i>
     </a>
 
-    <a href="whatsapp://send?text=DateNina!" target="_blank" id="whatsapp-message">
+    <a id="whatsapp-message" href="whatsapp://send?text=DateNina!" target="_blank">
       <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -21,20 +21,28 @@ import store from '@/store';
 @Component
 export default class SocialMedia extends Vue {
   tweetElm: any;
-  currentVideoId: string;
+  currentVideoId: any;
+  tweetMsg: any;
+  goodEnd: boolean;
+  badEnd: boolean;
 
   constructor() {
     super();
     this.tweetElm = document.getElementById('tweet');
+    this.badEnd = store.state.badEnd;
+    this.goodEnd = store.state.goodEnd;
     this.currentVideoId = store.state.video.Id;
+    this.tweetMsg = store.state.twitter;
   }
 
   mounted() {
-
+    if (store.state.goodEnd){
+      this.currentVideoId = 10;
+    }
     this.tweetElm = document.getElementById('tweet');
-    const tweetUrl = 'Date Nina! Kann ich nur empfehlen!';
-    const strLink = "https://twitter.com/intent/tweet?text=" + tweetUrl + '';
-    this.tweetElm.setAttribute("href", strLink);
+    const tweetSite = 'https://date-nina.rum.dev/';
+    const tweetUrl = 'https://twitter.com/intent/tweet?text=' +  this.tweetMsg[this.currentVideoId] + ' ' + tweetSite;
+    this.tweetElm.setAttribute('href', tweetUrl);
   }
 
   shareBtn() {
@@ -70,15 +78,20 @@ export default class SocialMedia extends Vue {
 }
 
 
-.fa-whatsapp {
-  color: #49a235;
-  transition: 0.5s;
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    font-size: 25px;
+#whatsapp-message {
+  @media (min-width: 500px) {
+    display: none;
   }
+  .fa-whatsapp {
+    color: #49a235;
+    transition: 0.5s;
+    @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+      font-size: 25px;
+    }
 
-  &:hover {
-    color: #ffffff;
+    &:hover {
+      color: #ffffff;
+    }
   }
 }
 </style>

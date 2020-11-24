@@ -2,7 +2,7 @@
   <div class="row align-items-center">
     <div class="col-lg-2 col-md-3 col-12 logo_wrapper">
       <a href="https://www.roadcross.ch/" target="_blank">
-        <img src="img/logo_raodcross.png" class="logo_redCross">
+        <img src="img/logo_roadcross.png" class="logo_redCross">
       </a>
     </div>
     <div class="col-lg-7 col-md-7 col-12">
@@ -10,10 +10,10 @@
         <div class="col-md-3 col-sm-2 col-auto d-flex justify-content-center">
           <a @click="showModal('Info')" id="info">{{ infoTitle }}</a>
         </div>
-        <div class="col-md-3 col-sm-2 col-auto d-flex justify-content-start">
+        <div class="col-md-3 col-sm-3 col-auto d-flex justify-content-start">
           <a @click="showModal('Imprint')" id="imprint">{{ imprintTitle }}</a>
         </div>
-        <div class="col-md-3 col-sm-2 col-auto d-flex justify-content-start">
+        <div class="col-md-5 col-sm-6 col-auto d-flex justify-content-start">
           <a @click="showModal('Privacy')" id="privacy">{{ privacyTitle }}</a>
         </div>
       </div>
@@ -46,7 +46,6 @@ export default class FooterComponent extends Vue {
 
   constructor() {
     super();
-    this.siteContent = this.$store.state.siteData;
     this.content = this.$store.state.siteData.content;
     this.currentLanguage = this.$store.state.currentLanguage;
     this.infoTitle = this.content[this.currentLanguage]['footer'].info;

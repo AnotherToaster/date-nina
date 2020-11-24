@@ -1,10 +1,27 @@
 {
   "contact": {
-    "addressTitle": "RoadCross Schweiz",
-    "addressCity": "8004 Zürich",
-    "addressTel": "Tel. 044 737 48 29",
-    "addressFax": "Fax 044 737 28 08",
-    "email": "info@roadcross.ch"
+    "de": {
+      "addressTitle": "RoadCross Schweiz",
+      "addressCity": "8004 Zürich",
+      "addressTel": "Tel. 044 737 48 29",
+      "addressFax": "Fax. 044 737 28 08",
+      "email": "info@roadcross.ch"
+    },
+    "fr": {
+      "addressTitle": "RoadCross Suisse",
+      "addressCity": "8004 Zürich",
+      "addressTel": "Tél. 044 737 48 29",
+      "addressFax": "Fax. 044 737 28 08",
+      "email": "info@roadcross.ch"
+    },
+    "it": {
+      "addressTitle": "RoadCross Svizzera",
+      "addressCity": "8004 Zürich",
+      "addressTel": "Tel. 044 737 48 29",
+      "addressFax": "Fax. 044 737 28 08",
+      "email": "info@roadcross.ch"
+    }
+
   },
   "content": {
     "de": {
@@ -445,13 +462,14 @@
         "fr": {
           "decAText": "",
           "decBText": "",
-          "linktext": "Nouveau rancart",
+          "linktext": "",
           "backLink": "8a",
           "text": [],
           "altFinishBtnText": "Retour à la décision",
           "a": {
             "videoURL": "videos/fr/step_9a.mp4",
             "goodEnd": true,
+            "btnText": "Nouveau rancart",
             "endText": "J'AI BIEN FAIT DE SORTIR AVEC TOI.",
             "endTextSmall": "Mais entre nous, je ne suis pas la seule à prendre de bonnes décisions... "
           },
@@ -472,6 +490,7 @@
           "a": {
             "videoURL": "videos/it/step_9a.mp4",
             "goodEnd": true,
+            "btnText": "di più",
             "endText": "OTTIMA DECISIONE QUELLA DI INCONTRARTI.",
             "endTextSmall": "Ma non sono certo l'unica tra noi due, a prendere le decisioni giuste... "
           },
@@ -487,26 +506,74 @@
   },
   "modal": {
     "infoModal": {
-      "title": "«Date Nina» – Der Verkehrssicherheitsfilm von RoadCross Schweiz",
-      "intro_text1": "Den meisten Jugendlichen geht’s wie Nina. Autofahren ist cool, aber bitte ohne Alk, Drogen und Rasen. Also, triff die richtige Entscheidung. Du hast es in der Hand, ob dir der Kick wichtiger ist als deine Zukunft.",
-      "intro_text2": "RoadCross Schweiz kämpft gegen die zu hohe Zahl von jugendlichen Verkehrstoten – nicht mit Regeln und Verboten, sondern durch Aufklärung und Diskussion. Denn leider zeigen auch die neuesten Verkehrsunfallzahlen, dass junge Leute mit Abstand das höchste Risiko verzeichnen, bei einem Unfall in Zusammenhang mit Geschwindigkeit, Alkohol oder Drogen schwer verletzt oder getötet zu werden.",
-      "intro_text3": "Wenn du Fragen zu und über RoadCross Schweiz hast, hier findest du die Antworten:",
-      "link1": "https://www.facebook.com/road.cross",
-      "link2": "https://www.roadcross.ch/",
-      "text_list": "«Date Nina» wurde von RoadCross Schweiz produziert und vom Fonds für Verkehrssicherheit (FVS) unterstützt. Mit grossem Engagement unterstützten den Film zudem:",
-      "helpers": {
-        "1": "Die Zuger Polizei",
-        "2": "Die Freiwillige Feuerwehr der Stadt Zug FFZ",
-        "3": "Der Rettungsdienst des Kantons Zug RDZ",
-        "4": "Die Gemeinde Steinhausen",
-        "5": "Das Tiefbauamt des Kantons Zug"
+      "de": {
+        "title": "«Date Nina» – Der Verkehrssicherheitsfilm von RoadCross Schweiz",
+        "intro_text1": "Den meisten Jugendlichen geht’s wie Nina. Autofahren ist cool, aber bitte ohne Alk, Drogen und Rasen. Also, triff die richtige Entscheidung. Du hast es in der Hand, ob dir der Kick wichtiger ist als deine Zukunft.",
+        "intro_text2": "RoadCross Schweiz kämpft gegen die zu hohe Zahl von jugendlichen Verkehrstoten – nicht mit Regeln und Verboten, sondern durch Aufklärung und Diskussion. Denn leider zeigen auch die neuesten Verkehrsunfallzahlen, dass junge Leute mit Abstand das höchste Risiko verzeichnen, bei einem Unfall in Zusammenhang mit Geschwindigkeit, Alkohol oder Drogen schwer verletzt oder getötet zu werden.",
+        "intro_text3": "Wenn du Fragen zu und über RoadCross Schweiz hast, hier findest du die Antworten:",
+        "link1": "https://www.facebook.com/road.cross",
+        "link2": "https://www.roadcross.ch/",
+        "text_list": "«Date Nina» wurde von RoadCross Schweiz produziert und vom Fonds für Verkehrssicherheit (FVS) unterstützt. Mit grossem Engagement unterstützten den Film zudem:",
+        "supporters": {
+          "1": "Die Zuger Polizei",
+          "2": "Die Freiwillige Feuerwehr der Stadt Zug FFZ",
+          "3": "Der Rettungsdienst des Kantons Zug RDZ",
+          "4": "Die Gemeinde Steinhausen",
+          "5": "Das Tiefbauamt des Kantons Zug"
+        }
+      },
+      "fr": {
+        "title": "« Rancard avec Nina » – Le film de RoadCross Suisse sur la sécurité routière",
+        "intro_text1": "Nina vit comme la plupart des jeunes. Conduire, c'est cool, mais sans alcool, sans drogue et en restant citoyen. Alors prends les bonnes décisions. À toi de voir si tu fais passer une poussée d'adrénaline avant ton avenir.",
+        "intro_text2": "RoadCross Schweiz kämpft gegen die zu hohe Zahl von jugendlichen Verkehrstoten – nicht mit Regeln und Verboten, sondern durch Aufklärung und Diskussion. Denn leider zeigen auch die neuesten Verkehrsunfallzahlen, dass junge Leute mit Abstand das höchste Risiko verzeichnen, bei einem Unfall in Zusammenhang mit Geschwindigkeit, Alkohol oder Drogen schwer verletzt oder getötet zu werden.RoadCross Suisse lutte pour faire baisser le taux de mortalité des jeunes sur la route et ce, sans poser de règles ni d'interdits, mais en proposant des discussions et des explications. Car malheureusement, les nouveaux chiffres relatifs à la mortalité routière prouvent que ce sont de loin les jeunes qui sont le plus touchés par les accidents graves voire mortels dus à la vitesse, à l'alcool ou aux drogues.",
+        "intro_text3": "Si tu as des questions sur RoadCross Suisse, tu trouveras les réponses ici:",
+        "link1": "https://www.facebook.com/road.cross",
+        "link2": "https://www.roadcross.ch/",
+        "text_list": "« Rancard avec Nina » a été produit par RoadCross Suisse et soutenu par le Fonds de sécurité routière (FSR). Le film est également vivement supporté par:",
+        "supporters": {
+          "1": "la police de Zoug",
+          "2": "les pompiers volontaires de la ville de Zoug (FFZ)",
+          "3": "les secouristes du canton de Zoug (RDZ)",
+          "4": "la collectivité locale de Steinhausen",
+          "5": "le service de voirie du canton de Zoug"
+        }
+      },
+      "it": {
+        "title": "«Date Nina» – Il video sulla sicurezza nel traffico di RoadCross Svizzera",
+        "intro_text1": "La maggior parte dei giovani la pensa come Nina. Guidare è bello, ma niente alcol, droga e corse. Quindi, prendi la decisione giusta. A te la scelta, se apparire è più importante del tuo futuro.",
+        "intro_text2": "RoadCross Schweiz kämpft gegen die zu hohe Zahl von jugendlichen Verkehrstoten – nicht mit Regeln und Verboten, sondern durch Aufklärung und Diskussion. Denn leider zeigen auch die neuesten Verkehrsunfallzahlen, dass junge Leute mit Abstand das höchste Risiko verzeichnen, bei einem Unfall in Zusammenhang mit Geschwindigkeit, Alkohol oder Drogen schwer verletzt oder getötet zu werden.RoadCross Svizzera sta lottando contro l'alto numero di giovani vittime del traffico, e lo fa con il dialogo e la discussione e non con regole e divieti. Purtroppo le nuove statistiche degli incidenti parlano chiaro, i giovani sono nettamente più a rischio quando le cause degli incidenti gravi o mortali sono da attribuirsi alla velocità, all'alcol o alle droghe.",
+        "intro_text3": "Se hai qualche domanda in merito a RoadCross Svizzera, qui trovi tutte le risposte:",
+        "link1": "https://www.facebook.com/road.cross",
+        "link2": "https://www.roadcross.ch/",
+        "text_list": "«Date Nina» è stato prodotto da RoadCross Svizzera con il supporto del Fondo di sicurezza stradale (FSS). Con grande impegno, il video è stato sponsorizzato anche da:",
+        "supporters": {
+          "1": "La Polizia di Zugo",
+          "2": "Il Corpo Pompieri volontari di Zugo FFZ",
+          "3": "Il Servizio di emergenza del Canton Zugo RDZ",
+          "4": "Il Comune di Steinhausen",
+          "5": "L'Ufficio ingegneria civile del Canton Zugo"
+        }
       }
     },
     "imprintModal": {
-      "title": "Impressum",
-      "introText": "Verantwortlich für den Inhalt:",
-      "subtitle": "Copyright",
-      "subtitleText": "Die Weiterverwendung von Bild und Text bedarf der ausdrücklichen Erlaubnis von RoadCross Schweiz."
+      "de": {
+        "title": "Impressum",
+        "introText": "Verantwortlich für den Inhalt:",
+        "subtitle": "Copyright",
+        "subtitleText": "Die Weiterverwendung von Bild und Text bedarf der ausdrücklichen Erlaubnis von RoadCross Schweiz."
+      },
+      "fr": {
+        "title": "Impressum",
+        "introText": "Responsable du contenu:",
+        "subtitle": "Copyright",
+        "subtitleText": "L'utilisation des images et du texte requiert l'autorisation expresse de RoadCross Suisse."
+      },
+      "it": {
+        "title": "Redazionale",
+        "introText": "Responsabile dei contenuti:",
+        "subtitle": "Copyright",
+        "subtitleText": "Per poter utilizzare immagini e testo è necessario il consenso scritto da parte di RoadCross Svizzera."
+      }
     },
     "privacyModal": {
       "title": "Privacy Policy / Datenschutz",

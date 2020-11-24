@@ -45,7 +45,16 @@ export default new Vuex.Store({
             Id: '1',
             backFromFinish: false,
             decision: 'a',
-        }
+        },
+        twitter: {
+            1: 'Date Nina! Kann ich nur empfehlen!',
+            5: 'Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... :( Vielleicht machst du es ja besser?',
+            7: 'Ich habe das Date mit Nina versaut... Schade! Vielleicht machst du es besser?',
+            8: 'Ich las ein SMS beim Autofahren! Vielleicht machst du es besser?',
+            9: 'Ich bin betrunken Auto gefahren! Vielleicht machst du es besser?',
+            10: 'Ich habe Nina erfolgreich durch ein Date geführt... Hast du auch Lust?',
+        },
+
     },
     mutations: {
         siteContent(state, data) {
@@ -217,6 +226,9 @@ export default new Vuex.Store({
         setDecision(state, data) {
             state.video.decision = data;
         },
+        setTweet(state, data) {
+            state.tweet = data;
+        },
     },
     actions: {
         siteContent(context, data) {
@@ -299,6 +311,9 @@ export default new Vuex.Store({
         },
         setDecision(context, data) {
             context.commit('setDecision', data)
+        },
+        setTweet(context, data) {
+            context.commit('setTweet', data)
         },
     },
     modules: {}
