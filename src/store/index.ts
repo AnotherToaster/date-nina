@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import ShareDialogParams = facebook.ShareDialogParams;
+import ShareDialogResponse = facebook.ShareDialogResponse;
 
 Vue.use(Vuex)
 
@@ -36,25 +38,15 @@ export default new Vuex.Store({
             }
         ],
         video: {
-/*
-            videoPlayer: document.getElementById('video'),
-*/
             isFullScreen: false,
             videoPosterUrl: '/img/introscreen.jpg',
             videoUrl: '',
             Id: '1',
             backFromFinish: false,
             decision: 'a',
-        },
-        twitter: {
-            1: 'Date Nina! Kann ich nur empfehlen!',
-            5: 'Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... :( Vielleicht machst du es ja besser?',
-            7: 'Ich habe das Date mit Nina versaut... Schade! Vielleicht machst du es besser?',
-            8: 'Ich las ein SMS beim Autofahren! Vielleicht machst du es besser?',
-            9: 'Ich bin betrunken Auto gefahren! Vielleicht machst du es besser?',
-            10: 'Ich habe Nina erfolgreich durch ein Date geführt... Hast du auch Lust?',
-        },
+            videoContent: {}
 
+        },
     },
     mutations: {
         siteContent(state, data) {
@@ -100,60 +92,19 @@ export default new Vuex.Store({
             state.video.isFullScreen = data;
         },
 
-        shareBtn(state) {
-            if (state.video.Id == '1') {
-                FB.ui({
-                    display: 'popup',
-                    method: 'share',
-                    href: 'https://date-nina.rum.dev/',
-                    quote: 'Date Nina! Kann ich nur empfehlen!'
-                }, function (response: string) {
-                    //
-                });
-            } else if (state.video.Id == '5') {
-                FB.ui({
-                    display: 'popup',
-                    method: 'share',
-                    href: 'https://date-nina.rum.dev/',
-                    quote: 'Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... :( Vielleicht machst du es ja besser?'
-                }, function (response: string) {
-                    //
-                });
-            } else if (state.video.Id == '7') {
-                FB.ui({
-                    display: 'popup',
-                    method: 'share',
-                    href: 'https://date-nina.rum.dev/',
-                    quote: 'Ich habe das Date mit Nina versaut... Schade! Vielleicht machst du es besser?'
-                }, function (response: string) {
-                    //
-                });
-            } else if (state.video.Id == '8') {
-                FB.ui({
-                    display: 'popup',
-                    method: 'share',
-                    href: 'https://date-nina.rum.dev/',
-                    quote: 'Ich las ein SMS beim Autofahren! Vielleicht machst du es besser?'
-                }, function (response: string) {
-                    //
-                });
-            } else if (state.badEnd) {
-                FB.ui({
-                    display: 'popup',
-                    method: 'share',
-                    href: 'https://date-nina.rum.dev/',
-                    quote: 'Ich bin betrunken Auto gefahren! Vielleicht machst du es besser?'
-                }, function (response: string) {
-                    //
-                });
-            } else if (state.goodEnd) {
-                FB.ui({
-                    display: 'popup',
-                    method: 'share',
-                    href: 'https://date-nina.rum.dev/',
-                    quote: 'Ich habe Nina erfolgreich durch ein Date geführt... Hast du auch Lust?'
-                }, function (response: string) {
-                    //
+        shareBtn(state, data) {
+            let shareObj: ShareDialogParams = {href: "", method: "share"};
+
+            shareObj = {
+                display: 'popup',
+                method: 'share',
+                href: 'https://date-nina.rum.dev/',
+                quote: data
+            };
+
+            if(shareObj) {
+                FB.ui(shareObj, function (response: ShareDialogResponse) {
+                    console.log(response);
                 });
             }
         },
@@ -185,6 +136,9 @@ export default new Vuex.Store({
         setVideoUrl(state, data) {
             state.video.videoUrl = data;
         },
+        setVideoContent(state, data) {
+            state.video.videoContent = data;
+        },
         backFromFinish(state, data) {
             state.video.backFromFinish = data;
         },
@@ -198,18 +152,16 @@ export default new Vuex.Store({
             state.showVideoControls = false;
             state.goodEnd = false;
             state.badEnd = false;
-            setTimeout(() => {
-                /*
-                state.video.videoPlayer.play();
-                */
+            const videoContainer: HTMLVideoElement  =  document.getElementById('video');
+            if (data && videoContainer) {
+                videoContainer.currentTime = (videoContainer.duration / 100) * 90;
+            }
 /*
-                document.getElementById('video').playbackRate = 12;
+            videoContainer.playbackRate = 12;
 */
-                if (data) {
-                    document.getElementById('video').currentTime = (document.getElementById('video').duration / 100) * 90;
-                }
-                document.getElementById('video').play();
-            }, 150)
+            setTimeout(() => {
+                videoContainer.play();
+            }, 25)
         },
         badEnd(state, data) {
             state.badEnd = data;
@@ -225,9 +177,6 @@ export default new Vuex.Store({
         },
         setDecision(state, data) {
             state.video.decision = data;
-        },
-        setTweet(state, data) {
-            state.tweet = data;
         },
     },
     actions: {
@@ -288,6 +237,9 @@ export default new Vuex.Store({
         setVideoUrl(context, data) {
             context.commit('setVideoUrl', data)
         },
+        setVideoContent(context, data) {
+            context.commit('setVideoContent', data)
+        },
         backFromFinish(context, data) {
             context.commit('backFromFinish', data)
         },
@@ -311,9 +263,6 @@ export default new Vuex.Store({
         },
         setDecision(context, data) {
             context.commit('setDecision', data)
-        },
-        setTweet(context, data) {
-            context.commit('setTweet', data)
         },
     },
     modules: {}

@@ -2,17 +2,24 @@
   <div class="col-12">
     <p class="endText">{{ endText }}</p>
     <p class="endText_fail mb-sm-5">{{ endTextFail }}</p>
-    <button id="goBack" class="btn btn-secondary end_btn mb-3" @click="goBack()"><i
-        class="fas fa-angle-double-left"></i>
+    <button id="goBack" class="btn btn-secondary end_btn mb-5" @click="goBack()">
+      <i class="fas fa-chevron-left firstArrow ml-3 p-0"></i>
+      <i class="fas fa-chevron-left secondArrow mr-3 p-0"></i>
       {{ altFinishBtnText }}
     </button>
+    <SocialMedia/>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
+import SocialMedia from "@/components/social-media.component.vue";
 
-@Component
+@Component({
+  components: {
+    SocialMedia
+  }
+})
 export default class BadFinishComponent extends Vue {
   videoSteps: string;
   video: any;
@@ -90,14 +97,29 @@ export default class BadFinishComponent extends Vue {
 }
 
 .end_btn {
-  background-image: linear-gradient(#4702fb, #3402b6);
-  color: #fff3cd;
+  background-color: #dd2e44;
+  border: 1px solid #dd2e44;
+  color: #fff;
   border-radius: 10px;
   max-width: 400px;
   height: 60px;
   font-size: 20px;
   position: relative;
-  border: none;
+
+  &:hover {
+    color: #000;
+    background-color: #f8f9fa;
+    box-shadow: 10px 5px 15px #dd2e44;
+    .fas {
+      transform: scale(1.3);
+    }
+    .firstArrow {
+      animation: color_anim 1s infinite 0.4s;
+    }
+    .secondArrow {
+      animation: color_anim 1s infinite 0.2s;
+    }
+  }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 220px;
     height: 40px;
@@ -114,13 +136,17 @@ export default class BadFinishComponent extends Vue {
       font-size: 15px;
     }
   }
+}
 
-  &:hover {
-    color: #d48888;
-
-    .fas {
-      transform: scale(1.3);
-    }
+@keyframes color_anim {
+  0% {
+    color: #000;
+  }
+  50% {
+    color: #dd2e44;
+  }
+  100% {
+    color: #000;
   }
 }
 </style>

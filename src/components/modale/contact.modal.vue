@@ -56,6 +56,7 @@ export default class ContactModal extends Vue {
   friendsData: Array<string>;
   contactModal: any;
   title: string;
+  currentLanguage: string;
   text: string;
   maxFieldsFriends: number;
   formModel = {};
@@ -63,11 +64,12 @@ export default class ContactModal extends Vue {
   constructor() {
     super();
     this.content = this.$store.state.siteData;
+    this.currentLanguage = this.$store.state.currentLanguage;
     this.userData = this.$store.state.userData;
     this.friendsData = this.$store.state.friendsData;
     this.contactModal = this.$store.state.siteData.modal.contactModal;
-    this.title = this.contactModal.title;
-    this.text = this.contactModal.text;
+    this.title = this.contactModal[this.currentLanguage].title;
+    this.text = this.contactModal[this.currentLanguage].text;
     this.maxFieldsFriends = this.$store.state.maxFieldNumber;
   }
 

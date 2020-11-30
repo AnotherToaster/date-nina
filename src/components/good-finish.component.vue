@@ -6,16 +6,23 @@
     <p class="endText">{{ endText }}</p>
     <p class="endTextSmall mb-sm-5">{{ endTextSmall }}</p>
     <button id="decBack" @click="startDate()"
-            class="btn btn-secondary end_btn mb-3"><i class="fas fa-arrow-right"></i>
+            class="btn btn-secondary end_btn mb-5"><i class="fas fa-arrow-right"></i>
       {{ btnText }}
     </button>
+    <SocialMedia/>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
+import SocialMedia from "@/components/social-media.component.vue";
 
-@Component
+
+@Component({
+  components: {
+    SocialMedia
+  }
+})
 export default class GoodFinishComponent extends Vue {
   videoSteps: string;
   video: any;
@@ -82,7 +89,6 @@ export default class GoodFinishComponent extends Vue {
 }
 
 .end_btn {
-  background-image: linear-gradient(#4702fb, #3402b6);
   color: #fff3cd;
   border-radius: 10px;
   width: 400px;

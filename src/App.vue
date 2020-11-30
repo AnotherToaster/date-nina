@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <div class="bg_wrapper">
+    <div class="bg_wrapper" v-bind:class="{screenBlur: $store.state.showContactModal || $store.state.showPrivacyModal || $store.state.showImprintModal || $store.state.showInfoModal}">
     </div>
     <div class="main_wrapper">
 
@@ -9,7 +9,7 @@
 
       <main class="container align-content-center">
 
-        <div class="video_wrapper">
+        <div class="video_wrapper" v-bind:class="{screenBlur: $store.state.showContactModal || $store.state.showPrivacyModal || $store.state.showImprintModal || $store.state.showInfoModal}">
           <VideoComponent/>
         </div>
 
@@ -22,7 +22,7 @@
 
       <footer class="container">
 
-        <div class="footer_wrapper">
+        <div class="footer_wrapper" v-bind:class="{screenBlur: $store.state.showContactModal || $store.state.showPrivacyModal || $store.state.showImprintModal || $store.state.showInfoModal}">
           <FooterComponent/>
         </div>
 
@@ -211,6 +211,11 @@ body {
   background: #000;
 }
 
+//Variables
+
+@transition-duration-blur: 0.2s;
+@blur-depth: 10px;
+
 header {
   min-height: 20vh;
   @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -232,6 +237,8 @@ header {
   background-size: 75%;
   min-height: 110vh;
   position: absolute;
+  transition: @transition-duration-blur;
+
   @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
     background-position-y: 0;
     min-height: 100vh;
@@ -244,7 +251,10 @@ header {
     background-position-x: -14vh;
   }
 }
+.video_wrapper {
+  transition: @transition-duration-blur;
 
+}
 
 .main_wrapper {
   padding: 0;
@@ -252,12 +262,6 @@ header {
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     padding: 0 10px;
   }
-}
-
-
-footer {
-  border-top: #666 2px solid;
-
 }
 
 .modal_inner {
@@ -306,6 +310,8 @@ footer {
 .footer_wrapper {
   vertical-align: top;
   padding-top: 15px;
+  transition: @transition-duration-blur;
+  border-top: #666 2px solid;
 
   a {
     font-size: 16px;
@@ -313,7 +319,7 @@ footer {
     cursor: pointer;
     text-decoration: none;
     color: #666;
-    transition: 0.3s;
+    transition: @transition-duration-blur;
 
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
       font-size: 12px;
@@ -327,7 +333,7 @@ footer {
   a:not([href]) {
     text-decoration: none;
     color: #666;
-    transition: 0.3s;
+    transition: @transition-duration-blur;
 
     &:hover {
       color: #fff;
@@ -340,5 +346,9 @@ footer {
     }
   }
 
+}
+
+.screenBlur {
+  filter: blur(6px);
 }
 </style>

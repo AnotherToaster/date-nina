@@ -60,6 +60,7 @@
           "decBText": "KÜSSCHEN GEBEN",
           "linkText": "JETZT NINA DATEN",
           "introText": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ...",
+          "shareText":  "Date Nina! Kann ich nur empfehlen!",
           "a": {
             "videoURL": "videos/de/step_1.mp4",
             "badEnd": false
@@ -228,6 +229,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
+          "shareText":  "Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... :( Vielleicht machst du es ja besser?",
           "a": {
             "videoURL": "videos/de/step_5a.mp4"
           },
@@ -590,8 +592,39 @@
       "logFileText": "Alle Zugriffe auf diesen Server werden in einem Zugriffs-Log erfasst. Es findet keine Auswertung dieser Daten statt."
     },
     "contactModal": {
-      "title": "Freunde Verkuppeln",
-      "text": "Du kannst bis zu 5 Freunde zu Date Nina einladen"
+      "de": {
+        "title": "Freunde Verkuppeln",
+        "text": "Du kannst bis zu 5 Freunde zu Date Nina einladen",
+        "sendBtn": "Senden",
+        "inputField": {
+          "clientNamePlaceholder": "Dein Name",
+          "clientEmailPlaceholder": "Deine Email",
+          "friendNamePlaceholder": "Name deines Freundes",
+          "friendEmailPlaceholder": "Email deines Freundes"
+        }
+      },
+      "fr": {
+        "title": "Brancher des amis",
+        "text": "Tu peux inviter jusqu'à 5 amis à rencontrer Nina",
+        "sendBtn": "Envoyer",
+        "inputField": {
+          "clientNamePlaceholder": "Ton Nom",
+          "clientEmailPlaceholder": "Ton adresse e-mail",
+          "friendNamePlaceholder": "Nom de ton ami",
+          "friendEmailPlaceholder": "Adresse e-mail de ton ami"
+        }
+      },
+      "it": {
+        "title": "Metti in contatto gli amici",
+        "text": "Puoi invitare fino a 5 amici al Date Nina",
+        "sendBtn": "Invia",
+        "inputField": {
+          "clientNamePlaceholder": "Il tuo nome",
+          "clientEmailPlaceholder": "La tua e-mail",
+          "friendNamePlaceholder": "Nome del tuo amico",
+          "friendEmailPlaceholder": "E-mail del tuo amico"
+        }
+      }
     }
   }
 }

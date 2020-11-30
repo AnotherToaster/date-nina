@@ -22,12 +22,10 @@
 
       <div id="bad-finish" class="badFinish_wrapper row" v-if="$store.state.badEnd">
         <BadFinishComponent/>
-        <SocialMedia/>
       </div>
 
       <div id="good-finish" class="goodFinish_wrapper row" v-if="$store.state.goodEnd">
         <GoodFinishComponent/>
-        <SocialMedia/>
       </div>
 
     </div>
@@ -37,7 +35,6 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import BadFinishComponent from "@/components/bad-finish.component.vue";
-import SocialMedia from "@/components/social-media.component.vue";
 import FullScreenComponent from "@/components/fullScreen.component.vue";
 import GoodFinishComponent from "@/components/good-finish.component.vue";
 import StartComponent from "@/components/start.component.vue";
@@ -46,7 +43,6 @@ import ChoicesComponent from '@/components/choices.component.vue';
 @Component({
   components: {
     BadFinishComponent,
-    SocialMedia,
     FullScreenComponent,
     GoodFinishComponent,
     StartComponent,
@@ -76,6 +72,7 @@ export default class VideoComponent extends Vue {
     this.linkText = this.videoSteps['1']['content'][this.currentLanguage].linkText;
     this.decAText = '';
     this.decBText = '';
+
   }
 
   mounted() {
@@ -128,14 +125,15 @@ video::-webkit-media-controls {
 
 .btnFullScreen_isFullScreen {
   width: 98%;
+  position: absolute;
+  bottom: 5%;
+/*
   @media (max-width: 1400px) and (-webkit-min-device-pixel-ratio: 1) {
     width: 95%;
-    top: 17%;
   }
   @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 98%;
     bottom: -5%;
-    top: unset;
     @media screen and (orientation: landscape) {
       width: 90%;
       bottom: 35%;
@@ -143,19 +141,16 @@ video::-webkit-media-controls {
   }
   @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     width: 96%;
-    top: 20%;
   }
   @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 96%;
-    top: 23%;
     @media (min-height: 320px) {
-      top: unset;
-      bottom: 15%;
+      width: 100%;
+      bottom: 5%;
     }
   }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 96%;
-    top: 28%;
     @media screen and (orientation: landscape) {
       width: 98%;
       bottom: 10%;
@@ -163,13 +158,10 @@ video::-webkit-media-controls {
   }
   @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 95%;
-    top: 40%;
   }
   @supports (-webkit-touch-callout: none) {
-    position: absolute;
     bottom: 5%;
-    top: unset;
-  }
+  }*/
 }
 
 .start_wrapper {
@@ -187,19 +179,6 @@ video::-webkit-media-controls {
 
 }
 
-.start_btn_text {
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-  }
-  @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
-    font-size: 11px;
-  }
-}
 
 .choices_wrapper {
   position: absolute;
@@ -212,21 +191,6 @@ video::-webkit-media-controls {
     margin: 0 0 0 0;
   }
 
-  .choice_btn {
-    background-image: linear-gradient(#4702fb, #3402b6);
-    color: #fff3cd;
-    border-radius: 10px;
-    width: 260px;
-    height: 60px;
-    font-size: 1.1rem;
-    position: relative;
-    border: none;
-    @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-      font-size: 0.75rem;
-      width: 150px;
-      height: 50px;
-    }
-  }
 }
 
 .badFinish_wrapper {
@@ -254,37 +218,5 @@ video::-webkit-media-controls {
     width: 100%;
   }
 }
-
-.base_btn_wrapper {
-  background-image: linear-gradient(#4702fb, #3402b6);
-  color: #fff3cd;
-  border-radius: 10px;
-  width: 260px;
-  height: 60px;
-  position: relative;
-  border: none;
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    width: 230px;
-    height: 50px;
-  }
-
-  &:hover {
-    color: #d48888;
-
-    .fas {
-      transform: scale(1.2);
-    }
-  }
-
-  .fas {
-    transition: all 0.15s ease-in-out;
-    position: absolute;
-    top: 37%;
-    left: 35px;
-    font-size: 14px;
-    transform-origin: left center;
-  }
-}
-
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="row share_btn_wrapper align-items-center">
+  <div class="row share_btn_wrapper align-items-center" v-bind:class="{screenBlur: $store.state.showContactModal || $store.state.showPrivacyModal || $store.state.showImprintModal || $store.state.showInfoModal}">
     <div class="col-12 col-sm-12 col-md-7 col-lg-7 align-items-center d-flex">
       <iframe
           src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdate-nina.rum.dev%2F&width=320&layout=button&action=like&size=large&share=false&height=65&appId=358697158726687"
@@ -43,6 +43,13 @@ export default class ShareComponent extends Vue {
 </script>
 
 <style scoped lang="less">
+
+//Variables
+
+@transition-duration-blur: 0.2s;
+@blur-depth: 10px;
+
+
 .row {
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     align-items: flex-end;
@@ -52,6 +59,7 @@ export default class ShareComponent extends Vue {
 
 .share_btn_wrapper {
   min-height: 11vh;
+  transition: @transition-duration-blur;
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     min-height: 19vh;
 
