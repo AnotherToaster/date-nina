@@ -1,8 +1,8 @@
 <template>
   <div class="col-12">
     <p class="endText">{{ endText }}</p>
-    <p class="endText_fail mb-sm-5">{{ endTextFail }}</p>
-    <button id="goBack" class="btn btn-secondary end_btn mb-5" @click="goBack()">
+    <p class="endText_fail mb-lg-5">{{ endTextFail }}</p>
+    <button id="goBack" class="btn end_btn mb-3 mb-lg-5" @click="goBack()">
       <i class="fas fa-chevron-left firstArrow ml-3 p-0"></i>
       <i class="fas fa-chevron-left secondArrow mr-3 p-0"></i>
       {{ altFinishBtnText }}
@@ -81,8 +81,18 @@ export default class BadFinishComponent extends Vue {
   line-height: 40px;
   font-size: 40px;
   font-family: Arial, Verdana, sans-serif;
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 20px;
     line-height: 30px;
+
+  }
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    line-height: 26px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+    line-height: 20px;
     font-size: 16px;
   }
 }
@@ -91,6 +101,9 @@ export default class BadFinishComponent extends Vue {
   color: #c61b26;
   font-size: 26px;
   font-family: Arial, Verdana, sans-serif;
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 20px;
+  }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     font-size: 14px;
   }
@@ -120,10 +133,14 @@ export default class BadFinishComponent extends Vue {
       animation: color_anim 1s infinite 0.2s;
     }
   }
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    height: 50px;
+    font-size: 15px;
+  }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 220px;
     height: 40px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .fas {
@@ -131,9 +148,12 @@ export default class BadFinishComponent extends Vue {
     padding-right: 15px;
     padding-left: 15px;
     transition: all 0.15s ease-in-out;
+    @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+      font-size: 14px;
+    }
     @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
       padding-right: 10px;
-      font-size: 15px;
+      font-size: 13px;
     }
   }
 }

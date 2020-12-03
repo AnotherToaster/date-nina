@@ -1,5 +1,5 @@
 <template>
-  <div class="modal_inner" id="contact_modal">
+  <div class="modal_inner" id="contact_modal" v-bind:class="{ThxModalHeight: showThanks && !sentContactFormError}">
     <div class="modal_wrapper" id="modalWrapper">
       <div v-if="!showThanks && !sentContactFormError">
         <div class="row">
@@ -23,13 +23,13 @@
           </div>
         </div>
       </div>
-      <div v-if="showThanks && !sentContactFormError">
-        <h4>Vielen Dank {{ $store.state.userData.clientName }}!</h4>
-        <p class="big">Anfage wurde erfolgreich gesendet</p>
+      <div v-if="showThanks && !sentContactFormError" class="backgroundThanks">
+        <h4 class="pt-3 pl-4 pt-sm-5 pl-sm-5">{{ thanksMessageTitle }} {{ $store.state.userData.clientName }}!</h4>
+        <p class="pl-4 pl-sm-5">{{ thanksMessage }}</p>
       </div>
       <div v-if="sentContactFormError">
-        <h4>Tut mir Leid {{ $store.state.userData.clientName }}!</h4>
-        <p class="big">Etwas scheint nicht in Ordnung zu sein!</p>
+        <h4>{{ thanksMessageTitleFail }} {{ $store.state.userData.clientName }}!</h4>
+        <p>{{ thanksMessageFail }}</p>
       </div>
     </div>
   </div>
@@ -56,6 +56,10 @@ export default class ContactModal extends Vue {
   friendsData: Array<string>;
   contactModal: any;
   title: string;
+  thanksMessageTitle: string;
+  thanksMessage: string;
+  thanksMessageFail: string;
+  thanksMessageTitleFail: string;
   currentLanguage: string;
   text: string;
   maxFieldsFriends: number;
@@ -71,6 +75,10 @@ export default class ContactModal extends Vue {
     this.title = this.contactModal[this.currentLanguage].title;
     this.text = this.contactModal[this.currentLanguage].text;
     this.maxFieldsFriends = this.$store.state.maxFieldNumber;
+    this.thanksMessageTitle = this.contactModal[this.currentLanguage].thanksMessageTitle;
+    this.thanksMessage = this.contactModal[this.currentLanguage].thanksMessage;
+    this.thanksMessageFail = this.contactModal[this.currentLanguage].thanksMessageFail;
+    this.thanksMessageTitleFail = this.contactModal[this.currentLanguage].thanksMessageTitleFail;
   }
 
   closeModal(modal: string) {
@@ -97,8 +105,44 @@ export default class ContactModal extends Vue {
 
 }
 
+
 </script>
 
 <style scoped lang="less">
+
+.ThxModalHeight {
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    height: 220px;
+
+  }
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    height: 250px;
+  }
+}
+
+.backgroundThanks {
+  position: absolute;
+  background: url(/img/bg_finish.png) no-repeat top center;
+  background-position-y: -8vh;
+  background-size: 100%;
+  width: 100%;
+  height: 300px;
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-position-y: -7vh;
+    background-size: 125%;
+  }
+  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-position-y: -2vh;
+  }
+
+  @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-position-y: -2vh;
+    background-size: 140%;
+    background-position-x: -9vh;
+  }
+}
 
 </style>

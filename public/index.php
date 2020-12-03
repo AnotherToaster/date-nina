@@ -36,7 +36,10 @@ if (isset($_GET['lang'])) {
     setcookie($cookieLang, $userLanguage, time() + (86400 * 365)); // 86400 = 1 day
 }*/
 $html = file_get_contents('index.html');
+$configs = file_get_contents('appConfigs.json');
+$configsJson = json_encode(json_decode($configs));
 
 $html = str_replace('<html lang="en">', '<html lang="' . $userLanguage . '">', $html);
+$html = str_replace('%%-var-%%',$configsJson ,  $html);
 
 echo $html;

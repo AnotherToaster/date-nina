@@ -127,41 +127,6 @@ video::-webkit-media-controls {
   width: 98%;
   position: absolute;
   bottom: 5%;
-/*
-  @media (max-width: 1400px) and (-webkit-min-device-pixel-ratio: 1) {
-    width: 95%;
-  }
-  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-    width: 98%;
-    bottom: -5%;
-    @media screen and (orientation: landscape) {
-      width: 90%;
-      bottom: 35%;
-    }
-  }
-  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-    width: 96%;
-  }
-  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-    width: 96%;
-    @media (min-height: 320px) {
-      width: 100%;
-      bottom: 5%;
-    }
-  }
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    width: 96%;
-    @media screen and (orientation: landscape) {
-      width: 98%;
-      bottom: 10%;
-    }
-  }
-  @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
-    width: 95%;
-  }
-  @supports (-webkit-touch-callout: none) {
-    bottom: 5%;
-  }*/
 }
 
 .start_wrapper {
@@ -199,8 +164,15 @@ video::-webkit-media-controls {
   left: 10%;
   width: 60%;
   transform: translateY(-50%);
+  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 90%;
+    top: 45%;
+  }
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    top: 39%;
+  }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    top: 50%;
+    top: 42%;
     left: 5%;
     width: 100%;
   }
@@ -212,11 +184,19 @@ video::-webkit-media-controls {
   left: 10%;
   width: 60%;
   transform: translateY(-50%);
+  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 90%;
+    top: 45%;
+  }
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    top: 39%;
+  }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     top: 45%;
     left: 5%;
     width: 100%;
   }
+
 }
 
 </style>

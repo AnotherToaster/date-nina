@@ -6,7 +6,7 @@
       <i class="fab fa-facebook-square" @click="shareBtn()"></i>
     </a>
 
-    <a class="m-md-0 p-md-0" target="_blank" id="tweet">
+    <a class="m-md-0 p-md-0" target="_blank" id="basic-tweet">
       <i class="fab fa-twitter-square"></i>
     </a>
 
@@ -35,13 +35,13 @@ export default class SocialMedia extends Vue {
     this.video = this.$store.state.video;
     this.currentVideoID = this.video.Id;
     this.currentLanguage = this.$store.state.currentLanguage;
-    this.shareText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage]['shareText'];
+    this.shareText = this.videoSteps['1']['content'][this.currentLanguage]['shareText'];
 
-    this.tweetElm = document.getElementById('tweet');
+    this.tweetElm = document.getElementById('basic-tweet');
   }
 
   mounted() {
-    this.tweetElm = document.getElementById('tweet');
+    this.tweetElm = document.getElementById('basic-tweet');
     const tweetSite = 'https://date-nina.rum.dev/';
     const tweetUrl = 'https://twitter.com/intent/tweet?text=' + this.shareText + ' ' + tweetSite;
     this.tweetElm.setAttribute('href', tweetUrl);

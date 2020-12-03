@@ -9,40 +9,267 @@ $params = json_decode($payload, true);
 
 $adminMail = 'dr@rum.agency';
 $adminName = 'Date-Nina';
-$subject = 'JETZT NINA DATEN';
 
 $data = $params['data'];
 
 $userData = $data['userData'];
 $friendsData = $data['friendsData'];
+$currentLanguage = $data['currentLanguage'];
 
 $fromName = $userData['clientName'];
 $fromEmail = $userData['clientEmail'];
 
 $friendEmail = false;
 $error = false;
-$emailMsg = '';
 $success = array('success' => false, 'friendsEmailSent' => array());
 
 //Create Array for PHPMailer
 $mailProp = array('fromName' => $fromName, 'fromEmail' => $fromEmail, 'friendsData' => $friendsData,
-    'subject' => $subject, 'emailMsg' => array());
+    'subject', 'emailMsg' => array());
 
-
-for ($id = 0; $id < count($friendsData); $id++) {
-    $mailProp['emailMsg'][$id] = '
-<html>
-<head>
+if ($currentLanguage == 'de') {
+    for ($id = 0; $id < count($friendsData); $id++) {
+        $mailProp['subject'] = 'Jetzt Nina Daten';
+        $mailProp['emailMsg'][$id] = '
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+    </style>
+    <title>DATE NINA</title>
 </head>
 <body>
-<p>Hoi ' . $friendsData[$id]['friendName'] . ',</p>
-<p>' . $fromEmail . ' findet, du sollst mich daten!</p>
-<p>Mach mit beim interaktiven Game von RoadCross Schweiz. Wir werden sicher viel 
-Spass miteinander haben, wenn du die richtigen Entscheidungen beim Date triffst ...</p>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+    }
+
+    table {
+        background-repeat: no-repeat;
+    }
+</style>
+<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://date-nina.rum.dev/img/bg_email.jpg">
+    <tr>
+        <td>
+            <table border="0" align="left" width="710" height="670" border="0" cellpadding="0" cellspacing="0" style="margin-left: 95px;">
+                <tr>
+                    <td height="" valign="top">
+                        <div id="content" style="width:410px;">
+                            <table border="0" align="left" width="410" height="" border="0" cellpadding="0" cellspacing="0">
+
+                                <tr>
+                                    <td height="150">
+&nbsp;                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="50">
+                                        <h1 style="font-size: 20px; font-weight: bold; color: #FFF;">Hoi ' . $friendsData[$id]['friendName'] . ',</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="">
+                                        <p style="font-size: 14px; font-weight: bold; color: #FFF; line-height:20px;">
+                                            ' . $fromName . ' findet, du sollst mich daten!
+                                            Mach mit beim interaktiven Game von RoadCross Schweiz.
+                                            Wir werden sicher viel Spass miteinander haben,
+                                            wenn du die richtigen Entscheidungen beim Date triffst ...</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="25">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="0">
+                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://date-nina.rum.dev/img/btn_inmail.png">
+                                            <tr>
+                                                <td>
+                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://date-nina.rum.dev/">JETZT NINA DATEN</a>
+                                                </td>
+                                            </tr>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
 ';
+    }
+} else if ($currentLanguage == 'fr') {
+    for ($id = 0; $id < count($friendsData); $id++) {
+        $mailProp['subject'] = 'Rancard avec Nina';
+        $mailProp['emailMsg'][$id] = '
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+    </style>
+    <title>DATE NINA</title>
+</head>
+<body>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+    }
+
+    table {
+        background-repeat: no-repeat;
+    }
+</style>
+<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://date-nina.rum.dev/img/bg_email.jpg">
+    <tr>
+        <td>
+            <table border="0" align="left" width="710" height="670" border="0" cellpadding="0" cellspacing="0" style="margin-left: 95px;">
+                <tr>
+                    <td height="" valign="top">
+                        <div id="content" style="width:410px;">
+                            <table border="0" align="left" width="410" height="" border="0" cellpadding="0" cellspacing="0">
+
+                                <tr>
+                                    <td height="150">
+&nbsp;                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="50">
+                                        <h1 style="font-size: 20px; font-weight: bold; color: #FFF;">Salut  ' . $friendsData[$id]['friendName'] . ',</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="">
+                                        <p style="font-size: 14px; font-weight: bold; color: #FFF; line-height:20px;">
+                                            ' . $fromName . ' pense que tu devrais me proposer un rancart !
+                                             Joue le jeu avec la vidéo interactive de Roadcross Schweiz. 
+                                             Nous allons certainement passer de bons moments si tu fais les bons choix au cours de la soirée.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="25">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="0">
+                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://date-nina.rum.dev/img/btn_inmail.png">
+                                            <tr>
+                                                <td>
+                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://date-nina.rum.dev/">Rancard avec Nina</a>
+                                                </td>
+                                            </tr>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+';
+    }
+} else if ($currentLanguage == 'it') {
+    for ($id = 0; $id < count($friendsData); $id++) {
+        $mailProp['subject'] = 'Date Nina';
+        $mailProp['emailMsg'][$id] = '
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+    </style>
+    <title>DATE NINA</title>
+</head>
+<body>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+    }
+
+    table {
+        background-repeat: no-repeat;
+    }
+</style>
+<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://date-nina.rum.dev/img/bg_email.jpg">
+    <tr>
+        <td>
+            <table border="0" align="left" width="710" height="670" border="0" cellpadding="0" cellspacing="0" style="margin-left: 95px;">
+                <tr>
+                    <td height="" valign="top">
+                        <div id="content" style="width:410px;">
+                            <table border="0" align="left" width="410" height="" border="0" cellpadding="0" cellspacing="0">
+
+                                <tr>
+                                    <td height="150">
+&nbsp;                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="50">
+                                        <h1 style="font-size: 20px; font-weight: bold; color: #FFF;">Ciao  ' . $friendsData[$id]['friendName'] . ',</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="">
+                                        <p style="font-size: 14px; font-weight: bold; color: #FFF; line-height:20px;">
+                                            ' . $fromName . ' pensa che mi dovresti dare un appuntamento! 
+                                            Partecipa al gioco interattivo di RoadCross Svizzera. 
+                                            Ci divertiremo di sicuro se al momento dell\' appuntamento prendo la decisione giusta.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="25">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="0">
+                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://date-nina.rum.dev/img/btn_inmail.png">
+                                            <tr>
+                                                <td>
+                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://date-nina.rum.dev/">JETZT NINA DATEN</a>
+                                                </td>
+                                            </tr>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+';
+    }
 }
+
 
 require_once('./phpMailer/src/PHPMailer.php');
 require_once('./phpMailer/src/Exception.php');
@@ -54,13 +281,13 @@ if (count($mailProp['friendsData']) >= 1 && count($mailProp['friendsData']) <= 5
     } else {
         $mailProp['subject'] = 'No subject given';
         $error = true;
-    }
+    }/*
     if (array_key_exists('emailMsg', $mailProp)) {
         $emailMsg = substr(strip_tags($mailProp['emailMsg']), 0, 250);
     } else {
         $mailProp['emailMsg'] = 'No Message provided!';
         $error = true;
-    }
+    }*/
     if (array_key_exists('fromName', $mailProp) && strlen($mailProp['fromName']) >= 3) {
         $fromName = substr(strip_tags($mailProp['fromName']), 0, 26);
     } else {

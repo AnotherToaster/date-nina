@@ -71,6 +71,7 @@
           "decBText": "Faire la bise",
           "linkText": "RENCONTRE-LA",
           "introText": "NINA T'ATTEND POUR UN RENDEZ-VOUS. EST-CE QUE CELA VA MARCHER? C'EST TOI QUI DÉCIDES ...",
+          "shareText":  "Un rendez-vous avec Nina! Je vous le recommande!",
           "a": {
             "videoURL": "videos/fr/step_1.mp4",
             "badEnd": false
@@ -81,6 +82,7 @@
           "decBText": "Dare un bacetto",
           "linkText": "Incontrala",
           "introText": "NINA HA UN APPUNTAMENTO CON TE E TI ASPETTA. DECIDI TU SE ANDRÀ A BUON FINE ...",
+          "shareText": "Un appuntamento con Nina! Lo consiglio!",
           "a": {
             "videoURL": "videos/it/step_1.mp4",
             "badEnd": false
@@ -247,6 +249,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Retour à la décision",
+          "shareText": "J'ai été pris en excès de vitesse ! Et c'était lors d'un rendez-vous avec Nina... :( Peut-être que vous ferez mieux ?",
           "a": {
             "videoURL": "videos/fr/step_5a.mp4"
           },
@@ -264,6 +267,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
+          "shareText": "Sono stato colto in flagrante! Ed era ad un appuntamento con Nina... :( Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_5a.mp4"
           },
@@ -331,6 +335,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
+          "shareText":  "Ich habe einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_7a.mp4"
           },
@@ -348,6 +353,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Retour à la décision",
+          "shareText": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
           "a": {
             "videoURL": "videos/fr/step_7a.mp4"
           },
@@ -365,6 +371,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
+          "shareText": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_7a.mp4"
           },
@@ -389,6 +396,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
+          "shareText":  "Ich habe einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_8a.mp4"
           },
@@ -405,6 +413,7 @@
           "backLink": "7a",
           "linktext": [],
           "altFinishBtnText": "Retour à la décision",
+          "shareText": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
           "text": [],
           "a": {
             "videoURL": "videos/fr/step_8a.mp4"
@@ -423,6 +432,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
+          "shareText": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_8a.mp4"
           },
@@ -447,6 +457,7 @@
           "backLink": "8a",
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
+          "shareText":  "Ich habe einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_9a.mp4",
             "goodEnd": true,
@@ -468,6 +479,7 @@
           "backLink": "8a",
           "text": [],
           "altFinishBtnText": "Retour à la décision",
+          "shareText": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
           "a": {
             "videoURL": "videos/fr/step_9a.mp4",
             "goodEnd": true,
@@ -489,6 +501,7 @@
           "backLink": "8a",
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
+          "shareText": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_9a.mp4",
             "goodEnd": true,
@@ -596,6 +609,10 @@
         "title": "Freunde Verkuppeln",
         "text": "Du kannst bis zu 5 Freunde zu Date Nina einladen",
         "sendBtn": "Senden",
+        "thanksMessageTitle": "Vielen Dank ",
+        "thanksMessage": "Anfage wurde erfolgreich gesendet",
+        "thanksMessageTitleFail": "Tut mir Leid",
+        "thanksMessageFail": "Etwas scheint nicht in Ordnung zu sein!",
         "inputField": {
           "clientNamePlaceholder": "Dein Name",
           "clientEmailPlaceholder": "Deine Email",
@@ -607,6 +624,10 @@
         "title": "Brancher des amis",
         "text": "Tu peux inviter jusqu'à 5 amis à rencontrer Nina",
         "sendBtn": "Envoyer",
+        "thanksMessageTitle": "Merci beaucoup ",
+        "thanksMessage": "La demande a été envoyée avec succès",
+        "thanksMessageTitleFail": "Je suis désolé",
+        "thanksMessageFail": "Il semble que quelque chose ne va pas!",
         "inputField": {
           "clientNamePlaceholder": "Ton Nom",
           "clientEmailPlaceholder": "Ton adresse e-mail",
@@ -618,6 +639,10 @@
         "title": "Metti in contatto gli amici",
         "text": "Puoi invitare fino a 5 amici al Date Nina",
         "sendBtn": "Invia",
+        "thanksMessageTitle": "Grazie mille ",
+        "thanksMessage": "La richiesta è stata inviata con successo",
+        "thanksMessageTitleFail": "Mi dispiace",
+        "thanksMessageFail": "Sembra che ci sia qualcosa che non va!",
         "inputField": {
           "clientNamePlaceholder": "Il tuo nome",
           "clientEmailPlaceholder": "La tua e-mail",

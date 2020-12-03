@@ -24,7 +24,6 @@ export default new Vuex.Store({
         counter: 1,
         showContactSuccess: false,
         currentLanguage: '',
-        switchLang: false,
         siteData: [],
         userData: {
             clientName: '',
@@ -85,9 +84,6 @@ export default new Vuex.Store({
         currentLanguage(state, data) {
             state.currentLanguage = data;
         },
-        switchLang(state, data) {
-            state.currentLanguage = data;
-        },
         isFullScreen(state, data) {
             state.video.isFullScreen = data;
         },
@@ -143,6 +139,9 @@ export default new Vuex.Store({
             state.video.backFromFinish = data;
         },
         startDate(state) {
+            const videoContainer: HTMLVideoElement  =  document.getElementById('video');
+            videoContainer.poster = '';
+            videoContainer.load();
             state.video.videoPosterUrl = '';
             state.video.Id = '1';
             state.video.videoUrl = 'videos/' + [state.currentLanguage] + '/step_1.mp4';
@@ -157,7 +156,7 @@ export default new Vuex.Store({
                 videoContainer.currentTime = (videoContainer.duration / 100) * 90;
             }
 /*
-            videoContainer.playbackRate = 12;
+            videoContainer.playbackRate = 1;
 */
             setTimeout(() => {
                 videoContainer.play();
@@ -168,6 +167,12 @@ export default new Vuex.Store({
         },
         goodEnd(state, data) {
             state.goodEnd = data;
+            if (data == true) {
+                const videoContainer: HTMLVideoElement  =  document.getElementById('video');
+                videoContainer.poster = '/img/bg_finish.png';
+                videoContainer.load();
+            }
+
         },
         showChoices(state, data) {
             state.showChoices = data;
@@ -221,9 +226,6 @@ export default new Vuex.Store({
         },
         currentLanguage(data) {
             data.commit('currentLanguage', data)
-        },
-        switchLang(context, lang) {
-            context.commit('switchLang', lang)
         },
         isFullScreen(context, data) {
             context.commit('isFullScreen', data)

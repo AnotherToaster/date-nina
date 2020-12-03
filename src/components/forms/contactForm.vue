@@ -1,7 +1,7 @@
 <template>
   <form id="contact_form" @submit.prevent="submitForm()">
-    <div class="form-row justify-content-center mb-2">
-      <div class="form-group col-sm-5">
+    <div class="form-row justify-content-start">
+      <div class="form-group col-10 col-md-5 mb-1 mb-md-0">
         <label for="name" class="sr-only">ClientName</label>
         <input type="text" class="form-control m-0"
                name="name"
@@ -11,7 +11,7 @@
                v-model="$store.state.userData.clientName"
                :placeholder="clientNamePlaceholder">
       </div>
-      <div class="form-group col-sm-5">
+      <div class="form-group col-10 col-md-5 mb-4">
         <label for="email" class="sr-only">ClientEmail</label>
         <input type="email" class="form-control m-0"
                name="email"
@@ -21,17 +21,17 @@
                v-model="$store.state.userData.clientEmail"
                :placeholder="clientEmailPlaceholder">
       </div>
-      <div class="form-group col-sm-2" id="friendsBtn">
+      <div class="form-group col-2 mb-1 d-flex justify-content-start" id="friendsBtn">
         <button type="button" class="btn icons"
                 v-bind="{disabled: $store.state.disableBtnActive}"
                 v-on:click="addInput()"><i class="far fa-plus-square"></i>
         </button>
       </div>
     </div>
-    <div class="form-row justify-content-center" :id="key"
+    <div class="form-row justify-content-start" :id="key"
          v-for="(friend, key) in $store.state.friendsData"
          v-bind:key="key">
-      <div class="form-group col-sm-5">
+      <div class="form-group col-10 col-md-5 mb-1">
         <label for="friendName" class="sr-only"></label>
         <input type="text" class="form-control m-0"
                id="friendName"
@@ -39,7 +39,8 @@
                :placeholder="friendNamePlaceholder"
                v-model="friend.friendName">
       </div>
-      <div class="form-group col-sm-5">
+
+      <div class="form-group col-10 col-md-5 mb-4">
         <label for="friendEmail" class="sr-only"></label>
         <input type="email" class="form-control m-0"
                id="friendEmail"
@@ -47,14 +48,12 @@
                :placeholder="friendEmailPlaceholder"
                v-model="friend.friendEmail">
       </div>
-      <div class="form-group col-sm-2" id="submitBtn">
+      <div class="form-group col-2 mb-1" id="submitBtn">
         <button type="button" class="btn icons" v-bind="{disabled: $store.state.counter <= 1}"
                 v-on:click="removeInput()"><i class="far fa-minus-square"></i>
         </button>
       </div>
     </div>
-
-
     <div class="form-row mt-4 justify-content-md-between justify-content-center d-flex">
       <div class="form-group col-12 col-md-6">
         <button type="submit"
@@ -73,7 +72,7 @@
 <script lang="ts">
 import store from '@/store'
 import {Component, Vue} from 'vue-property-decorator';
-import SocialMedia from "@/components/social-media.component.vue";
+import SocialMedia from "@/components/social-media_basic.component.vue";
 
 
 @Component({
@@ -90,6 +89,7 @@ export default class InputField extends Vue {
   clientEmailPlaceholder: string;
   friendNamePlaceholder: string;
   friendEmailPlaceholder: string;
+
   constructor() {
     super();
     this.contactModal = this.$store.state.siteData.modal.contactModal;
@@ -136,6 +136,13 @@ export default class InputField extends Vue {
 .btn:disabled {
   opacity: 0.5;
   color: #3b3a3a;
+}
+
+#friendsBtn, #submitBtn {
+  top: -5px;
+  @media (max-width: 768px) {
+    top: -50px;
+  }
 }
 
 </style>
