@@ -94,6 +94,7 @@ export default class BadFinishComponent extends Vue {
   @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
     line-height: 20px;
     font-size: 16px;
+    margin-bottom: 7px;
   }
 }
 
@@ -106,6 +107,7 @@ export default class BadFinishComponent extends Vue {
   }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     font-size: 14px;
+    margin-bottom: 5px;
   }
 }
 

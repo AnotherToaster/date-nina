@@ -119,12 +119,12 @@ export default new Vuex.Store({
                 state.friendsData.push(item);
             }
         },
-        removeInput(state) {
+        removeInput(state, data) {
             if (state.disableBtnActive) {
                 state.disableBtnActive = false;
             }
             state.counter -= 1
-            state.friendsData.pop()
+            state.friendsData.splice(data, 1);
         },
         setVideoId(state, data) {
             state.video.Id = data;
@@ -156,11 +156,11 @@ export default new Vuex.Store({
                 videoContainer.currentTime = (videoContainer.duration / 100) * 90;
             }
 /*
-            videoContainer.playbackRate = 1;
+            videoContainer.playbackRate = 12;
 */
             setTimeout(() => {
                 videoContainer.play();
-            }, 25)
+            }, 150)
         },
         badEnd(state, data) {
             state.badEnd = data;
@@ -221,8 +221,8 @@ export default new Vuex.Store({
         addInput(data) {
             data.commit('addInput', data)
         },
-        removeInput(data) {
-            data.commit('removeInput', data)
+        removeInput(context, data) {
+            context.commit('removeInput', data)
         },
         currentLanguage(data) {
             data.commit('currentLanguage', data)

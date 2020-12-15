@@ -20,7 +20,7 @@
         <ChoicesComponent/>
       </div>
 
-      <div id="bad-finish" class="badFinish_wrapper row" v-if="$store.state.badEnd">
+      <div id="bad-finish" class="badFinish_wrapper row" v-if="$store.state.badEnd" v-bind:class="{ badEndWrapper_isFullScreen: this.video.isFullScreen }">
         <BadFinishComponent/>
       </div>
 
@@ -101,9 +101,14 @@ export default class VideoComponent extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 
+#video {
+  width: 101%;
+}
+
 video::-webkit-media-controls {
   display: none !important;
 }
+
 
 .btnFullScreen_wrapper {
   position: relative;
@@ -176,6 +181,10 @@ video::-webkit-media-controls {
     left: 5%;
     width: 100%;
   }
+}
+
+.badEndWrapper_isFullScreen{
+  top: 47%;
 }
 
 .goodFinish_wrapper {

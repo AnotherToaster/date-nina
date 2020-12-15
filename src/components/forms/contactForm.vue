@@ -50,7 +50,7 @@
       </div>
       <div class="form-group col-2 mb-1" id="submitBtn">
         <button type="button" class="btn icons" v-bind="{disabled: $store.state.counter <= 1}"
-                v-on:click="removeInput()"><i class="far fa-minus-square"></i>
+                v-on:click="removeInput(InputKey = key)"><i class="far fa-minus-square"></i>
         </button>
       </div>
     </div>
@@ -89,12 +89,14 @@ export default class InputField extends Vue {
   clientEmailPlaceholder: string;
   friendNamePlaceholder: string;
   friendEmailPlaceholder: string;
+  InputKey: number;
 
   constructor() {
     super();
     this.contactModal = this.$store.state.siteData.modal.contactModal;
     this.currentLanguage = this.$store.state.currentLanguage;
     this.sendBtn = this.contactModal[this.currentLanguage].sendBtn;
+    this.InputKey = 0;
     this.clientNamePlaceholder = this.contactModal[this.currentLanguage]['inputField'].clientNamePlaceholder;
     this.clientEmailPlaceholder = this.contactModal[this.currentLanguage]['inputField'].clientEmailPlaceholder;
     this.friendNamePlaceholder = this.contactModal[this.currentLanguage]['inputField'].friendNamePlaceholder;
@@ -105,8 +107,9 @@ export default class InputField extends Vue {
     store.dispatch('addInput')
   }
 
-  removeInput() {
-    store.dispatch('removeInput');
+  removeInput(InputKey: number) {
+    this.InputKey = InputKey;
+    store.dispatch('removeInput', this.InputKey);
   }
 
   submitForm() {
