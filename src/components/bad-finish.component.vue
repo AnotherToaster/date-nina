@@ -35,6 +35,7 @@ export default class BadFinishComponent extends Vue {
   decBText: string;
   videoELm: any;
   backFromFinish: boolean;
+  videoDuration: number;
 
   constructor() {
     super();
@@ -42,6 +43,7 @@ export default class BadFinishComponent extends Vue {
     this.currentVideoID = this.$store.state.video.Id;
     this.currentLanguage = this.$store.state.currentLanguage;
     this.videoSrc = this.$store.state.video.videoUrl;
+    this.videoDuration = this.$store.state.video.videoCurrentTime;
     this.backFromFinish = this.$store.state.video.backFromFinish;
     this.endText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage]['b'].endText;
     this.altFinishBtnText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage].altFinishBtnText;
@@ -61,11 +63,8 @@ export default class BadFinishComponent extends Vue {
     this.$store.dispatch('setVideoId', this.currentVideoID);
     this.$store.dispatch('setVideoUrl', this.videoSteps[this.currentVideoID]['content'][this.currentLanguage]['a'].videoURL)
     this.$store.dispatch('backFromFinish', true);
-    this.$store.dispatch('showVideoControls', false);
-    this.$store.dispatch('showChoices', false);
-    this.$store.dispatch('goodEnd', false);
-    this.$store.dispatch('badEnd', false);
     this.$store.dispatch('setDecision', 'a');
+    this.$store.dispatch('videoDuration', this.videoELm.duration);
     setTimeout(() => {
       this.$store.dispatch('playVideo', true);
     }, 150)

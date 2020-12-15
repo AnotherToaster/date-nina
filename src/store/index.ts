@@ -43,6 +43,7 @@ export default new Vuex.Store({
             Id: '1',
             backFromFinish: false,
             decision: 'a',
+            videoCurrentTime: 0,
             videoContent: {}
 
         },
@@ -147,20 +148,24 @@ export default new Vuex.Store({
             state.video.videoUrl = 'videos/' + [state.currentLanguage] + '/step_1.mp4';
         },
         playVideo(state, data) {
+            const videoContainer: HTMLVideoElement  =  document.getElementById('video');
+            setTimeout(() => {
+                videoContainer.pause();
+            }, 150);
             state.showChoices = false;
             state.showVideoControls = false;
             state.goodEnd = false;
             state.badEnd = false;
-            const videoContainer: HTMLVideoElement  =  document.getElementById('video');
-            if (data && videoContainer) {
+            if (data && videoContainer.duration >= 10) {
                 videoContainer.currentTime = (videoContainer.duration / 100) * 90;
+            } else if (data) {
+                videoContainer.currentTime = state.video.videoCurrentTime;
             }
 /*
             videoContainer.playbackRate = 12;
-*/
             setTimeout(() => {
                 videoContainer.play();
-            }, 150)
+            }, 150);
         },
         badEnd(state, data) {
             state.badEnd = data;
@@ -182,6 +187,9 @@ export default new Vuex.Store({
         },
         setDecision(state, data) {
             state.video.decision = data;
+        },
+        videoCurrentTime(state, data) {
+            state.video.videoCurrentTime = data;
         },
     },
     actions: {
@@ -265,6 +273,9 @@ export default new Vuex.Store({
         },
         setDecision(context, data) {
             context.commit('setDecision', data)
+        },
+        videoCurrentTime(context, data) {
+            context.commit('videoCurrentTime', data)
         },
     },
     modules: {}
