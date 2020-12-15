@@ -43,7 +43,7 @@ export default new Vuex.Store({
             Id: '1',
             backFromFinish: false,
             decision: 'a',
-            videoCurrentTime: 0,
+            videoDuration: 0,
             videoContent: {}
 
         },
@@ -188,8 +188,8 @@ export default new Vuex.Store({
         setDecision(state, data) {
             state.video.decision = data;
         },
-        videoCurrentTime(state, data) {
-            state.video.videoCurrentTime = data;
+        videoDuration(state, data) {
+            state.video.videoDuration = data;
         },
     },
     actions: {
@@ -274,8 +274,8 @@ export default new Vuex.Store({
         setDecision(context, data) {
             context.commit('setDecision', data)
         },
-        videoCurrentTime(context, data) {
-            context.commit('videoCurrentTime', data)
+        videoDuration(context, data) {
+            context.commit('videoDuration', data)
         },
     },
     modules: {}
