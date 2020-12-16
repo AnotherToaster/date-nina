@@ -44,6 +44,7 @@ export default new Vuex.Store({
             backFromFinish: false,
             decision: 'a',
             videoDuration: 0,
+            videoCurrentTime: 100,
             videoContent: {}
 
         },
@@ -99,7 +100,7 @@ export default new Vuex.Store({
                 quote: data
             };
 
-            if(shareObj) {
+            if (shareObj) {
                 FB.ui(shareObj, function (response: ShareDialogResponse) {
                     console.log(response);
                 });
@@ -140,7 +141,7 @@ export default new Vuex.Store({
             state.video.backFromFinish = data;
         },
         startDate(state) {
-            const videoContainer: HTMLVideoElement  =  document.getElementById('video');
+            const videoContainer: HTMLVideoElement = document.getElementById('video');
             videoContainer.poster = '';
             videoContainer.load();
             state.video.videoPosterUrl = '';
@@ -161,8 +162,7 @@ export default new Vuex.Store({
             } else if (data) {
                 videoContainer.currentTime = state.video.videoCurrentTime;
             }
-/*
-            videoContainer.playbackRate = 12;
+/*            videoContainer.playbackRate = 9;*/
             setTimeout(() => {
                 videoContainer.play();
             }, 150);
@@ -173,7 +173,7 @@ export default new Vuex.Store({
         goodEnd(state, data) {
             state.goodEnd = data;
             if (data == true) {
-                const videoContainer: HTMLVideoElement  =  document.getElementById('video');
+                const videoContainer: HTMLVideoElement = document.getElementById('video');
                 videoContainer.poster = '/img/bg_finish.png';
                 videoContainer.load();
             }
@@ -190,6 +190,9 @@ export default new Vuex.Store({
         },
         videoDuration(state, data) {
             state.video.videoDuration = data;
+        },
+        videoCurrentTime(state, data) {
+            state.video.videoCurrentTime = data;
         },
     },
     actions: {
@@ -276,6 +279,9 @@ export default new Vuex.Store({
         },
         videoDuration(context, data) {
             context.commit('videoDuration', data)
+        },
+        videoCurrentTime(context, data) {
+            context.commit('videoCurrentTime', data)
         },
     },
     modules: {}
