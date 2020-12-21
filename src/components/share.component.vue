@@ -2,11 +2,10 @@
   <div class="row share_btn_wrapper align-items-center" v-bind:class="{screenBlur: $store.state.showContactModal || $store.state.showPrivacyModal || $store.state.showImprintModal || $store.state.showInfoModal}">
     <div class="col-12 mb-3 mb-md-0 col-sm-12 col-md-7 col-lg-7 align-items-center d-flex">
       <iframe
-          src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdate-nina.rum.dev%2F&width=320&layout=button&action=like&size=large&share=false&height=65&appId=3201352483304550"
+          src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Froadcrossschweiz&width=320&layout=button&action=like&size=large&share=false&height=65&appId=3201352483304550"
           width="175" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
           allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </div>
     <div class="col-12 col-sm-12 justify-content-sm-start col-md-5 align-items-center justify-content-md-end col-lg-5 d-flex justify-content-start mb-3">
       <button class="btn btn-light share_btn" data-toggle="modal"
