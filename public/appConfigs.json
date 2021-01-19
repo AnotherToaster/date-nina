@@ -60,7 +60,7 @@
           "decBText": "KÜSSCHEN GEBEN",
           "linkText": "JETZT NINA DATEN",
           "introText": "Nina wartet auf ein Date mit dir. Ob es gut läuft oder nicht, entscheidest du selbst ...",
-          "shareText":  "Date Nina! Kann ich nur empfehlen!",
+          "shareText":  "Date Nina! Kann ich nur empfehlen! ❤️",
           "a": {
             "videoURL": "videos/de/step_1.mp4",
             "badEnd": false
@@ -231,7 +231,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
-          "shareText":  "Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... :( Vielleicht machst du es ja besser?",
+          "shareText":  "Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... ☹ Vielleicht machst du es ja besser?",
           "a": {
             "videoURL": "videos/de/step_5a.mp4"
           },
@@ -396,7 +396,7 @@
           "linktext": [],
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
-          "shareText":  "Ich habe einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
+          "shareText":  "Ich habe eine Whatsapp - Nachricht während dem Auto fahren gelesen! Und das beim Date mit Nina. Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_8a.mp4"
           },
@@ -457,7 +457,7 @@
           "backLink": "8a",
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
-          "shareText":  "Ich habe einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
+          "shareText":  "Ich habe betrunken einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_9a.mp4",
             "goodEnd": true,

@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
-import SocialMedia from "@/components/social-media_basic.component.vue";
+import SocialMedia from "@/components/social-media.component.vue";
 
 
 @Component({

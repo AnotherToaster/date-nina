@@ -10,7 +10,7 @@
       <i class="fab fa-twitter-square"></i>
     </a>
 
-    <a class="m-md-0 p-md-0" id="whatsapp-message" href="whatsapp://send?text=Versuch mal ein Date mit Nina! https://date-nina.rum.dev/" target="_blank">
+    <a class="m-md-0 p-md-0" id="whatsapp-message" :href="'whatsapp://send?text='+this.shareText+' https://date-nina.rum.dev/'" target="_blank">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>

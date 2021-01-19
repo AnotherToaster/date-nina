@@ -10,12 +10,11 @@
       <i class="fab fa-twitter-square"></i>
     </a>
 
-    <a class="m-md-0 p-md-0" id="whatsapp-message" href="whatsapp://send?text=Versuch mal ein Date mit Nina! https://date-nina.rum.dev/" target="_blank">
+    <a class="m-md-0 p-md-0" id="whatsapp-message" :href="'whatsapp://send?text='+this.shareText+' https://date-nina.rum.dev/'" target="_blank">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
 </template>
-
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 
@@ -28,12 +27,14 @@ export default class SocialMedia extends Vue {
   currentVideoID: any;
   currentLanguage: string;
   shareText: string;
+  videoDecision: string;
 
   constructor() {
     super();
     this.videoSteps = this.$store.state.siteData.steps;
     this.video = this.$store.state.video;
     this.currentVideoID = this.video.Id;
+    this.videoDecision = this.video.decision;
     this.currentLanguage = this.$store.state.currentLanguage;
     this.shareText = this.videoSteps[this.currentVideoID]['content'][this.currentLanguage]['shareText'];
 
@@ -41,6 +42,9 @@ export default class SocialMedia extends Vue {
   }
 
   mounted() {
+    if (this.currentVideoID == '9' && this.videoDecision == 'a') {
+      this.shareText = 'Ich hatte ein super Date mit Nina. Alle Entscheidungen richtig getroffen. Willst du auch mal ein Date mit Nina?'
+    }
     this.tweetElm = document.getElementById('tweet');
     const tweetSite = 'https://date-nina.rum.dev/';
     const tweetUrl = 'https://twitter.com/intent/tweet?text=' + this.shareText + ' ' + tweetSite;

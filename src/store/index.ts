@@ -157,12 +157,14 @@ export default new Vuex.Store({
             state.showVideoControls = false;
             state.goodEnd = false;
             state.badEnd = false;
-            if (data && videoContainer.duration >= 10) {
+           /* if (data && videoContainer.duration >= 10) {
                 videoContainer.currentTime = (videoContainer.duration / 100) * 90;
             } else if (data) {
                 videoContainer.currentTime = state.video.videoCurrentTime;
-            }
-/*            videoContainer.playbackRate = 9;*/
+            }*/
+/*
+            videoContainer.playbackRate = 10;
+*/
             setTimeout(() => {
                 videoContainer.play();
             }, 150);
