@@ -21,10 +21,10 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <a href="http://www.facebook.com/roadcross" target="_blank">{{ link1 }}</a>
+            <a href="https://www.facebook.com/roadcross" target="_blank">{{ link1 }}</a>
           </div>
           <div class="col-lg-12 mb-3">
-            <a href="http://www.roadcross.ch" target="_blank">{{ link2 }}</a>
+            <a href="https://www.roadcross.ch" target="_blank">{{ link2 }}</a>
           </div>
         </div>
         <div class="row">

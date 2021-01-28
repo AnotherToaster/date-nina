@@ -196,6 +196,11 @@ export default class App extends Vue {
   }
 
   beforeModalClose(modal: string) {
+    if (modal === 'Contact') {
+      this.$store.dispatch('showThanks', false);
+      this.$store.dispatch('sentContactFormError', false);
+      this.$store.dispatch('showContactSuccess', false);
+    }
     this.$store.dispatch('show' + modal + 'Modal', false);
   }
 }
@@ -217,7 +222,7 @@ body {
 @blur-depth: 10px;
 
 header {
-  min-height: 20vh;
+  min-height: 14vh;
   @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
     min-height: 30vh;
   }
@@ -235,7 +240,7 @@ header {
   background: url('/img/bg_main.jpg') no-repeat top center;
   background-position-y: -15vh;
   background-size: 75%;
-  min-height: 110vh;
+  min-height: 100vh;
   position: absolute;
   transition: @transition-duration-blur;
 
@@ -311,7 +316,9 @@ header {
   vertical-align: top;
   padding-top: 15px;
   transition: @transition-duration-blur;
+/*
   border-top: #666 2px solid;
+*/
 
   a {
     font-size: 16px;

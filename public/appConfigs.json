@@ -232,6 +232,7 @@
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
           "shareText":  "Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... ☹ Vielleicht machst du es ja besser?",
+          "shareTextFB":  "Ich wurde beim Rasen erwischt! Und das beim Date mit Nina... Vielleicht machst du es ja besser?",
           "a": {
             "videoURL": "videos/de/step_5a.mp4"
           },
@@ -250,6 +251,7 @@
           "text": [],
           "altFinishBtnText": "Retour à la décision",
           "shareText": "J'ai été pris en excès de vitesse ! Et c'était lors d'un rendez-vous avec Nina... :( Peut-être que vous ferez mieux ?",
+          "shareTextFB": "J'ai été pris en excès de vitesse ! Et c'était lors d'un rendez-vous avec Nina... :( Peut-être que vous ferez mieux ?",
           "a": {
             "videoURL": "videos/fr/step_5a.mp4"
           },
@@ -268,6 +270,7 @@
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
           "shareText": "Sono stato colto in flagrante! Ed era ad un appuntamento con Nina... :( Forse farete meglio?",
+          "shareTextFB": "Sono stato colto in flagrante! Ed era ad un appuntamento con Nina... :( Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_5a.mp4"
           },
@@ -336,6 +339,7 @@
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
           "shareText":  "Ich habe einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
+          "shareTextFB":  "Ich habe einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_7a.mp4"
           },
@@ -354,6 +358,7 @@
           "text": [],
           "altFinishBtnText": "Retour à la décision",
           "shareText": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
+          "shareTextFB": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
           "a": {
             "videoURL": "videos/fr/step_7a.mp4"
           },
@@ -372,6 +377,7 @@
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
           "shareText": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
+          "shareTextFB": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_7a.mp4"
           },
@@ -397,6 +403,7 @@
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
           "shareText":  "Ich habe eine Whatsapp - Nachricht während dem Auto fahren gelesen! Und das beim Date mit Nina. Vielleicht machst du es besser?",
+          "shareTextFB":  "Ich habe eine Whatsapp - Nachricht während dem Auto fahren gelesen! Und das beim Date mit Nina. Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_8a.mp4"
           },
@@ -414,6 +421,7 @@
           "linktext": [],
           "altFinishBtnText": "Retour à la décision",
           "shareText": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
+          "shareTextFB": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
           "text": [],
           "a": {
             "videoURL": "videos/fr/step_8a.mp4"
@@ -433,6 +441,7 @@
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
           "shareText": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
+          "shareTextFB": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_8a.mp4"
           },
@@ -458,6 +467,7 @@
           "text": [],
           "altFinishBtnText": "Zurück zur Entscheidung",
           "shareText":  "Ich habe betrunken einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
+          "shareTextFB":  "Ich habe betrunken einen Unfall gemacht und das beim Date mit Nina! Vielleicht machst du es besser?",
           "a": {
             "videoURL": "videos/de/step_9a.mp4",
             "goodEnd": true,
@@ -480,6 +490,7 @@
           "text": [],
           "altFinishBtnText": "Retour à la décision",
           "shareText": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
+          "shareTextFB": "J'ai eu un accident lors de mon rendez-vous avec Nina ! Peut-être ferez-vous mieux ?",
           "a": {
             "videoURL": "videos/fr/step_9a.mp4",
             "goodEnd": true,
@@ -502,6 +513,7 @@
           "text": [],
           "altFinishBtnText": "Torna alla scelta",
           "shareText": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
+          "shareTextFB": "Ho avuto un incidente all'appuntamento con Nina! Forse farete meglio?",
           "a": {
             "videoURL": "videos/it/step_9a.mp4",
             "goodEnd": true,

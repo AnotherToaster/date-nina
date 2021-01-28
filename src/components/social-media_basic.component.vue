@@ -10,7 +10,7 @@
       <i class="fab fa-twitter-square"></i>
     </a>
 
-    <a class="m-md-0 p-md-0" id="whatsapp-message" :href="'whatsapp://send?text='+this.shareText+' https://date-nina.rum.dev/'" target="_blank">
+    <a class="m-md-0 p-md-0" id="whatsapp-message" :href="'whatsapp://send?text='+this.shareText+' https://datenina.ch/'" target="_blank">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
@@ -42,13 +42,13 @@ export default class SocialMedia extends Vue {
 
   mounted() {
     this.tweetElm = document.getElementById('basic-tweet');
-    const tweetSite = 'https://date-nina.rum.dev/';
+    const tweetSite = 'https://datenina.ch/';
     const tweetUrl = 'https://twitter.com/intent/tweet?text=' + this.shareText + ' ' + tweetSite;
     this.tweetElm.setAttribute('href', tweetUrl);
   }
 
   shareBtn() {
-    this.$store.dispatch('shareBtn', this.shareText);
+    this.$store.dispatch('shareBtn', 'Date Nina! Kann ich nur empfehlen!');
   }
 }
 

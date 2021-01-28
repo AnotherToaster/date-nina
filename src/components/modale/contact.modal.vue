@@ -84,7 +84,6 @@ export default class ContactModal extends Vue {
   closeModal(modal: string) {
     this.$modal.hide('contact-modal')
     this.$store.dispatch('show' + modal + 'Modal', false);
-    this.$store.dispatch('showContactSuccess', false);
   }
 
   get showThanks() {

@@ -98,7 +98,6 @@ export default class VideoComponent extends Vue {
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 
 #video {

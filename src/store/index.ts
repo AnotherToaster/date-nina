@@ -96,7 +96,7 @@ export default new Vuex.Store({
             shareObj = {
                 display: 'popup',
                 method: 'share',
-                href: 'https://date-nina.rum.dev/',
+                href: 'https://datenina.ch/',
                 quote: data
             };
 

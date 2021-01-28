@@ -57,8 +57,12 @@ export default class ShareComponent extends Vue {
 
 
 .share_btn_wrapper {
-  min-height: 11vh;
+  min-height: 6vh;
   transition: @transition-duration-blur;
+  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: 11vh;
+
+  }
   @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
     min-height: 15vh;
 

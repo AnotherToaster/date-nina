@@ -168,7 +168,7 @@ if ($currentLanguage == 'de') {
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial;font-size: 16px;padding: 25px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                <a class="mcnButton " title="Jetzt Nina Daten" href="https://date-nina.rum.dev/" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">Jetzt Nina Daten</a>
+                                <a class="mcnButton " title="Jetzt Nina Daten" href="https://datenina.ch/" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">Jetzt Nina Daten</a>
                             </td>
                         </tr>
                     </tbody>
@@ -209,7 +209,7 @@ if ($currentLanguage == 'de') {
         background-repeat: no-repeat;
     }
 </style>
-<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://date-nina.rum.dev/img/bg_email.jpg">
+<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://datenina.ch/img/bg_email.jpg">
     <tr>
         <td>
             <table border="0" align="left" width="710" height="670" border="0" cellpadding="0" cellspacing="0" style="margin-left: 95px;">
@@ -242,10 +242,10 @@ if ($currentLanguage == 'de') {
                                 </tr>
                                 <tr>
                                     <td height="0">
-                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://date-nina.rum.dev/img/btn_inmail.png">
+                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://datenina.ch/img/btn_inmail.png">
                                             <tr>
                                                 <td>
-                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://date-nina.rum.dev/">Rancard avec Nina</a>
+                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://datenina.ch/">Rancard avec Nina</a>
                                                 </td>
                                             </tr>
                                     </td>
@@ -289,7 +289,7 @@ if ($currentLanguage == 'de') {
         background-repeat: no-repeat;
     }
 </style>
-<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://date-nina.rum.dev/img/bg_email.jpg">
+<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://datenina.ch/img/bg_email.jpg">
     <tr>
         <td>
             <table border="0" align="left" width="710" height="670" border="0" cellpadding="0" cellspacing="0" style="margin-left: 95px;">
@@ -322,10 +322,10 @@ if ($currentLanguage == 'de') {
                                 </tr>
                                 <tr>
                                     <td height="0">
-                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://date-nina.rum.dev/img/btn_inmail.png">
+                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://datenina.ch/img/btn_inmail.png">
                                             <tr>
                                                 <td>
-                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://date-nina.rum.dev/">JETZT NINA DATEN</a>
+                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://datenina.ch/">JETZT NINA DATEN</a>
                                                 </td>
                                             </tr>
                                     </td>

@@ -1,8 +1,5 @@
 <template>
   <div class="col-12">
-<!--    <div class="logo_wrapper">
-      <img src="img/bg_finish.png" class="bg_finish">
-    </div>-->
     <p class="endText">{{ endText }}</p>
     <p class="endTextSmall mb-lg-5">{{ endTextSmall }}</p>
     <button id="decBack" @click="startDate()"
@@ -53,29 +50,6 @@ export default class GoodFinishComponent extends Vue {
 </script>
 
 <style scoped lang="less">
-
-/*.bg_finish {
-  position: absolute;
-  transform: translate(-25%, -19%);
-  z-index: -1;
-  width: 180%;
-  left: 180px;
-  top: 25px;
-  @media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-
-  }
-  @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-
-  }
-  @media (max-width: 567px) and (-webkit-min-device-pixel-ratio: 2) {
-    width: 150%;
-    top: 20px;
-  }
-  @media (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
-    width: 160%;
-    left: 50px;
-  }
-}*/
 
 .endText {
   color: #FFF;

@@ -63,12 +63,6 @@ export default class BadFinishComponent extends Vue {
     this.$store.dispatch('setVideoId', this.currentVideoID);
     this.$store.state.badEnd = false;
     this.$store.state.showChoices = true;
-/*    this.$store.dispatch('setVideoUrl', this.videoSteps[this.currentVideoID]['content'][this.currentLanguage]['a'].videoURL)
-    this.$store.dispatch('backFromFinish', true);
-    this.$store.dispatch('setDecision', 'a');
-    setTimeout(() => {
-      this.$store.dispatch('playVideo', true);
-    }, 150);*/
   }
 }
 

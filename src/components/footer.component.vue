@@ -37,7 +37,6 @@ import {Component, Vue} from 'vue-property-decorator';
 
 @Component
 export default class FooterComponent extends Vue {
-  siteContent: Array<string>;
   content: any;
   currentLanguage: string;
   infoTitle: string;
