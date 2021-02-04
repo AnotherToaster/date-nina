@@ -48,7 +48,7 @@ export default class SocialMedia extends Vue {
   }
 
   shareBtn() {
-    this.$store.dispatch('shareBtn', 'Date Nina! Kann ich nur empfehlen!');
+    this.$store.dispatch('shareBtn', this.shareText);
   }
 }
 

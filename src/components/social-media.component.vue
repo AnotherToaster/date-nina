@@ -44,7 +44,13 @@ export default class SocialMedia extends Vue {
 
   mounted() {
     if (this.currentVideoID == '9' && this.videoDecision == 'a') {
-      this.shareText = 'Ich hatte ein super Date mit Nina. Alle Entscheidungen richtig getroffen. Willst du auch mal ein Date mit Nina?'
+      if(this.currentLanguage == 'de') {
+        this.shareText = 'Dieses Wochenende habe ich die richtigen Entscheidungen getroffen und hatte ein super Date mit Nina. Alle Entscheidungen richtig getroffen. Was meinst du? Kriegst du das auch hin?'
+      } else if (this.currentLanguage == 'fr') {
+        this.shareText = 'J\'ai pris les bonnes décisions ce week-end! Et toi? Tu penses pouvoir arriver?'
+      }else if (this.currentLanguage == 'it') {
+        this.shareText = 'Questo fine settimana ho preso le decisioni giuste e ho avuto un grande date con Nina. Allora, cosa ne pensi? Riuscirai anche tu?'
+      }
     }
     this.tweetElm = document.getElementById('tweet');
     const tweetSite = 'https://datenina.ch/';
@@ -53,7 +59,16 @@ export default class SocialMedia extends Vue {
   }
 
   shareBtn() {
-    this.$store.dispatch('shareBtn', this.shareTextFB);
+    if (this.currentVideoID == '9' && this.videoDecision == 'a') {
+      if(this.currentLanguage == 'de') {
+        this.shareText = 'Dieses Wochenende habe ich die richtigen Entscheidungen getroffen und hatte ein super Date mit Nina. Alle Entscheidungen richtig getroffen. Was meinst du? Kriegst du das auch hin?'
+      } else if (this.currentLanguage == 'fr') {
+        this.shareText = 'J\'ai pris les bonnes décisions ce week-end! Et toi? Tu penses pouvoir arriver?'
+      }else if (this.currentLanguage == 'it') {
+        this.shareText = 'Questo fine settimana ho preso le decisioni giuste e ho avuto un grande date con Nina. Allora, cosa ne pensi? Riuscirai anche tu?'
+      }
+    }
+    this.$store.dispatch('shareBtn', this.shareText);
   }
 }
 

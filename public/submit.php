@@ -67,15 +67,6 @@ if ($currentLanguage == 'de') {
 				<!--[if mso]>
 				<td valign="top" width="600" style="width:600px;">
 				<![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-                        
-                        <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #656565;font-family: Helvetica;font-size: 12px;line-height: 150%;">
-                        
-                            <a href="https://us8.campaign-archive.com/?e=[UNIQID]&amp;u=0c4f620fb71b17602df4736a5&amp;id=12d5a5630d" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;">View this email in your browser</a>
-                        </td>
-                    </tr>
-                </tbody></table>
 				<!--[if mso]>
 				</td>
 				<![endif]-->
@@ -119,7 +110,7 @@ if ($currentLanguage == 'de') {
 		</tr>
 		<tr>
 			<td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-			<p dir="ltr" style="text-align: left;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;"><span style="color:#FFFFFF">' . $fromName . ' findet, du sollst mich daten! Mach mit beim interaktiven Game von RoadCross Schweiz. Wir werden sicher viel Spass miteinander haben, wenn du die richtigen Entscheidungen beim Date triffst ...</span></p>
+			<p dir="ltr" style="text-align: left;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;"><span style="color:#FFFFFF">' . $fromName . ' fordert dich heraus! Mach mit beim interaktiven Game von RoadCross Schweiz und beweise, dass du die richtigen Entscheidungen triffst.</span></p>
 
 			<p dir="ltr" style="text-align: left;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;"><br>
 			<span style="color:#FFFFFF">Liebe Grüsse, Nina</span></p>
@@ -187,7 +178,7 @@ if ($currentLanguage == 'de') {
     for ($id = 0; $id < count($friendsData); $id++) {
         $mailProp['subject'] = 'Rancard avec Nina';
         $mailProp['emailMsg'][$id] = '
-<!DOCTYPE html><html><head>
+        <!DOCTYPE html><html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style>
         html, body {
             margin: 0;
@@ -209,65 +200,134 @@ if ($currentLanguage == 'de') {
         background-repeat: no-repeat;
     }
 </style>
-<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://datenina.ch/img/bg_email.jpg">
-    <tr>
-        <td>
-            <table border="0" align="left" width="710" height="670" border="0" cellpadding="0" cellspacing="0" style="margin-left: 95px;">
-                <tr>
-                    <td height="" valign="top">
-                        <div id="content" style="width:410px;">
-                            <table border="0" align="left" width="410" height="" border="0" cellpadding="0" cellspacing="0">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border: 0;max-width: 600px !important;">
+                            <tbody><tr>
+                                <td valign="top" id="templatePreheader" style="background:#000000 none no-repeat top/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: top;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+              	<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+			    
+				<!--[if mso]>
+				<td valign="top" width="600" style="width:600px;">
+				<![endif]-->
 
-                                <tr>
-                                    <td height="150">
-&nbsp;                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="50">
-                                        <h1 style="font-size: 20px; font-weight: bold; color: #FFF;">Salut  ' . $friendsData[$id]['friendName'] . ',</h1>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="">
-                                        <p style="font-size: 14px; font-weight: bold; color: #FFF; line-height:20px;">
-                                            ' . $fromName . ' pense que tu devrais me proposer un rancart !
-                                             Joue le jeu avec la vidéo interactive de Roadcross Schweiz. 
-                                             Nous allons certainement passer de bons moments si tu fais les bons choix au cours de la soirée.</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="25">
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="0">
-                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://datenina.ch/img/btn_inmail.png">
-                                            <tr>
-                                                <td>
-                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://datenina.ch/">Rancard avec Nina</a>
-                                                </td>
-                                            </tr>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+                
+				<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateHeader" style="background:#000000 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;"></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateBody" style="background:#000000 url(&quot;https://mcusercontent.com/0c4f620fb71b17602df4736a5/images/b995f59a-399f-449f-8b0a-86b0e89dcecb.jpg&quot;) no-repeat top/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: url(https://mcusercontent.com/0c4f620fb71b17602df4736a5/images/b995f59a-399f-449f-8b0a-86b0e89dcecb.jpg);background-repeat: no-repeat;background-position: top;background-size: cover;border-top: 1px none #ffffff;border-bottom: 2px none #EAEAEA;padding-top: 110px;padding-bottom: 50px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+              	<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+			    
+				<!--[if mso]>
+				<td valign="top" width="600" style="width:600px;">
+				<![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+                        
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" height="" width="450" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody>
+		<tr>
+			<td height="" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			<h1 style="text-align: left;display: block;margin: 0;padding: 0;color: #ffffff;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;"><span style="color:#FFFFFF">Hi ' . $friendsData[$id]['friendName'] . ',</span></h1>
+			</td>
+		</tr>
+		<tr>
+			<td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			<p dir="ltr" style="text-align: left;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;"><span style="color:#FFFFFF">' . $fromName . ' pense que tu ne vas pas réussir à passer les obstacles ! Viens faire un tour avec moi pour voir si tu prends les bonnes décisions.</span></p>
 
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
+			<p dir="ltr" style="text-align: left;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;"><br>
+			<span style="color:#FFFFFF">Cordialement, Nina</span></p>
+			</td>
+		</tr>
+	</tbody>
 </table>
-</body>
-</html>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+                
+				<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class="mcnDividerBlockOuter">
+        <tr>
+            <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 50px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px none #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--            
+                <td class="mcnDividerBlockInner" style="padding: 18px;">
+                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnButtonBlockOuter">
+        <tr>
+            <td style="padding-top: 0;padding-right: 18px;padding-bottom: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top" align="center" class="mcnButtonBlockInner">
+                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border-radius: 5px;background-color: #DD2E44;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial;font-size: 16px;padding: 25px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <a class="mcnButton " title="Rancard avec Nina" href="https://datenina.ch/fr" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">Rancard avec Nina</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateFooter" style="background:#000000 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 9px;"></td>
+                            </tr>
+                        </tbody></table></body></html>
 ';
     }
 } else if ($currentLanguage == 'it') {
     for ($id = 0; $id < count($friendsData); $id++) {
         $mailProp['subject'] = 'Date Nina';
         $mailProp['emailMsg'][$id] = '
-<!DOCTYPE html><html><head>
+        <!DOCTYPE html><html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style>
         html, body {
             margin: 0;
@@ -289,58 +349,126 @@ if ($currentLanguage == 'de') {
         background-repeat: no-repeat;
     }
 </style>
-<table border="0" width="100%" height="670" border="0" cellspacing="0" cellpadding="0" style="background-repeat: no-repeat;" background="https://datenina.ch/img/bg_email.jpg">
-    <tr>
-        <td>
-            <table border="0" align="left" width="710" height="670" border="0" cellpadding="0" cellspacing="0" style="margin-left: 95px;">
-                <tr>
-                    <td height="" valign="top">
-                        <div id="content" style="width:410px;">
-                            <table border="0" align="left" width="410" height="" border="0" cellpadding="0" cellspacing="0">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border: 0;max-width: 600px !important;">
+                            <tbody><tr>
+                                <td valign="top" id="templatePreheader" style="background:#000000 none no-repeat top/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: top;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+              	<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+			    
+				<!--[if mso]>
+				<td valign="top" width="600" style="width:600px;">
+				<![endif]-->
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+                
+				<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateHeader" style="background:#000000 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;"></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateBody" style="background:#000000 url(&quot;https://mcusercontent.com/0c4f620fb71b17602df4736a5/images/b995f59a-399f-449f-8b0a-86b0e89dcecb.jpg&quot;) no-repeat top/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: url(https://mcusercontent.com/0c4f620fb71b17602df4736a5/images/b995f59a-399f-449f-8b0a-86b0e89dcecb.jpg);background-repeat: no-repeat;background-position: top;background-size: cover;border-top: 1px none #ffffff;border-bottom: 2px none #EAEAEA;padding-top: 110px;padding-bottom: 50px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+              	<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+			    
+				<!--[if mso]>
+				<td valign="top" width="600" style="width:600px;">
+				<![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+                        
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" height="" width="450" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<tbody>
+		<tr>
+			<td height="" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			<h1 style="text-align: left;display: block;margin: 0;padding: 0;color: #ffffff;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;"><span style="color:#FFFFFF">Hi ' . $friendsData[$id]['friendName'] . ',</span></h1>
+			</td>
+		</tr>
+		<tr>
+			<td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			<p dir="ltr" style="text-align: left;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;"><span style="color:#FFFFFF">' . $fromName . ' ti sfida! Partecipa al gioco interattivo di RoadCross Switzerland e dimostra che stai prendendo le decisioni giuste.</span></p>
 
-                                <tr>
-                                    <td height="150">
-&nbsp;                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="50">
-                                        <h1 style="font-size: 20px; font-weight: bold; color: #FFF;">Ciao  ' . $friendsData[$id]['friendName'] . ',</h1>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="">
-                                        <p style="font-size: 14px; font-weight: bold; color: #FFF; line-height:20px;">
-                                            ' . $fromName . ' pensa che mi dovresti dare un appuntamento! 
-                                            Partecipa al gioco interattivo di RoadCross Svizzera. 
-                                            Ci divertiremo di sicuro se al momento dell\' appuntamento prendo la decisione giusta.</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="25">
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="0">
-                                        <table border="0" align="left" height="42" width="215" height="" border="0" cellpadding="0" cellspacing="0" background="https://datenina.ch/img/btn_inmail.png">
-                                            <tr>
-                                                <td>
-                                                    <a style="font-size: 16px; font-weight: bold; color: #FFF; padding-left:40px; text-decoration: none;" href="https://datenina.ch/">JETZT NINA DATEN</a>
-                                                </td>
-                                            </tr>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
+			<p dir="ltr" style="text-align: left;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;"><br>
+			<span style="color:#FFFFFF">Cordiali saluti, Nina</span></p>
+			</td>
+		</tr>
+	</tbody>
 </table>
-</body>
-</html>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+                
+				<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class="mcnDividerBlockOuter">
+        <tr>
+            <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 50px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px none #EAEAEA;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--            
+                <td class="mcnDividerBlockInner" style="padding: 18px;">
+                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnButtonBlockOuter">
+        <tr>
+            <td style="padding-top: 0;padding-right: 18px;padding-bottom: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top" align="center" class="mcnButtonBlockInner">
+                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border-radius: 5px;background-color: #DD2E44;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody>
+                        <tr>
+                            <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial;font-size: 16px;padding: 25px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <a class="mcnButton " title="Date Nina" href="https://datenina.ch/it" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">Date Nina</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateFooter" style="background:#000000 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 9px;"></td>
+                            </tr>
+                        </tbody></table></body></html>
 ';
     }
 }
